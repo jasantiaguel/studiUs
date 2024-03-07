@@ -1,9 +1,9 @@
 # studiUs
 
 ## Created by
-- Jonathan Santiaguel
+- Jonathan Santiaguel (A01372063)
 - Nathan Yee
-- Jerome Gache, A01332858
+- Jerome Gache (A01332858)
 
 ## Description
 - Social app aiming to connect students via inclusive study groups
