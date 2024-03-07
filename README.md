@@ -2,7 +2,7 @@
 
 ## Created by
 - Jonathan Santiaguel (A01372063)
-- Nathan Yee
+- Nathan Yee (A01178399)
 - Jerome Gache (A01332858)
 
 ## Description
