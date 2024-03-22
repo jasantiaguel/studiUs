@@ -1,0 +1,12 @@
+.tab, .currentTab {
+    min-width: 33.33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.currentTab {
+    background-color: lightblue;
+}
+.tab {
+    background-color: beige;
+}
