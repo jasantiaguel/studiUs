@@ -8,7 +8,7 @@ export default function NavTab({image, path}) {
     
     return(
         <Link href={path} className={currentPage ? styles.currentTab : styles.tab}>
-            <Image src={image} width={32} height={32}/>
+            <Image src={image} width={32} height={32} className={styles.icon}/>
         </Link>
     )
 }

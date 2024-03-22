@@ -1,0 +1,14 @@
+.header {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 398px;
+    padding: 0 16px;
+    height: 88px;
+    background-color: beige;
+}
+.logo {
+    width: 32px;
+    height: 32px;
+}

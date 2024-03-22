@@ -1,0 +1,10 @@
+.switch {
+    padding: 0 8px;
+    border: none;
+}
+.on {
+    background-color: lightgreen;
+}
+.off {
+    background-color: lightcoral;
+}

@@ -9,5 +9,5 @@
 - Social app aiming to connect students via inclusive study groups
 
 ## Packages installed
-Install packages: `npm install`
-Run: `npm run dev`
+- Install packages: `npm install`
+- Run: `npm run dev`
