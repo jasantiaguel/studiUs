@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 
 export default function Notifications() {
     return(
-        <div className={`${styles.frame} ${styles.notifications}`}>
+        <div className={`frame ${styles.notifications}`}>
             <Header/>
             <main className={styles.main}>
                 <h1>StudiUs</h1>

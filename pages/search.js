@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 
 export default function Search() {
     return(
-        <div className={`${styles.frame} ${styles.search}`}>
+        <div className={`frame ${styles.search}`}>
             <Header/>
             <main className={styles.main}>
                 <h1>StudiUs</h1>

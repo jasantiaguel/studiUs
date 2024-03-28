@@ -1,13 +1,3 @@
-.frame {
-  background-color: #eee;
-  width: 430px;
-  height: 932px;
-  margin: auto;
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-  align-items: center;
-}
 .main {
 
 }

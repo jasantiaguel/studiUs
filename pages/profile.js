@@ -4,7 +4,7 @@ import Footer from '@/components/Footer'
 
 export default function profile() {
     return (
-        <div>
+        <div className={`frame`}>
             <Header />
             <div>profile</div>
             <Footer />
