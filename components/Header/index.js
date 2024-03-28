@@ -1,12 +1,16 @@
 import styles from "./Header.module.css";
-import Switch from "@/components/Switch";
-import Image from "next/image";
+import Menu from "@/components/Menu";
+import Link from "next/link";
 
 export default function Header() {
     return(
         <div className={styles.header}>
-            <Image width={32} height={32} className={styles.logo}/>
-            <Switch/>
+            <Menu/>
+            <Link href="/profile">
+                <button className={styles.profile}>
+                    profile
+                </button>
+            </Link>
         </div>
     )
 }
