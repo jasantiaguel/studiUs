@@ -1,12 +1,14 @@
-import React from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import styles from "@/styles/Profile.module.css";
 
 export default function profile() {
     return (
-        <div className={`frame`}>
+        <div className="frame">
             <Header />
-            <div>profile</div>
+            <div className={styles.main}
+                >profile
+            </div>
             <Footer />
         </div>
 
