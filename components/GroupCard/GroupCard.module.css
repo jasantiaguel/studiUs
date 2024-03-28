@@ -1,0 +1,8 @@
+.main {
+    background-color: #ddd;
+}
+
+.tags {
+    display: flex;
+    flex-flow: row;
+}
