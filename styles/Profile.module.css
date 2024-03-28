@@ -1,3 +1,18 @@
 .main {
     
 }
+
+.profilePicture{
+    width: 100px;
+    height: 100px;
+}
+
+.form{
+    border: none;
+    border-bottom: 1px solid var(--black);
+    margin-bottom: 10px;
+    width: 250px;
+    outline: none;
+    display: block;
+
+}
