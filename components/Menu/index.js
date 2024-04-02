@@ -10,7 +10,6 @@ export default function Menu() {
 
     return(
         <>
-            <Image src="/" width={32} height={32} onClick={handleClick}/>
             {
                 expand ?
                 <div className={`${styles.menu}`}>
@@ -18,6 +17,7 @@ export default function Menu() {
                     <p onClick={handleClick}>close</p>
                 </div> : null
             }
+            <Image src="/" width={32} height={32} onClick={handleClick}/>
         </>
     )
 }

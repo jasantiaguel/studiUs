@@ -1,5 +1,23 @@
 :root {
-  
+  --size-body: 16pt;
+  --weight-regular: 400;
+  --weight-bold: 700;
+}
+h1, h2, h3, h4 {font-weight: var(--bold);}
+h1 {
+  font-size: 28pt;
+}
+h2 {
+  font-size: 24pt;
+}
+h3 {
+  font-size: 20pt;
+}
+h4 {
+  font-size: 18pt;
+}
+p {
+  font-size: 16pt;
 }
 
 .frame {

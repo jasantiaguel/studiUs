@@ -1,5 +1,6 @@
 .tab, .currentTab {
-    min-width: 33.33%;
+    min-width: 20%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,4 +14,8 @@
 .icon {
     width: 32px;
     height: 32px;
+}
+.container {
+    width: 430px;
+    height: 88px;
 }

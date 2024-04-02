@@ -6,11 +6,6 @@ export default function Header() {
     return(
         <div className={styles.header}>
             <Menu/>
-            <Link href="/profile">
-                <button className={styles.profile}>
-                    profile
-                </button>
-            </Link>
         </div>
     )
 }

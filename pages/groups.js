@@ -1,8 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import styles from "@/styles/Notifications.module.css";
+import styles from "@/styles/Groups.module.css";
 
-export default function Notifications() {
+export default function Groups() {
     return(
         <div className="frame">
             <Header/>

@@ -1,0 +1,6 @@
+.top {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+}
