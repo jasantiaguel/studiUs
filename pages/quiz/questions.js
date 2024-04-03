@@ -5,6 +5,7 @@ import styles from "@/styles/Questions.module.css";
 
 import { questions } from "@/data/quiz"; //edit questions here
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Question from "@/components/Question";
 import Button from "@/components/Button";
 import Link from "next/link";
@@ -15,6 +16,7 @@ export default function Questions() {
     const [pqr, setPqr] = useState(0);
     const [sqr, setSqr] = useState(0);
     const [showSubmit, setShowSubmit] = useState(false);
+    const router = useRouter();
 
     function determineMethod() {
         if (feynman >= pqr && feynman >= sqr) return "Feynman"; //defaults to feynman if tied; not ideal but not sure what to do for now
