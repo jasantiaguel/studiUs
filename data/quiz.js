@@ -1,18 +1,41 @@
+//change the value property to assign different weights
+//add categories to the array if question covers multiple categories
+
 export const questions = [
     {
         question: "Question 1",
-        answers: [{method1: "method1 answer 1"}, {method2: "method2 answer 1"}, {method3: "method3 answer 1"}, {method4: "method4 answer 1"}]
+        answers: [
+            {text: "Feynman, SQ3R +1", method: ["Feynman", "SQ3R"], value: 1},
+            {text: "Feynman +2", method: ["Feynman"], value: 2},
+            {text: "SQ3R +2", method: ["SQ3R"], value: 2},
+            {text: "PQ4R +2", method: ["PQ4R"], value: 2}
+        ]
     },
     {
         question: "Question 2",
-        answers: [{method1: "method1 answer 2"}, {method2: "method2 answer 2"}, {method3: "method3 answer 2"}, {method4: "method4 answer 2"}]
+        answers: [
+            {text: "Feynman, SQ3R +1", method: ["Feynman", "SQ3R"], value: 1},
+            {text: "Feynman +2", method: ["Feynman"], value: 2},
+            {text: "SQ3R +2", method: ["SQ3R"], value: 2},
+            {text: "PQ4R +2", method: ["PQ4R"], value: 2}
+        ]
     },
     {
         question: "Question 3",
-        answers: [{method1: "method1 answer 3"}, {method2: "method2 answer 3"}, {method3: "method3 answer 3"}, {method4: "method4 answer 3"}]
+        answers: [
+            {text: "Feynman, SQ3R +1", method: ["Feynman", "SQ3R"], value: 1},
+            {text: "Feynman +2", method: ["Feynman"], value: 2},
+            {text: "SQ3R +2", method: ["SQ3R"], value: 2},
+            {text: "PQ4R +2", method: ["PQ4R"], value: 2}
+        ]
     },
     {
         question: "Question 4",
-        answers: [{method1: "method1 answer 4"}, {method2: "method2 answer 4"}, {method3: "method3 answer 4"}, {method4: "method4 answer 4"}]
-    },
+        answers: [
+            {text: "Feynman, SQ3R +1", method: ["Feynman", "SQ3R"], value: 1},
+            {text: "Feynman +2", method: ["Feynman"], value: 2},
+            {text: "SQ3R +2", method: ["SQ3R"], value: 2},
+            {text: "PQ4R +2", method: ["PQ4R"], value: 2}
+        ]
+    }
 ]
