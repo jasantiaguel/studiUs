@@ -13,27 +13,30 @@ import Link from "next/link";
 export default function Questions() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [feynman, setFeynman] = useState(0);
-    const [pqr, setPqr] = useState(0);
-    const [sqr, setSqr] = useState(0);
+    const [qr, setQR] = useState(0);
+    const [leitner, setLeitner] = useState(0);
+    const [retrieval, setRetrieval] = useState(0);
     const [showSubmit, setShowSubmit] = useState(false);
     const router = useRouter();
 
     function determineMethod() {
-        if (feynman >= pqr && feynman >= sqr) return "Feynman"; //defaults to feynman if tied; not ideal but not sure what to do for now
-        if (pqr > feynman && pqr >= sqr) return "PQ4R"; //defaults to PQ4R if tied with SQ3R - also not ideal
-        if (sqr > feynman && sqr > pqr) return "SQ3R";
+        if (feynman >= qr && feynman >= leitner >= feynman >= retrieval) return "Feynman";
+        if (qr >= leitner && qr >= retrieval && pq > feynman) return "SQ3R/PQ4R";
+        if (leitner > qr && leitner > feynman && leitner >= retrieval) return "Leitner";
+        if (retrieval > qr && retrieval > leitner && retrieval > feynman) return "Retrieval";
     }
 
     //processes data coming back from Question component (go to component for more details)
-    const returnData = (data) => { //`data` is the value returned by Question
+    const returnData = (data) => { //`data` is the object returned by Question
         if (data.method.includes("Feynman")) setFeynman(feynman + data.value);
-        if (data.method.includes("PQ4R")) setPqr(pqr + data.value);
-        if (data.method.includes("SQ3R")) setSqr(sqr + data.value);
+        if (data.method.includes("Leitner")) setLeitner(leitner + data.value);
+        if (data.method.includes("SQ3R/PQ4R")) setQR(qr + data.value);
+        if (data.method.includes("Retrieval")) setRetrieval(retrieval + data.value);
     }
 
     //dictates question click behaviour
     const handleClick = () => {
-        if (currentQuestion < 3) { //needs this condition so that it doesn't overflow
+        if (currentQuestion < questions.length-1) { //needs this condition so that it doesn't overflow
             setCurrentQuestion(currentQuestion+1);
         }
         else {
