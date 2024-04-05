@@ -20,10 +20,10 @@ export default function Questions() {
     const router = useRouter();
 
     function determineMethod() {
-        if (feynman >= qr && feynman >= leitner >= feynman >= retrieval) return "Feynman";
-        if (qr >= leitner && qr >= retrieval && pq > feynman) return "SQ3R/PQ4R";
-        if (leitner > qr && leitner > feynman && leitner >= retrieval) return "Leitner";
-        if (retrieval > qr && retrieval > leitner && retrieval > feynman) return "Retrieval";
+        if (feynman >= qr && feynman >= leitner >= feynman >= retrieval) return "Feynman"; // in case of tie, first prio
+        if (qr >= leitner && qr >= retrieval && pq > feynman) return "SQ3R/PQ4R"; // second prio
+        if (leitner > qr && leitner > feynman && leitner >= retrieval) return "Leitner"; // third prio
+        if (retrieval > qr && retrieval > leitner && retrieval > feynman) return "Retrieval"; //fourth prio
     }
 
     //processes data coming back from Question component (go to component for more details)

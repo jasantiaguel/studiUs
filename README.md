@@ -11,3 +11,6 @@
 ## Packages installed
 - Install packages: `npm install`
 - Run: `npm run dev`
+
+## Link to style guide repo
+https://github.com/yeenathan/studiUs-Style-Guide
