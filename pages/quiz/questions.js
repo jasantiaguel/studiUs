@@ -85,12 +85,13 @@ export default function Questions() {
                     }) :
                     <div>
                         {answerSelected.description}
-                        <Button onclick={handleNextQuestion} text="Next Question"/>
+                        {showSubmit ?
+                            <Link href={{pathname: "./results", query: {method: determineMethod()}}}><Button text="Finish"/></Link> :
+                            <Button onclick={handleNextQuestion} text="Next Question"/>
+                        }
                     </div>
                 }
                 {
-                    showSubmit ?
-                    <Link href={{pathname: "./results", query: {method: determineMethod()}}}><Button text="Finish"/></Link> :
                     questionIsSelected ?
                     <Button onclick={handleNext} text="Next"/> : null
                 }
