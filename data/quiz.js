@@ -8,12 +8,12 @@ const RETRIEVAL = "Retrieval";
 
 export const questions = [
     {
-        question: "Question 1",
+        question: "When faced with a new topic to study, what's your first instinct?",
         answers: [
-            {text: "Feynman, Leitner +1", method: [FEYNMAN, LEITNER], value: 1, description: "This is the description for Feynman, Leitner +1 for question 1."},
-            {text: "Feynman +2", method: [FEYNMAN], value: 2, description: "This is the description for Feynman +2 for question 1."},
-            {text: "Leitner +2", method: [LEITNER], value: 2, description: "This is the description for Leitner +2 for question 1."},
-            {text: "Retrieval +2", method: [RETRIEVAL], value: 2, description: "This is the description for Retrieval +2 for question 1."}
+            {text: "Dive right into reading and taking notes", method: [QR], value: 2, description: "Your first instinct to Dive to read and take notes matches and is similar to the SQ3R / PQ4R study method!"},
+            {text: "Test yourself on what you already know", method: [RETRIEVAL], value: 2, description: "Your first instinct to Test yourself on what you already know is similar to Retrieval Practice study method!"},
+            {text: "Explain it to someone else as if they're a beginner", method: [FEYNMAN], value: 2, description: "Your first instinct to Explain it to someone else as if they're a beginner is similar to the Feynman Technique!"},
+            {text: "Organize your study materials for spaced repetition", method: [LEITNER], value: 2, description: "Your first instinct to Organize your study materials for spaced repetition is similar to the Lietnar System study method!"}
         ]
     },
     {

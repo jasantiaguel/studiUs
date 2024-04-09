@@ -3,6 +3,7 @@ import Footer from '@/components/Footer'
 import styles from "@/styles/Profile.module.css";
 import Image from "next/image";
 import { useState, useEffect } from 'react';
+import HeadArea from '@/components/HeadArea';
 
 export default function profile() {
     const [formValues, setFormValues] = useState({
@@ -55,6 +56,7 @@ export default function profile() {
 
     return (
         <div className="frame">
+            <HeadArea/>
             <Header />
             <div className={styles.main}>
 

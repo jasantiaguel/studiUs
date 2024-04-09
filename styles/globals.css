@@ -1,23 +1,110 @@
 :root {
-  --size-body: 16pt;
-  --weight-regular: 400;
-  --weight-bold: 700;
+  /****TYPE****/
+  --large-title: 28px;
+  --title-1: 24px;
+  --title-2: 20px;
+  --title-3: 18px;
+  --headline: 17px;
+  --body: 16px;
+  --sub-body: 15px;
+  --footnote: 14px;
+  --caption-1: 12px;
+  --caption-2: 11px;
+
+  --font-weight-regular: 400;
+  --font-weight-semibold: 550;
+  --font-weight-bold: 700;
+
+  /****GREEN****/
+  --dark-green: #234422;
+  --dark-green-85: #23442285;
+  --med-green: #60935D;
+  --med-green-85: #60935D85;
+  --med-green-75: #60935D75;
+  --med-green-20: #60935D20;
+  --med-green-10: #60935D10;
+
+  --light-green: #86B084;
+  --light-green-85: #86B08485;
+
+  --bright-green: #B6D1B5;
+  
+  --bright-af: #FDFFFD;
+  --bright-af-80: #FDFFFD80;
+  --bright-af-75: #FDFFFD75;
+  --bright-af-45: #FDFFFD45;
+  --bright-af-15: #FDFFFD15;
+
+  /****BLUE****/
+  --dark-blue: #1C4947;
+  --bold-blue: #305B59;
+  
+  --med-blue: #3B6F6C;
+  --med-blue-85: #3B6F6C85;
+  --med-blue-35: #3B6F6C35;
+
+  --light-blue: #618F8E;
+  --light-blue-85: #618F8E85;
+  --bright-blue: #87B1AF;
+
+  --blue-bg-gradient: linear-gradient(0deg, rgba(93,147,142,0.2) 0%, rgba(93,147,142,0) 100%);
+
+  /****RED***/
+  --dark-red: #782D2F;
+  --bold-red: #944F51;
+  --med-red: #B47274;
+  --light-red: #D7A1A2;
+  --bright-red: #FDDADB;
+
+  /****"BLACK"****/
+  --black-text: #2E384D; /*it's blue!!*/
+  --black-sub: #8C9CB0;
+
+  /****"WHITE"****/
+  --white-bg: #EBF1F4;
+  --white-bg-85: #EBF1F485;
+
+  --white-shaded: #DFE9DF; /*literally green*/
+  --white-shaded-85: #DFE9DF85;
 }
-h1, h2, h3, h4 {font-weight: var(--bold);}
+
+h1, h2, h3 {
+  font-weight: var(--font-weight-bold);
+}
+h4, h5 {
+  font-weight: var(--font-weight-regular);
+}
 h1 {
-  font-size: 28pt;
+  font-family: "Rajdhani", sans-serif;
+  font-size: var(--large-title);
 }
 h2 {
-  font-size: 24pt;
+  font-size: var(--title-1);
 }
 h3 {
-  font-size: 20pt;
+  font-size: var(--title-2);
 }
 h4 {
-  font-size: 18pt;
+  font-size: var(--title-3);
 }
+h5 {
+  font-size: var(--headline);
+}
+
 p {
-  font-size: 16pt;
+  font-size: var(--body);
+}
+
+.caption1 {
+  margin-top: 0;
+  font-size: var(--caption-1)
+}
+
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #333;
+  margin: 0;
 }
 
 .frame {
@@ -29,10 +116,4 @@ p {
   flex-flow: column;
   justify-content: space-between;
   align-items: center;
-}
-
-body {
-  font-family: sans-serif;
-  background-color: #333;
-  margin: 0;
 }

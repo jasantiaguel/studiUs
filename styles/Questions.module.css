@@ -1,0 +1,6 @@
+.main {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+    padding: 32px;
+}

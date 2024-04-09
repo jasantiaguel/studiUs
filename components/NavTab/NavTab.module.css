@@ -9,7 +9,7 @@
     background-color: lightblue;
 }
 .tab {
-    background-color: beige;
+    background-color: var(--bright-af-80);
 }
 .icon {
     width: 32px;

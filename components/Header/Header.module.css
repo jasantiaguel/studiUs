@@ -6,7 +6,7 @@
     width: 398px;
     padding: 0 16px;
     height: 88px;
-    background-color: beige;
+    background-color: var(--bright-af-80);
 }
 .logo {
     width: 32px;
