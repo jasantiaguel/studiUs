@@ -15,6 +15,7 @@
 
 .background {
     position: absolute;
+    top: 0;
     width: 430px;
     height: 932px;
     background-color: #00000090;

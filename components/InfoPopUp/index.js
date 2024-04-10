@@ -16,6 +16,7 @@ export default function InfoPopUp({method, onclick}) {
                         })
                     }
                 </ol>
+                <h2>Benefits</h2>
                 <ul>
                     {
                         method.benefits.map((point) => {

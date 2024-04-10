@@ -7,17 +7,10 @@ import styles from "@/styles/Quiz.module.css";
 import Link from "next/link";
 import HeadArea from "@/components/HeadArea";
 
-import InfoPopUp from "@/components/InfoPopUp";
-import { useState } from "react";
 import { studyMethods } from "@/data/studymethods";
+import PopupButton from "@/components/PopupButton";
 
-export default function Quiz() {
-    const [popup, setPopup] = useState(null);
-    
-    const showInfo = (method) => {
-        setPopup(method);
-    }
-    
+export default function Quiz() {    
     return(
         <div className="frame">
             <HeadArea/>
@@ -35,17 +28,10 @@ export default function Quiz() {
                 </div>
                 {
                     studyMethods.map((method) => {
-                        return(
-                            <div className={styles.studyBlock} onClick={() => showInfo(method)}>
-                                <p>{method.name}</p>
-                            </div>
-                        )
+                        return <PopupButton method={method}/>
                     })
                 }
             </div>
-            {
-                popup && <InfoPopUp method={popup} onclick={() => setPopup(null)}/>
-            }
             <Footer/>
         </div>
     )
