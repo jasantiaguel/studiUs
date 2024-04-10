@@ -7,19 +7,38 @@
     
 }
 .quizHeader{
-    position: relative;
-    z-index: 2;
-    margin-left: -15px;
-    margin-top: -30px;
+   width: 219px;
+   height: 70px;
+   position: relative;
+   background: var(--med-green-75);
+   border-bottom-right-radius: 16px;
+   border-top-right-radius: 16px;
+   filter: drop-shadow(4px 8px 32px var(--dark-green));
+   margin-left: -15px;
+   margin-top: 40px;
+   margin-bottom: 16px;
 
 }
+.headerText{
+    color: var(--bright-af);
+    position: relative;
+    margin-left: 32px;
+}
+
+.quizBackground{
+    position: absolute;
+    left: 100px;
+    top: 1px;
+}
+
 .questionName{
     z-index: 1;
     position: relative;
-    margin-top: -90px;
+    margin-top: -40px;
     margin-bottom: -30px;
-    width: 359px;
+    width: 344px;
     margin-left: 20px;
+    color: var(--dark-blue);
 }
 
 .buttons {
@@ -37,6 +56,6 @@
 .questions {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 25px;
+    margin-right: 25px;
 }

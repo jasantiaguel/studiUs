@@ -84,8 +84,10 @@ export default function Questions() {
         <div className="frame">
             <HeadArea />
             <div className={styles.main}>
-
-                <Image src='/images/quiz.header.svg' width={280} height={200} className={styles.quizHeader} />
+                <div className={styles.quizBackground}><Image src='/images/header.elipse.svg' width={430} height={313}/> </div>
+                <div className={styles.quizHeader}>
+                    <h1 className={styles.headerText}>StudiUs Quiz</h1>
+                </div>
 
                 <h2 className={styles.questionName}>{questions[currentQuestion].question}</h2>
                 {   // Screen 1
