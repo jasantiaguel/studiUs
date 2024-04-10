@@ -3,14 +3,19 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./NavTab.module.css";
 
-export default function NavTab({image, path}) {
+export default function NavTab({ image, path }) {
     const currentPage = (usePathname() == path);
-    
-    return(
+
+    return (
         <div className={styles.container}>
             <Link href={path} className={currentPage ? styles.currentTab : styles.tab}>
-                <Image src={image} width={32} height={32} className={styles.icon}/>
+                <Image src={image} width={32} height={32} className={styles.icon} />
             </Link>
+          
         </div>
+
     )
+
+
 }
+

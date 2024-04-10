@@ -10,10 +10,10 @@ export const questions = [
     {
         question: "When faced with a new topic to study, what's your first instinct?",
         answers: [
-            {text: "Dive right into reading and taking notes", method: [QR], value: 2, description: "Your first instinct to Dive to read and take notes matches and is similar to the SQ3R / PQ4R study method!"},
-            {text: "Test yourself on what you already know", method: [RETRIEVAL], value: 2, description: "Your first instinct to Test yourself on what you already know is similar to Retrieval Practice study method!"},
-            {text: "Explain it to someone else as if they're a beginner", method: [FEYNMAN], value: 2, description: "Your first instinct to Explain it to someone else as if they're a beginner is similar to the Feynman Technique!"},
-            {text: "Organize your study materials for spaced repetition", method: [LEITNER], value: 2, description: "Your first instinct to Organize your study materials for spaced repetition is similar to the Lietnar System study method!"}
+            {text: "Dive right into reading and taking notes", method: [QR], value: 2, description: "Your first instinct to Dive to read and take notes matches and is similar to the SQ3R / PQ4R study method!", number: 1},
+            {text: "Test yourself on what you already know", method: [RETRIEVAL], value: 2, description: "Your first instinct to Test yourself on what you already know is similar to Retrieval Practice study method!", number: 2},
+            {text: "Explain it to someone else as if they're a beginner", method: [FEYNMAN], value: 2, description: "Your first instinct to Explain it to someone else as if they're a beginner is similar to the Feynman Technique!", number: 3},
+            {text: "Organize your study materials for spaced repetition", method: [LEITNER], value: 2, description: "Your first instinct to Organize your study materials for spaced repetition is similar to the Lietnar System study method!", number: 4}
         ]
     },
     {

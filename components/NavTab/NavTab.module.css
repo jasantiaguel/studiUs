@@ -18,4 +18,5 @@
 .container {
     width: 430px;
     height: 88px;
+    border-top-right-radius: 24;
 }
