@@ -11,6 +11,7 @@ import Button from "@/components/Button";
 import Link from "next/link";
 import HeadArea from "@/components/HeadArea";
 import ProgressBar from "@/components/ProgressBar";
+import Image from "next/image";
 
 export default function Questions() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -83,7 +84,10 @@ export default function Questions() {
         <div className="frame">
             <HeadArea />
             <div className={styles.main}>
-                <h2>{questions[currentQuestion].question}</h2>
+
+                <Image src='/images/quiz.header.svg' width={280} height={200} className={styles.quizHeader} />
+
+                <h2 className={styles.questionName}>{questions[currentQuestion].question}</h2>
                 {   // Screen 1
                     !answerSubmitted ?
                         <div className={styles.questions}>

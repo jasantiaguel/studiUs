@@ -6,7 +6,7 @@
 .rectangle{
     width: 131px; /*147-16 (for padding)*/
     height: 132px; /*148-16*/
-    padding: 16px;
+    padding: 8px;
     background-color: var(--bright-af);
     color: var(--dark-green);
     border-radius: 16px;

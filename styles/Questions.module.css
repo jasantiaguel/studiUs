@@ -6,6 +6,21 @@
     padding: 32px;
     
 }
+.quizHeader{
+    position: relative;
+    z-index: 2;
+    margin-left: -15px;
+    margin-top: -30px;
+
+}
+.questionName{
+    z-index: 1;
+    position: relative;
+    margin-top: -90px;
+    margin-bottom: -30px;
+    width: 359px;
+    margin-left: 20px;
+}
 
 .buttons {
     display: flex;
@@ -22,4 +37,6 @@
 .questions {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin-left: 20px;
+    margin-right: 20px;
 }
