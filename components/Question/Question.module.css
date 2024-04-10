@@ -7,7 +7,7 @@
     width: 131px; /*147-16 (for padding)*/
     height: 132px; /*148-16*/
     padding: 16px;
-    background-color: var(--med-green-20);
+    background-color: var(--bright-af);
     color: var(--dark-green);
     border-radius: 16px;
     z-index: 1;
@@ -15,6 +15,7 @@
     font-size: 15px;
     display: flex;
     align-items: center;
+    text-align: center;
 }
 .ellipse{
     padding: 8px;
@@ -27,11 +28,11 @@
     font-weight: var(--font-weight-bold);
     z-index: 2;
     position: relative;
-    top: 16px;
+    top: 25px;
 }
 
 .quizBackground:hover .ellipse{
-    background-color: var(--dark-green-85);
+    background-color: var(--med-green);
 }
 
 /* .question:hover {
