@@ -7,11 +7,6 @@
     
 }
 
-.questionLayout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
 .buttons {
     display: flex;
     flex-flow: row;
@@ -22,4 +17,9 @@
     display: flex;
     flex-flow: column;
     gap: 8px;
+}
+
+.questions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }

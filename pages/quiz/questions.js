@@ -85,14 +85,12 @@ export default function Questions() {
                 <h2>{questions[currentQuestion].question}</h2>
                 {   // Screen 1
                     !questionSubmitted ?
-                        <div className={styles.questionLayout}>
-                            <div className={styles.questions}>
-                                {
-                                    questions[currentQuestion].answers.map((answer) => {
-                                        return <Question onclick={handleQuestion} answerData={answer} returnData={returnData} style={answer == answerSelected ? selectedStyle : null} />
-                                    })
-                                }
-                            </div>
+                        <div className={styles.questions}>
+                            {
+                                questions[currentQuestion].answers.map((answer) => {
+                                    return <Question onclick={handleQuestion} answerData={answer} returnData={returnData} style={answer == answerSelected ? selectedStyle : null} />
+                                })
+                            }
                         </div>
                         :
                         // Screen 2 (After hitting Next)    
