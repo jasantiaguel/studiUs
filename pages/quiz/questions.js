@@ -37,14 +37,6 @@ export default function Questions() {
             {name: "Feynman", value: feynman},
         ]
     }
-    // function determineMethod() {
-    //     let result = [qr, leitner, retrieval, feynman];
-    //     let max = Math.max(...result);
-    //     if (qr == max) return "SQ3R/PQ4R";
-    //     if (leitner == max) return "Leitner";
-    //     if (retrieval == max) return "Retrieval";
-    //     if (feynman == max) return "Feynman";
-    // }
 
     //processes data coming back from Question component (go to component for more details)
     const returnData = (data) => { //`data` is the object returned by Question
