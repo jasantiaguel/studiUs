@@ -64,7 +64,9 @@ export default function Questions() {
             setCurrentQuestion(currentQuestion+1);
         }
     }
-
+    const handleLearnMore = () => {
+        
+    }
     const handleQuestion = () => {
         setQuestionIsSelected(true);
         if (currentQuestion == questions.length-1) {
@@ -90,17 +92,22 @@ export default function Questions() {
                 <h2>{questions[currentQuestion].question}</h2>
                 {   // Screen 1
                     !questionSubmitted ?
+                    <>
                     <div className={styles.questions}>
                         {
                             questions[currentQuestion].answers.map((answer) => {
                                 return <Question onclick={handleQuestion} answerData={answer} returnData={returnData} style={answer == answerSelected ? selectedStyle : null}/>
                             })
                         }
+                    </div>
+                    <div className={styles.buttons}>
+                        <Button onclick={handleBack} text="Back"/>
                         {
                             questionIsSelected &&
                             <Button onclick={handleNext} text="Next"/> // "Submits selected answer"
                         }
                     </div>
+                    </>
                     :
                     // Screen 2 (After hitting Next)
                     <> 
@@ -108,6 +115,7 @@ export default function Questions() {
                             <p>{answerSelected.description}</p>
                         </div>
                         <div className={styles.buttons}>
+                            <Button onclick={handleLearnMore} text="Learn More"/>
                             {   // Handles which button to show on last question
                                 showSubmit ?
                                 <Link href={{pathname: "./results", query: {results: JSON.stringify(getResults())}}}><Button text="Finish"/></Link> :
@@ -115,10 +123,7 @@ export default function Questions() {
                             }
                         </div>    
                     </>
-                }
-                <div className={styles.buttons}>
-                    <Button onclick={handleBack} text="Previous Question"/>
-                </div>
+                }                
             </div>
             <Footer/>
         </div>

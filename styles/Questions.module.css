@@ -1,6 +1,12 @@
 .main {
     display: flex;
     flex-flow: column;
-    align-items: flex-end;
+    height: 100%;
     padding: 32px;
+}
+
+.buttons {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
 }
