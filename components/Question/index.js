@@ -10,16 +10,13 @@ export default function Question({ answerData, onclick, returnData, style }) {  
     }
 
     return (
-        <div className={styles.quizBackground}>
-            <div className={styles.elipse}>
-                <div className={styles.number}>{answerData.number} </div>  
+        <div className={styles.quizBackground} onClick={handleClick} >
+            <div className={styles.ellipse} style={style}>
+                {answerData.number} 
             </div>
             <div className={styles.rectangle}>
-                <div onClick={handleClick} className={styles.question} style={style}>
-                    {answerData.text}
-                </div>
+                {answerData.text}
             </div>
         </div>
-
     )
 }

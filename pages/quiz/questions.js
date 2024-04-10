@@ -26,7 +26,7 @@ export default function Questions() {
     const router = useRouter();
 
     const selectedStyle = {
-        backgroundColor: "darkgray"
+        backgroundColor: "var(--dark-green)"
     }
 
     function getResults() {
@@ -85,7 +85,6 @@ export default function Questions() {
                 <h2>{questions[currentQuestion].question}</h2>
                 {   // Screen 1
                     !questionSubmitted ?
-
                         <div className={styles.questionLayout}>
                             <div className={styles.questions}>
                                 {
