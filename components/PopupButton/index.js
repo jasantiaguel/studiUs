@@ -7,7 +7,7 @@ export default function PopupButton({method}) {
 
     return(
         <>
-            <div className={styles.main} onClick={() => setPopup(true)}>
+            <div className={styles.container} onClick={() => setPopup(true)}>
                 <p>{method.name}</p>
             </div>
             {

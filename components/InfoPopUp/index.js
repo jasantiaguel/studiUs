@@ -4,7 +4,7 @@ export default function InfoPopUp({method, onclick}) {
     return(
         <div className={styles.background} onClick={onclick}>
             <div className={styles.container}>
-                <h2>{method.name}</h2>
+                <h2>The {method.name}</h2>
                 <h4>{method.sub}</h4>
                 <h2>Description</h2>
                 <p>{method.description}</p>

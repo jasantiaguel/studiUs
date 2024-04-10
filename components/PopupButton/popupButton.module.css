@@ -1,0 +1,23 @@
+.container {
+    min-width: 136px;
+    height: 152px;
+    background-color: var(--med-green);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--body);
+    color: white;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0;
+    padding-bottom: 8px;
+    border-radius: 16px;
+}
+
+.container p {
+    margin: 0;
+}
+
+.container:hover {
+    background-color: var(--med-green-85);
+}

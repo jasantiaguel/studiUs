@@ -4,3 +4,19 @@
     align-items: center;
     justify-content: center;
 }
+
+.studyMethods {
+    display: flex;
+    flex-flow: row;
+    overflow-x: scroll;
+    width: 398px;
+    gap: 8px;
+}
+
+.studyMethods::-webkit-scrollbar {
+    display: none;
+}
+
+.main {
+    padding: 0 16px;
+}

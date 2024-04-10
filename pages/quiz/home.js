@@ -26,11 +26,13 @@ export default function Quiz() {
                         </Link>
                     </div>
                 </div>
+                <div className={styles.studyMethods}>
                 {
                     studyMethods.map((method) => {
                         return <PopupButton method={method}/>
                     })
                 }
+                </div>
             </div>
             <Footer/>
         </div>
