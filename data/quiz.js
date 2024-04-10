@@ -17,30 +17,30 @@ export const questions = [
         ]
     },
     {
-        question: "Question 2",
+        question: "How do you prefer to review and reinforce what you've learned?",
         answers: [
-            {text: "Feynman, Leitner +1", method: [FEYNMAN, LEITNER], value: 1, description: "This is the description for Feynman, Leitner +1 for question 2."},
-            {text: "Feynman +2", method: [FEYNMAN], value: 2, description: "This is the description for Feynman +2 for question 2."},
-            {text: "Leitner +2", method: [LEITNER], value: 2, description: "This is the description for Leitner +2 for question 2."},
-            {text: "Retrieval +2", method: [RETRIEVAL], value: 2, description: "This is the description for Retrieval +2 for question 2."}
+            {text: "Re-reading and summarizing key points", method: [QR], value: 2, description: "Your preference to Re-read and summarize key points is similar to the SQ3R / PQ4R study method!"},
+            {text: "Frequent quizzing and self-testing", method: [RETRIEVAL], value: 2, description: "Your preference to Test yourself on what you already know is similar to Retrieval Practice study method!"},
+            {text: "Teaching others or discussing concepts out loud", method: [FEYNMAN], value: 2, description: "Your preference to Teach others or discuss concepts out loud is similar to the Feynman Technique!"},
+            {text: "Using flashcards or spaced repetition software", method: [LEITNER], value: 2, description: "Your preference to Use flashcards or spaced repetition software is similar to the Lietnar System study method!"}
         ]
     },
     {
-        question: "Question 3",
+        question: "What motivates you to stay engaged with your study material?",
         answers: [
-            {text: "Feynman, Leitner +1", method: [FEYNMAN, LEITNER], value: 1, description: "This is the description for Feynman, Leitner +1 for question 3."},
-            {text: "Feynman +2", method: [FEYNMAN], value: 2, description: "This is the description for Feynman +2 for question 3."},
-            {text: "Leitner +2", method: [LEITNER], value: 2, description: "This is the description for Leitner +2 for question 3."},
-            {text: "Retrieval +2", method: [RETRIEVAL], value: 2, description: "This is the description for Retrieval +2 for question 3."}
+            {text: "Understanding the big picture and connecting concepts", method: [QR], value: 2, description: "Your motivation to Understand the big picture and connect concepts is similar to the SQ3R / PQ4R study method!"},
+            {text: "Seeing immediate improvement through self-testing", method: [RETRIEVAL], value: 2, description: "Your motivation to See immediate improvement through self-testing is similar to the Retrieval Practice study method!"},
+            {text: "Simplifying complex ideas to grasp them better", method: [FEYNMAN], value: 2, description: "Your motivation to Simplify complex ideas to grasp them better is similar to the Feynman Technique!"},
+            {text: "The structured progression and organization of review", method: [LEITNER], value: 2, description: "Your source of motivation through structured progression is similar to the Lietner System!"}
         ]
     },
     {
-        question: "Question 4",
+        question: "How do you prefer to track your progress and adjust your study approach?",
         answers: [
-            {text: "Feynman, Leitner +1", method: [FEYNMAN, LEITNER], value: 1, description: "This is the description for Feynman, Leitner +1 for question 4."},
-            {text: "Feynman +2", method: [FEYNMAN], value: 2, description: "This is the description for Feynman +2 for question 4."},
-            {text: "Leitner +2", method: [LEITNER], value: 2, description: "This is the description for Leitner +2 for question 4."},
-            {text: "Retrieval +2", method: [RETRIEVAL], value: 2, description: "This is the description for Retrieval +2 for question 4."}
+            {text: "Taking detailed notes and reviewing them regularly", method: [QR], value: 2, description: "Your approach to Take detailed notes and review them regularly is similar to the SQ3R / PQ4R study method!"},
+            {text: "Monitoring your ability to recall information over time", method: [RETRIEVAL], value: 2, description: "Your approach to Monitor your ability to recall information over time is similar to Retrieval Practice study method!"},
+            {text: "Reflecting on how well you can explain the topic to others", method: [FEYNMAN], value: 2, description: "Your approach to Reflect on how well you can explain the topic to others is similar to the Feynman Technique!"},
+            {text: "Organize your study materials for spaced repetition", method: [LEITNER], value: 2, description: "Your approach to Use a system that adapts based on what you know and don't know is similar to the Lietnar System method!"}
         ]
     }
 ]

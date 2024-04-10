@@ -1,6 +1,7 @@
 .main {
     display: flex;
     flex-flow: column;
+    justify-content: space-between;
     height: 100%;
     padding: 32px;
 }
@@ -9,4 +10,10 @@
     display: flex;
     flex-flow: row;
     justify-content: space-between;
+}
+
+.bottom {
+    display: flex;
+    flex-flow: column;
+    gap: 8px;
 }

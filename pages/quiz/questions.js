@@ -10,6 +10,7 @@ import Question from "@/components/Question";
 import Button from "@/components/Button";
 import Link from "next/link";
 import HeadArea from "@/components/HeadArea";
+import ProgressBar from "@/components/ProgressBar";
 
 export default function Questions() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -92,7 +93,6 @@ export default function Questions() {
                 <h2>{questions[currentQuestion].question}</h2>
                 {   // Screen 1
                     !questionSubmitted ?
-                    <>
                     <div className={styles.questions}>
                         {
                             questions[currentQuestion].answers.map((answer) => {
@@ -100,30 +100,39 @@ export default function Questions() {
                             })
                         }
                     </div>
-                    <div className={styles.buttons}>
-                        <Button onclick={handleBack} text="Back"/>
-                        {
-                            questionIsSelected &&
-                            <Button onclick={handleNext} text="Next"/> // "Submits selected answer"
-                        }
-                    </div>
-                    </>
                     :
-                    // Screen 2 (After hitting Next)
-                    <> 
-                        <div className={styles.description}>
-                            <p>{answerSelected.description}</p>
-                        </div>
-                        <div className={styles.buttons}>
-                            <Button onclick={handleLearnMore} text="Learn More"/>
-                            {   // Handles which button to show on last question
-                                showSubmit ?
-                                <Link href={{pathname: "./results", query: {results: JSON.stringify(getResults())}}}><Button text="Finish"/></Link> :
-                                <Button onclick={handleNextQuestion} text="Next Question"/>
-                            }
-                        </div>    
-                    </>
-                }                
+                    // Screen 2 (After hitting Next)    
+                    <div className={styles.description}>
+                        <p>{answerSelected.description}</p>
+                    </div>
+                }
+                <div className={styles.bottom}>
+                    <div className={styles.buttons}>
+                        {   !questionSubmitted?
+                            // Screen 1 buttons
+                            <>
+                                <Button onclick={handleBack} text="Back"/>
+                                {
+                                    questionIsSelected &&
+                                    <Button onclick={handleNext} text="Next"/> // "Submits selected answer"
+                                }
+                            </>
+                            :
+                            // Screen 2 buttons
+                            <>
+                                <Button onclick={handleLearnMore} text="Learn More"/>
+                                {   // Handles which button to show on last question
+                                    showSubmit ?
+                                    <Link href={{pathname: "./results", query: {results: JSON.stringify(getResults())}}}><Button text="Finish"/></Link> :
+                                    <Button onclick={handleNextQuestion} text="Next Question"/>
+                                }
+                            </>
+                            
+                        }
+                        
+                    </div>
+                    <ProgressBar progress={currentQuestion} length={questions.length}/>
+                </div>
             </div>
             <Footer/>
         </div>

@@ -1,0 +1,12 @@
+.node {
+    background-color: lightgray;
+    width: 94px;
+    height: 8px;
+}
+
+.progressBar {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    gap: 8px;
+}
