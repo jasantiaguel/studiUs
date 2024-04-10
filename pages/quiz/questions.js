@@ -19,9 +19,10 @@ export default function Questions() {
     const [leitner, setLeitner] = useState(0);
     const [retrieval, setRetrieval] = useState(0);
     const [showSubmit, setShowSubmit] = useState(false);
-    const [questionIsSelected, setQuestionIsSelected] = useState(false);
-    const [answerSelected, setAnswerSelected] = useState();
-    const [questionSubmitted, setQuestionSubmitted] = useState(false);
+
+    const [answerIsSelected, setAnswerIsSelected] = useState(false); // is an answer selected
+    const [answerSelected, setAnswerSelected] = useState(); // the actual answer selected
+    const [answerSubmitted, setAnswerSubmitted] = useState(false); // is the answer submitted
 
     const router = useRouter();
 
@@ -44,15 +45,15 @@ export default function Questions() {
     }
 
     const handleNext = () => {
-        setQuestionIsSelected(false);
-        setQuestionSubmitted(true);
+        setAnswerIsSelected(false);
+        setAnswerSubmitted(true);
         if (answerSelected.method.includes("Feynman")) setFeynman(feynman + answerSelected.value);
         if (answerSelected.method.includes("Leitner")) setLeitner(leitner + answerSelected.value);
         if (answerSelected.method.includes("SQ3R/PQ4R")) setQR(qr + answerSelected.value);
         if (answerSelected.method.includes("Retrieval")) setRetrieval(retrieval + answerSelected.value);
     }
     const handleNextQuestion = () => {
-        setQuestionSubmitted(false);
+        setAnswerSubmitted(false);
         if (currentQuestion < questions.length - 1) {
             setCurrentQuestion(currentQuestion + 1);
         }
@@ -61,16 +62,16 @@ export default function Questions() {
 
     }
     const handleQuestion = () => {
-        setQuestionIsSelected(true);
+        setAnswerIsSelected(true);
         if (currentQuestion == questions.length - 1) {
             setShowSubmit(true);
         }
     }
     //back button
     const handleBack = () => {
-        setQuestionSubmitted(false);
+        setAnswerSubmitted(false);
         setAnswerSelected(null);
-        setQuestionIsSelected(false);
+        setAnswerIsSelected(false);
         if (currentQuestion > 0) {
             setCurrentQuestion(currentQuestion - 1);
         }
@@ -84,7 +85,7 @@ export default function Questions() {
             <div className={styles.main}>
                 <h2>{questions[currentQuestion].question}</h2>
                 {   // Screen 1
-                    !questionSubmitted ?
+                    !answerSubmitted ?
                         <div className={styles.questions}>
                             {
                                 questions[currentQuestion].answers.map((answer) => {
@@ -100,12 +101,12 @@ export default function Questions() {
                 }
                 <div className={styles.bottom}>
                     <div className={styles.buttons}>
-                        {!questionSubmitted ?
+                        {!answerSubmitted ?
                             // Screen 1 buttons
                             <>
                                 <Button onclick={handleBack} text="Back" />
                                 {
-                                    questionIsSelected &&
+                                    answerIsSelected &&
                                     <Button onclick={handleNext} text="Next" /> // "Submits selected answer"
                                 }
                             </>
