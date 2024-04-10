@@ -1,3 +1,5 @@
+import Button from "@/components/Button";
+import Link from "next/link";
 import Footer from "@/components/Footer";
 import HeadArea from "@/components/HeadArea";
 import Header from "@/components/Header";
@@ -39,6 +41,7 @@ export default function Results() {
                 <p>{`Leitner: ${LEITNER}%`}</p>
                 <p>{`Feynman: ${FEYNMAN}%`}</p>
             </div>
+            <Link href="/quiz/home"><Button text="Quiz Home"/></Link>
             <Footer/>
         </div>
     )

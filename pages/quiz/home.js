@@ -7,7 +7,10 @@ import styles from "@/styles/Quiz.module.css";
 import Link from "next/link";
 import HeadArea from "@/components/HeadArea";
 
-export default function Quiz() {
+import { studyMethods } from "@/data/studymethods";
+import PopupButton from "@/components/PopupButton";
+
+export default function Quiz() {    
     return(
         <div className="frame">
             <HeadArea/>
@@ -23,6 +26,11 @@ export default function Quiz() {
                         </Link>
                     </div>
                 </div>
+                {
+                    studyMethods.map((method) => {
+                        return <PopupButton method={method}/>
+                    })
+                }
             </div>
             <Footer/>
         </div>

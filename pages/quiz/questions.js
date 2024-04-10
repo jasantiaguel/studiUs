@@ -124,9 +124,7 @@ export default function Questions() {
                                         <Button onclick={handleNextQuestion} text="Next Question" />
                                 }
                             </>
-
                         }
-
                     </div>
                     <ProgressBar progress={currentQuestion} length={questions.length} />
                 </div>
