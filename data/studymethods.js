@@ -54,7 +54,7 @@ export const studyMethods = [
         whoCanBenefit: "Students seeking to solidify their understanding of material, individuals preparing for exams or assessments, and those aiming to build robust memory recall skills."
     },
     {
-        name: "SQ3R / PQ4R",
+        name: "SQ3R/PQ4R",
         sub: "Method",
         description: "SQ3R (Survey, Question, Read, Recite, Review) or PQ4R (Preview, Question, Read, Reflect, Recite, Review) is an active reading and study method. It involves previewing the material, generating questions, reading actively while answering those questions, reciting or recalling information, and finally reviewing the material to reinforce learning.",
         howToUse: [
