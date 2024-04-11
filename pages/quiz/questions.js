@@ -83,18 +83,13 @@ export default function Questions() {
     return (
         <div className="frame">
             <HeadArea />
-            <div className={styles.main}>
-                <div className={styles.quizBackground}>
-                    <Image src='/images/header.elipse.svg' width={430} height={313}/> 
-                </div>
-                <div className={styles.quizTopo}>
-                    <Image src='/images/topography6.svg' width={1033.09} height={742.69}/> 
-                </div>
-                
+            <Image src='/images/header.elipse.svg' width={430} height={313} className={styles.quizBackground}/> 
+            <Image src='/images/graphic.topo2.svg' width={1033} height={743} className={styles.quizTopo}/>  
+            <div className={styles.main}>             
                 <div className={styles.quizHeader}>
                     <h1 className={styles.headerText}>StudiUs Quiz</h1>
                 </div>
-                
+
                 <h2 className={styles.questionName}>{questions[currentQuestion].question}</h2>
                 {   // Screen 1
                     !answerSubmitted ?
@@ -108,7 +103,10 @@ export default function Questions() {
                         :
                         // Screen 2 (After hitting Next)    
                         <div className={styles.description}>
-                            <p>{answerSelected.description}</p>
+                            <Question answerData={answerSelected} onclick={null} className={styles.expandedQuestion}/>
+                            <div>  
+                                <p className={styles.insight}>{answerSelected.description}</p>
+                            </div>
                         </div>
                 }
                 <div className={styles.bottom}>
