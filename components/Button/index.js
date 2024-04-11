@@ -9,7 +9,7 @@ const sizeStyles = {
     }
 }
 
-export default function Button({text, onclick, bgColor = 'var(--med-blue)', size = 'default', width}) {
+export default function Button({text, onclick, bgColor='var(--med-blue)', size='default', width}) {
     return(
         <button 
             onClick={onclick} 

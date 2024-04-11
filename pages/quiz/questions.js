@@ -123,12 +123,9 @@ export default function Questions() {
                         {!answerSubmitted ?
                             // Screen 1 buttons
                             <>
-                                <button onClick={handleBack} className={styles.buttonOverride}>
-                                    <Image src='/images/back.arrow.svg' width={41} height={48}/>
-                                </button>
                                 {
                                     answerIsSelected &&
-                                    <Button onclick={handleNext} text="Next" /> // "Submits selected answer"
+                                    <Button onclick={handleNext} text="Submit" bgColor="var(--med-green)" /> // "Submits selected answer"
                                 }
                             </>
                             :
@@ -138,7 +135,7 @@ export default function Questions() {
                                 {   // Handles which button to show on last question
                                     showSubmit ?
                                         <Link href={{ pathname: "./results", query: { results: JSON.stringify(getResults()) } }}><Button text="Finish" width="179px"/></Link> :
-                                        <Button onclick={handleNextQuestion} text="Next Question" width="179px" />
+                                        <Button onclick={handleNextQuestion} text="Next Question" bgColor="var(--med-green)" width="179px" />
                                 }
                             </>
                         }
@@ -146,7 +143,12 @@ export default function Questions() {
                     {
                         popup && <InfoPopUp methodName={answerSelected.method[0]} onclick={() => setPopup(null)}/>
                     }
-                    <ProgressBar progress={currentQuestion} length={questions.length} />
+                    <div className={styles.progressContainer}>
+                        <button onClick={handleBack} className={styles.buttonOverride}>
+                            <Image src='/images/back.arrow.svg' width={41} height={48}/>
+                        </button>
+                        <ProgressBar progress={currentQuestion} length={questions.length} />
+                    </div>
                 </div>
             </div>
             <Footer />

@@ -1,7 +1,8 @@
 .node {
-    background-color: lightgray;
+    background-color: var(--bright-af-75);
     width: 94px;
     height: 8px;
+    border-radius: 8px;
 }
 
 .progressBar {

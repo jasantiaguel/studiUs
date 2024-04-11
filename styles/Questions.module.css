@@ -2,8 +2,9 @@
     display: flex;
     flex-flow: column;
     height: 100%;
-    padding: 32px;
+    padding: 16px;
     background-image: url("/images/graphic.topo2.svg");
+    width: 398px;
 }
 
 .quizHeader{
@@ -14,7 +15,7 @@
     background: var(--med-green-85);
     border-bottom-right-radius: 16px;
     border-top-right-radius: 16px;
-    filter: drop-shadow(4px 8px 32px var(--drop-shadow-2-2-16));
+    filter: drop-shadow(var(--drop-shadow-4-8-32));
     z-index: 2;
     margin-top: 45px;
 }
@@ -48,8 +49,10 @@
 .buttons {
     display: flex;
     flex-flow: row;
-    justify-content: space-between;
+    justify-content: flex-end;
+    gap: 8px;
     z-index: 5;
+    padding: 0 16px;
 }
 
 .bottom {
@@ -60,6 +63,9 @@
 }
 
 .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     height: 406px;
 }
 
@@ -71,24 +77,23 @@
     background-color: none;
 }
 
+.nextButton {
+    margin-left: auto;
+}
+
 .topContainer {
     padding: 0 16px;
 }
 
 .descriptionBox{
     position: relative;
-    width: 362.97px;
-    height: 94px;
     border-radius: 16px;
     background-color: var(--bright-af);
+    padding: 4px 16px;
 }
 
-.description{
-    width: 337.19px;
-    height: 94px;
-    position: relative;
-    left: 10px;
-    top: 15px;
+.progressContainer {
+    margin: auto;
 }
 
 /* <div className="QuizContent" style={{width: 362.97, height: 94, position: 'relative', boxShadow: '2px 2px 16px rgba(46, 56, 77, 0.35)', backdropFilter: 'blur(8px)'}}>
