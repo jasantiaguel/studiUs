@@ -35,11 +35,11 @@
 
 .quizTopo{
     position: absolute;
-    margin-left: -380px;
-    margin-top: -25px;
-    -webkit-transform: rotate(134.16deg); 
-    -moz-transform: rotate(134.16deg);
+    top: 0;
+    /* transform: rotate(134deg); */
     z-index: 0;
+    width: 430px;
+    height: 932px
 }
 
 .questionName{
