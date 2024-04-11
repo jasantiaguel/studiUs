@@ -2,7 +2,7 @@
     display: flex;
     flex-flow: column;
     align-items: center;
-    filter: drop-shadow(2px 2px 16px var(--dark-green-85));
+    filter: drop-shadow(2px 2px 16px var(--drop-shadow-2-2-16));
     width: fit-content;
 }
 .rectangle{
