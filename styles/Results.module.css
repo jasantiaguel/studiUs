@@ -1,0 +1,16 @@
+.main {
+    padding: 32px;
+}
+
+.block {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--bright-af);
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 8px;
+}
+
+.block p {
+    margin: 0;
+}

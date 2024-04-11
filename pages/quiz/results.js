@@ -24,22 +24,34 @@ export default function Results() {
     function determineMethod() {
         let result = [QR, RETRIEVAL, LEITNER, FEYNMAN];
         let max = Math.max(...result);
-        if (QR == max) return "SQ3R/PQ4R";
-        if (LEITNER == max) return "Leitner";
-        if (RETRIEVAL == max) return "Retrieval";
-        if (FEYNMAN == max) return "Feynman";
+        if (QR == max) return {method: "SQ3R/PQ4R", percentage: QR};
+        if (LEITNER == max) return {method: "Leitner", percentage: LEITNER};
+        if (RETRIEVAL == max) return {method: "Retrieval", percentage: RETRIEVAL};
+        if (FEYNMAN == max) return {method: "Feynman", percentage: FEYNMAN};
     }
+
+    let winner = determineMethod();
 
     return(
         <div className="frame">
             <HeadArea/>
             <Header/>
             <div className={styles.main}>
-                <h2>{`${determineMethod()} is the most effective approach for your learning style`}</h2>
-                <p>{`SQ3R/PQ4R: ${QR}%`}</p>
-                <p>{`Retrieval: ${RETRIEVAL}%`}</p>
-                <p>{`Leitner: ${LEITNER}%`}</p>
-                <p>{`Feynman: ${FEYNMAN}%`}</p>
+                <h2>{`${winner.method} is the most effective approach for your learning style`}</h2>
+                <h4>{`${winner.percentage}% of your answers corresponded to ${winner.method}`}</h4>
+                <p>Here is a summary of your results:</p>
+                <div className={styles.resultsDisplay}>
+                    {
+                        results.map((result) => {
+                            return(
+                                <div className={styles.block}>
+                                    <p>{result.name}</p>
+                                    <p>{`${result.value/total*100}%`}</p>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
             </div>
             <Link href="/quiz/home"><Button text="Quiz Home"/></Link>
             <Footer/>
