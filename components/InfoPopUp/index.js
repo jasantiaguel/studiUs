@@ -1,6 +1,10 @@
 import styles from "./InfoPopUp.module.css";
+import { studyMethods } from "@/data/studymethods";
 
-export default function InfoPopUp({method, onclick}) {
+export default function InfoPopUp({methodName, onclick}) {
+    let method = studyMethods.find((method) => {
+        return method.name == methodName;
+    })
     return(
         <div className={styles.background} onClick={onclick}>
             <div className={styles.container}>

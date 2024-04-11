@@ -2,16 +2,16 @@ import styles from "./popupButton.module.css";
 import InfoPopUp from "../InfoPopUp";
 import { useState } from "react";
 
-export default function PopupButton({method}) {
+export default function PopupButton({methodName}) {
     const [popup, setPopup] = useState(false);
 
     return(
         <>
             <div className={styles.container} onClick={() => setPopup(true)}>
-                <p>{method.name}</p>
+                <p>{methodName}</p>
             </div>
             {
-                popup && <InfoPopUp method={method} onclick={() => setPopup(null)}/>
+                popup && <InfoPopUp methodName={methodName} onclick={() => setPopup(null)}/>
             }
         </>
     )
