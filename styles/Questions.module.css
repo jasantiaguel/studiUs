@@ -42,6 +42,10 @@
     height: 932px
 }
 
+.expandedQuestion{
+    width: 50em;
+}
+
 .questionName{
     z-index: 1;
     position: relative;

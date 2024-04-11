@@ -103,8 +103,10 @@ export default function Questions() {
                         :
                         // Screen 2 (After hitting Next)    
                         <div className={styles.description}>
-                            <Question answerData={answerSelected} onclick={null}/>
-                            <p>{answerSelected.description}</p>
+                            <Question answerData={answerSelected} onclick={null} className={styles.expandedQuestion}/>
+                            <div>  
+                                <p className={styles.insight}>{answerSelected.description}</p>
+                            </div>
                         </div>
                 }
                 <div className={styles.bottom}>
