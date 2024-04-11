@@ -119,7 +119,9 @@ export default function Questions() {
                         {!answerSubmitted ?
                             // Screen 1 buttons
                             <>
-                                <Button onclick={handleBack}><Image src='/images/back.arrow.svg' width={41} height={48}/></Button>
+                                <button className={styles.buttonOverride} onClick={handleBack}>
+                                    <Image onclick={handleBack} src='/images/back.arrow.svg' width={41} height={48}/>
+                                </button>
                                 {
                                     answerIsSelected &&
                                     <Button onclick={handleNext} text="Next" /> // "Submits selected answer"
@@ -131,7 +133,7 @@ export default function Questions() {
                                 <Button onclick={() => setPopup(true)} text="Learn More" width="179px" />
                                 {   // Handles which button to show on last question
                                     showSubmit ?
-                                        <Link href={{ pathname: "./results", query: { results: JSON.stringify(getResults()) } }}><Button text="Finish" /></Link> :
+                                        <Link href={{ pathname: "./results", query: { results: JSON.stringify(getResults()) } }}><Button text="Finish" width="179px" /></Link> :
                                         <Button onclick={handleNextQuestion} text="Next Question" width="179px" />
                                 }
                             </>

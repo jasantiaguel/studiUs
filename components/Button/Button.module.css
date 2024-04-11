@@ -1,7 +1,6 @@
 .main {
     border: none;
     border-radius: 24px;
-    padding: 16px;
     font-weight: var(--font-weight-bold);
     font-size: var(--size-body);
     color: var(--bright-af);

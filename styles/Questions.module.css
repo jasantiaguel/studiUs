@@ -54,7 +54,6 @@
     flex-flow: row;
     justify-content: space-between;
     z-index: 5;
-    min-height: 51px;
 }
 
 .bottom {
@@ -65,4 +64,13 @@
 
 .content {
     height: 406px;
+}
+
+.buttonOverride {
+    border: none;
+    padding: none;
+}
+
+.buttonOverride:hover {
+    background-color: none;
 }
