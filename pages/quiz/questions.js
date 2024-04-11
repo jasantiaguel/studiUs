@@ -84,7 +84,7 @@ export default function Questions() {
         <div className="frame">
             <HeadArea />
             <Image src='/images/header.elipse.svg' width={430} height={313} className={styles.quizBackground}/> 
-            <Image src='/images/topography6.svg' width={1033} height={743} className={styles.quizTopo}/>  
+            <Image src='/images/graphic.topo2.svg' width={1033} height={743} className={styles.quizTopo}/>  
             <div className={styles.main}>             
                 <div className={styles.quizHeader}>
                     <h1 className={styles.headerText}>StudiUs Quiz</h1>
