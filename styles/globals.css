@@ -17,55 +17,62 @@
 
   /****GREEN****/
   --dark-green: #234422;
-  --dark-green-85: #23442285;
+  --dark-green-85: #234422D9; /* 85% opacity */
   --med-green: #60935D;
-  --med-green-85: #60935D85;
-  --med-green-75: #60935D75;
-  --med-green-20: #60935D20;
-  --med-green-10: #60935D10;
-
+  --med-green-85: #60935DD9; /* 85% opacity */
+  --med-green-75: #60935D; /* 75% opacity */
+  --med-green-20: #60935D33; /* 20% opacity */
+  --med-green-10: #60935D1A; /* 10% opacity */
+  
   --light-green: #86B084;
-  --light-green-85: #86B08485;
-
+  --light-green-85: #86B084D9; /* 85% opacity */
+  
   --bright-green: #B6D1B5;
   
   --bright-af: #FDFFFD;
-  --bright-af-80: #FDFFFD80;
-  --bright-af-75: #FDFFFD75;
-  --bright-af-45: #FDFFFD45;
-  --bright-af-15: #FDFFFD15;
-
+  --bright-af-80: #FDFFFDCC; /* 80% opacity */
+  --bright-af-75: #FDFFFDBC; /* 75% opacity */
+  --bright-af-45: #FDFFF76E; /* 45% opacity */
+  --bright-af-15: #FDFFE6; /* 15% opacity */
+  
   /****BLUE****/
   --dark-blue: #1C4947;
   --bold-blue: #305B59;
   
   --med-blue: #3B6F6C;
-  --med-blue-85: #3B6F6C85;
-  --med-blue-35: #3B6F6C35;
-
+  --med-blue-85: #3B6F6CD9; /* 85% opacity */
+  --med-blue-35: #3B6F6C59; /* 35% opacity */
+  
   --light-blue: #618F8E;
-  --light-blue-85: #618F8E85;
+  --light-blue-85: #618F8ED9; /* 85% opacity */
   --bright-blue: #87B1AF;
-
+  
   --blue-bg-gradient: linear-gradient(0deg, rgba(93,147,142,0.2) 0%, rgba(93,147,142,0) 100%);
-
+  
   /****RED***/
   --dark-red: #782D2F;
   --bold-red: #944F51;
   --med-red: #B47274;
   --light-red: #D7A1A2;
   --bright-red: #FDDADB;
-
+  
   /****"BLACK"****/
   --black-text: #2E384D; /*it's blue!!*/
   --black-sub: #8C9CB0;
-
+  
   /****"WHITE"****/
   --white-bg: #EBF1F4;
-  --white-bg-85: #EBF1F485;
-
+  --white-bg-85: #EBF1F4D9; /* 85% opacity */
+  
   --white-shaded: #DFE9DF; /*literally green*/
-  --white-shaded-85: #DFE9DF85;
+  --white-shaded-85: #DFE9DFD9; /* 85% opacity */
+
+  /****"DROP-SHADOW"****/
+  --drop-shadow-2-2-16: 2px 2px 16px #2E384D59;
+  --drop-shadow-4-8-32: 4px 8px 32px #2E384D59;
+
+  /****"BACKDROP-BLUR"****/
+  --backdrop-blur: blur(8px)
 }
 
 h1, h2, h3 {
@@ -100,7 +107,6 @@ p {
   font-size: var(--caption-1)
 }
 
-
 body {
   font-family: "Inter", sans-serif;
   background-color: #333;
@@ -116,6 +122,5 @@ body {
   flex-flow: column;
   justify-content: space-between;
   align-items: center;
-  overflow: clip;
-
+  overflow: hidden;
 }
