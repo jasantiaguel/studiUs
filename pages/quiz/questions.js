@@ -84,10 +84,17 @@ export default function Questions() {
         <div className="frame">
             <HeadArea />
             <div className={styles.main}>
-                <div className={styles.quizBackground}><Image src='/images/header.elipse.svg' width={430} height={313}/> </div>
+                <div className={styles.quizBackground}>
+                    <Image src='/images/header.elipse.svg' width={430} height={313}/> 
+                </div>
+                <div className={styles.quizTopo}>
+                    <Image src='/images/topography6.svg' width={1033.09} height={742.69}/> 
+                </div>
+                
                 <div className={styles.quizHeader}>
                     <h1 className={styles.headerText}>StudiUs Quiz</h1>
                 </div>
+                
 
                 <h2 className={styles.questionName}>{questions[currentQuestion].question}</h2>
                 {   // Screen 1
@@ -110,7 +117,7 @@ export default function Questions() {
                         {!answerSubmitted ?
                             // Screen 1 buttons
                             <>
-                                <Button onclick={handleBack} text="Back" />
+                                <Button onclick={handleBack}><Image src='/images/back.arrow.svg' width={41} height={48}/></Button>
                                 {
                                     answerIsSelected &&
                                     <Button onclick={handleNext} text="Next" /> // "Submits selected answer"
