@@ -3,6 +3,7 @@
     flex-flow: column;
     align-items: center;
     filter: drop-shadow(2px 2px 16px var(--dark-green-85));
+    width: fit-content;
 }
 .rectangle{
     width: 131px; /*147-16 (for padding)*/
