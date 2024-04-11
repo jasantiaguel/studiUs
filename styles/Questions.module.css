@@ -71,6 +71,7 @@
 
 .buttonOverride {
     border: none;
+    background: none;
 }
 
 .buttonOverride:hover {

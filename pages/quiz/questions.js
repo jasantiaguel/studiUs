@@ -97,8 +97,14 @@ export default function Questions() {
                         !answerSubmitted ?
                             <div className={styles.questions}>
                                 {
-                                    questions[currentQuestion].answers.map((answer) => {
-                                        return <Question onclick={handleQuestion} answerData={answer} returnData={returnData} style={answer == answerSelected ? selectedStyle : null} />
+                                    questions[currentQuestion].answers.map((answer, index) => {
+                                        return <Question 
+                                                    tabIndex={index + 1}
+                                                    onclick={handleQuestion} 
+                                                    answerData={answer} 
+                                                    returnData={returnData} 
+                                                    style={answer == answerSelected ? selectedStyle : null}
+                                                />
                                     })
                                 }
                             </div>
@@ -125,17 +131,30 @@ export default function Questions() {
                             <>
                                 {
                                     answerIsSelected &&
-                                    <Button onclick={handleNext} text="Submit" bgColor="var(--med-green)" /> // "Submits selected answer"
+                                    <Button 
+                                        tabIndex={5} 
+                                        onclick={handleNext}
+                                        text="Submit" 
+                                        bgColor="var(--med-green)" 
+                                    /> // "Submits selected answer"
                                 }
                             </>
                             :
                             // Screen 2 buttons
                             <>
-                                <Button onclick={() => setPopup(true)} bgColor="var(--bright-blue)" text="Learn More" width="179px" />
+                                <Button 
+                                    tabIndex={6} 
+                                    onclick={() => setPopup(true)}
+                                    bgColor="var(--bright-blue)" 
+                                    text="Learn More" 
+                                    width="179px" 
+                                />
                                 {   // Handles which button to show on last question
                                     showSubmit ?
-                                        <Link href={{ pathname: "./results", query: { results: JSON.stringify(getResults()) } }}><Button text="See Results" bgColor="var(--med-green)" width="179px"/></Link> :
-                                        <Button onclick={handleNextQuestion} text="Next Question" bgColor="var(--med-green)" width="179px" />
+                                        <Link tabIndex={-1} href={{ pathname: "./results", query: { results: JSON.stringify(getResults()) } }}>
+                                            <Button tabIndex={8} text="See Results" bgColor="var(--med-green)" width="179px"/>
+                                        </Link> :
+                                        <Button tabIndex={7} onclick={handleNextQuestion} text="Next Question" bgColor="var(--med-green)" width="179px" />
                                 }
                             </>
                         }
@@ -144,7 +163,7 @@ export default function Questions() {
                         popup && <InfoPopUp methodName={answerSelected.method[0]} onclick={() => setPopup(null)}/>
                     }
                     <div className={styles.progressContainer}>
-                        <button onClick={handleBack} className={styles.buttonOverride}>
+                        <button tabIndex={9} onClick={handleBack} className={styles.buttonOverride}>
                             <Image src='/images/back.arrow.svg' width={41} height={48}/>
                         </button>
                         <ProgressBar progress={currentQuestion} length={questions.length} />

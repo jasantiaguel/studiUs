@@ -9,10 +9,12 @@ const sizeStyles = {
     }
 }
 
-export default function Button({text, onclick, bgColor='var(--med-blue)', size='default', width}) {
+export default function Button({text, onclick, bgColor='var(--med-blue)', size='default', width, tabIndex, onKeyDown}) {
     return(
         <button 
+            tabIndex={tabIndex}
             onClick={onclick} 
+            onKeyDown={onKeyDown}
             className={styles.main}
             style={{
                 backgroundColor: bgColor,
