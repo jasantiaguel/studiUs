@@ -11,12 +11,17 @@
     overflow: auto;
     position: relative;
     top: 128px;
+    z-index: 10;
 }
 
 .background {
     position: absolute;
     top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
     width: 430px;
     height: 932px;
-    background-color: #00000090;
+    background-color: #00000080;
 }

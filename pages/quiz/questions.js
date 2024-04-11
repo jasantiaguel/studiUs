@@ -12,6 +12,7 @@ import Link from "next/link";
 import HeadArea from "@/components/HeadArea";
 import ProgressBar from "@/components/ProgressBar";
 import Image from "next/image";
+import InfoPopUp from "@/components/InfoPopUp";
 
 export default function Questions() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -24,6 +25,8 @@ export default function Questions() {
     const [answerIsSelected, setAnswerIsSelected] = useState(false); // is an answer selected
     const [answerSelected, setAnswerSelected] = useState(); // the actual answer selected
     const [answerSubmitted, setAnswerSubmitted] = useState(false); // is the answer submitted
+
+    const [popup, setPopup] = useState(false); //for "learn more" overlay
 
     const router = useRouter();
 
@@ -58,9 +61,6 @@ export default function Questions() {
         if (currentQuestion < questions.length - 1) {
             setCurrentQuestion(currentQuestion + 1);
         }
-    }
-    const handleLearnMore = () => {
-
     }
     const handleQuestion = () => {
         setAnswerIsSelected(true);
@@ -126,7 +126,7 @@ export default function Questions() {
                             :
                             // Screen 2 buttons
                             <>
-                                <Button onclick={handleLearnMore} text="Learn More" />
+                                <Button onclick={() => setPopup(true)} text="Learn More"/>
                                 {   // Handles which button to show on last question
                                     showSubmit ?
                                         <Link href={{ pathname: "./results", query: { results: JSON.stringify(getResults()) } }}><Button text="Finish" /></Link> :
@@ -135,6 +135,9 @@ export default function Questions() {
                             </>
                         }
                     </div>
+                    {
+                        popup && <InfoPopUp methodName={answerSelected.method[0]} onclick={() => setPopup(null)}/>
+                    }
                     <ProgressBar progress={currentQuestion} length={questions.length} />
                 </div>
             </div>
