@@ -14,3 +14,28 @@
 .block p {
     margin: 0;
 }
+
+.quizHeader{
+    width: 219px;
+    height: 70px;
+    position: relative;
+    right: 32px;
+    background: var(--med-green-85);
+    border-bottom-right-radius: 16px;
+    border-top-right-radius: 16px;
+    filter: drop-shadow(var(--drop-shadow-4-8-32));
+    z-index: 2;
+    margin-top: 29px;
+    color: var(--bright-af);
+    display: flex;
+    align-items: center;
+}
+
+.headerText {
+    margin: 0;
+    margin-left: 32px;
+}
+
+.header {
+    color: var(--dark-green);
+}

@@ -33,9 +33,6 @@ export default function Questions() {
     const selectedStyle = {
         backgroundColor: "var(--dark-green)"
     }
-    const answerStyle = {
-        
-    }
 
     function getResults() {
         return [

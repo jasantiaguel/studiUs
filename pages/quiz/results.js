@@ -35,9 +35,11 @@ export default function Results() {
     return(
         <div className="frame">
             <HeadArea/>
-            <Header/>
             <div className={styles.main}>
-                <h2>{`${winner.method} is the most effective approach for your learning style`}</h2>
+                <div className={styles.quizHeader}>
+                    <h1 className={styles.headerText}>StudiUs Quiz</h1>
+                </div>
+                <h2 className={styles.header}>{`${winner.method} is the most effective approach for your learning style`}</h2>
                 <h4>{`${winner.percentage}% of your answers corresponded to ${winner.method}`}</h4>
                 <p>Here is a summary of your results:</p>
                 <div className={styles.resultsDisplay}>
