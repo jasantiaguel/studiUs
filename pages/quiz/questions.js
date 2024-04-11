@@ -109,7 +109,6 @@ export default function Questions() {
                                     <div className={styles.questionContainer}>
                                         <Question answerData={answerSelected} onclick={null}/> 
                                     </div>
-                               
                                     <div className={styles.descriptionBox}>  
                                         <p className={styles.description}>{answerSelected.description}</p>
                                     </div>
@@ -132,10 +131,10 @@ export default function Questions() {
                             :
                             // Screen 2 buttons
                             <>
-                                <Button onclick={() => setPopup(true)} text="Learn More" width="179px" />
+                                <Button onclick={() => setPopup(true)} bgColor="var(--bright-blue)" text="Learn More" width="179px" />
                                 {   // Handles which button to show on last question
                                     showSubmit ?
-                                        <Link href={{ pathname: "./results", query: { results: JSON.stringify(getResults()) } }}><Button text="Finish" width="179px"/></Link> :
+                                        <Link href={{ pathname: "./results", query: { results: JSON.stringify(getResults()) } }}><Button text="See Results" bgColor="var(--med-green)" width="179px"/></Link> :
                                         <Button onclick={handleNextQuestion} text="Next Question" bgColor="var(--med-green)" width="179px" />
                                 }
                             </>
