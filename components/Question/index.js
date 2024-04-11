@@ -1,7 +1,7 @@
 import styles from "./Question.module.css";
 import { useState } from "react";
 
-export default function Question({ answerData, onclick, returnData, style, currentQuestion }) {   //answerData is one of the objects in the answers array in the data file quiz.js:
+export default function Question({ answerData, onclick, returnData, style}) {   //answerData is one of the objects in the answers array in the data file quiz.js:
     //                                                                    {text: "Feynman, SQ3R +1", method: ["Feynman", "SQ3R"], value: 1}
 
     //combines passed onclick function with additional functionality
@@ -13,7 +13,7 @@ export default function Question({ answerData, onclick, returnData, style, curre
 
     
     return (
-        <div className={styles.answerBackground} onClick={handleClick} style={currentQuestion % 2 == 0 ? {marginRight: "auto"} : {marginLeft: "auto"}}>
+        <div className={styles.answerBackground} onClick={handleClick} style={answerData.number % 2 != 0 ? {marginRight: "auto"} : {marginLeft: "auto"}}>
             <div className={styles.ellipse} style={style}>
                 {answerData.number} 
             </div>
