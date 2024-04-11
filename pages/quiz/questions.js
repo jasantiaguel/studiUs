@@ -91,29 +91,32 @@ export default function Questions() {
                 <div className={styles.quizHeader}>
                     <h1 className={styles.headerText}>StudiUs Quiz</h1>
                 </div>
-                <h2 className={styles.questionName}>{questions[currentQuestion].question}</h2>
-                {   // Screen 1
-                    !answerSubmitted ?
-                        <div className={styles.questions}>
-                            {
-                                questions[currentQuestion].answers.map((answer) => {
-                                    return <Question onclick={handleQuestion} answerData={answer} returnData={returnData} style={answer == answerSelected ? selectedStyle : null} />
-                                })
-                            }
-                        </div>
-                        :
-                        // Screen 2 (After hitting Next)   
-                        <>
-                            <div className={styles.content}>
-                                <div className={styles.questionContainer}>
-                                    <Question answerData={answerSelected} onclick={null} currentQuestion={currentQuestion}/> 
-                                </div>
-                                <div className={styles.description}>  
-                                    <p className={styles.insight}>{answerSelected.description}</p>
-                                </div>
+                <div className={styles.topContainer}>
+                    <h2 className={styles.questionName}>{questions[currentQuestion].question}</h2>
+                    {   // Screen 1
+                        !answerSubmitted ?
+                            <div className={styles.questions}>
+                                {
+                                    questions[currentQuestion].answers.map((answer) => {
+                                        return <Question onclick={handleQuestion} answerData={answer} returnData={returnData} style={answer == answerSelected ? selectedStyle : null} />
+                                    })
+                                }
                             </div>
-                        </>
-                }
+                            :
+                            // Screen 2 (After hitting Next)   
+                            <>
+                                <div className={styles.content}>
+                                    <div className={styles.questionContainer}>
+                                        <Question answerData={answerSelected} onclick={null} currentQuestion={currentQuestion}/> 
+                                    </div>
+                                    <div className={styles.description}>  
+                                        <p className={styles.insight}>{answerSelected.description}</p>
+                                    </div>
+                                </div>
+                            </>
+                            
+                    }
+                </div>
                 <div className={styles.bottom}>
                     <div className={styles.buttons}>
                         {!answerSubmitted ?
