@@ -4,4 +4,6 @@
     padding: 16px;
     font-weight: var(--font-weight-bold);
     font-size: var(--size-body);
+    color: var(--bright-af);
+    filter: drop-shadow(var(--drop-shadow-2-2-16));
 }

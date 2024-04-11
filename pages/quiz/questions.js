@@ -128,11 +128,11 @@ export default function Questions() {
                             :
                             // Screen 2 buttons
                             <>
-                                <Button onclick={() => setPopup(true)} text="Learn More"/>
+                                <Button onclick={() => setPopup(true)} text="Learn More" width="179px" />
                                 {   // Handles which button to show on last question
                                     showSubmit ?
                                         <Link href={{ pathname: "./results", query: { results: JSON.stringify(getResults()) } }}><Button text="Finish" /></Link> :
-                                        <Button onclick={handleNextQuestion} text="Next Question" />
+                                        <Button onclick={handleNextQuestion} text="Next Question" width="179px" />
                                 }
                             </>
                         }
