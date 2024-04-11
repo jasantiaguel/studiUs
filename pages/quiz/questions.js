@@ -95,7 +95,6 @@ export default function Questions() {
                     <h1 className={styles.headerText}>StudiUs Quiz</h1>
                 </div>
                 
-
                 <h2 className={styles.questionName}>{questions[currentQuestion].question}</h2>
                 {   // Screen 1
                     !answerSubmitted ?

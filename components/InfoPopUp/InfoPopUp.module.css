@@ -24,4 +24,5 @@
     width: 430px;
     height: 932px;
     background-color: #00000080;
+    z-index: 9;
 }
