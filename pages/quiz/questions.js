@@ -85,6 +85,8 @@ export default function Questions() {
             <HeadArea />
             <Image src='/images/header.elipse.svg' width={430} height={313} className={styles.quizBackground}/> 
             <div className={styles.main}>
+            <Image src='/images/graphic.topo2.svg' width={1033} height={743} className={styles.quizTopo}/>  
+            <div className={styles.main}>             
                 <div className={styles.quizHeader}>
                     <h1 className={styles.headerText}>StudiUs Quiz</h1>
                 </div>
@@ -102,8 +104,10 @@ export default function Questions() {
                         :
                         // Screen 2 (After hitting Next)    
                         <div className={styles.description}>
-                            <Question answerData={answerSelected} onclick={null}/>
-                            <p>{answerSelected.description}</p>
+                            <Question answerData={answerSelected} onclick={null} className={styles.expandedQuestion}/>
+                            <div>  
+                                <p className={styles.insight}>{answerSelected.description}</p>
+                            </div>
                         </div>
                 }
                 <div className={styles.bottom}>
