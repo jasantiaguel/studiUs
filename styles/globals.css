@@ -47,7 +47,7 @@
   --light-blue-85: #618F8ED9; /* 85% opacity */
   --bright-blue: #87B1AF;
   
-  --blue-bg-gradient: linear-gradient(0deg, rgba(93,147,142,0.2) 0%, rgba(93,147,142,0) 100%);
+  --blue-bg-gradient: linear-gradient(0deg, rgba(93,147,142,0.45) 0%, rgba(93,147,142,0) 100%);
   
   /****RED***/
   --dark-red: #782D2F;
@@ -114,7 +114,7 @@ body {
 }
 
 .frame {
-  background: var(--blue-bg-gradient), #eee;
+  background: var(--blue-bg-gradient), var(--white-bg);
   width: 430px;
   height: 932px;
   margin: auto;
