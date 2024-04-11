@@ -13,6 +13,13 @@
     gap: 8px;
 }
 
+.top{
+    padding: 16px;
+    background-color: var(--bright-af);
+    filter: drop-shadow(var(--drop-shadow-4-8-32));
+
+}
+
 .studyMethods::-webkit-scrollbar {
     display: none;
 }
