@@ -1,25 +1,22 @@
 .main {
     display: flex;
     flex-flow: column;
-    justify-content: space-between;
     height: 100%;
     padding: 32px;
-    background-image: url("/images/topography6.svg");
-    background-position: -100% 20%;
+    background-image: url("/images/graphic.topo2.svg");
 }
 
 .quizHeader{
     width: 219px;
     height: 70px;
     position: relative;
+    right: 16px;
     background: var(--med-green-85);
     border-bottom-right-radius: 16px;
     border-top-right-radius: 16px;
     filter: drop-shadow(4px 8px 32px var(--dark-green));
-    margin-left: -15px;
-    margin-top: 45px;
-    margin-bottom: -8px;
     z-index: 2;
+    margin-top: 45px;
 }
 
 .headerText{
@@ -35,18 +32,14 @@
 .questionName{
     z-index: 1;
     position: relative;
-    margin-top: -40px;
-    margin-bottom: -60px;
     width: 344px;
-    margin-left: 18px;
     color: var(--dark-blue);
 }
 .questions {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-left: 25px;
-    margin-right: 25px;
     height: 406px;
+    margin-left: 16px;
 }
 
 .buttons {
@@ -60,6 +53,7 @@
     display: flex;
     flex-flow: column;
     gap: 8px;
+    margin-top: auto;
 }
 
 .content {
@@ -73,4 +67,8 @@
 
 .buttonOverride:hover {
     background-color: none;
+}
+
+.topContainer {
+    padding: 0 16px;
 }
