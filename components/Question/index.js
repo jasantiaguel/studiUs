@@ -13,7 +13,7 @@ export default function Question({ answerData, onclick, returnData, style, curre
 
     
     return (
-        <div className={styles.quizBackground} onClick={handleClick} style={currentQuestion % 2 == 0 ? {marginRight: "auto"} : {marginLeft: "auto"}}>
+        <div className={styles.answerBackground} onClick={handleClick} style={currentQuestion % 2 == 0 ? {marginRight: "auto"} : {marginLeft: "auto"}}>
             <div className={styles.ellipse} style={style}>
                 {answerData.number} 
             </div>
