@@ -107,6 +107,7 @@ export default function Questions() {
                             <>
                                 <div className={styles.content}>
                                     <div className={styles.questionContainer}>
+                                        <Image src={answerSelected.image} width={430} height={313} className={styles.img}/>
                                         <Question answerData={answerSelected} onclick={null}/> 
                                     </div>
                                     <div className={styles.descriptionBox}>  
