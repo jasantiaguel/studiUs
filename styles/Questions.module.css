@@ -4,7 +4,8 @@
     justify-content: space-between;
     height: 100%;
     padding: 32px;
-    overflow: hidden;
+    background-image: url("/images/topography6.svg");
+    background-position: -100% 20%;
 }
 
 .quizHeader{
@@ -29,17 +30,6 @@
 
 .quizBackground{
     position: absolute;
-    margin-left: -15px;
-    top: 1px;
-}
-
-.quizTopo{
-    position: absolute;
-    top: 0;
-    /* transform: rotate(134deg); */
-    z-index: 0;
-    width: 430px;
-    height: 932px
 }
 
 .questionName{
@@ -56,6 +46,7 @@
     grid-template-columns: 1fr 1fr;
     margin-left: 25px;
     margin-right: 25px;
+    height: 406px;
 }
 
 .buttons {
@@ -72,3 +63,6 @@
     gap: 8px;
 }
 
+.description {
+    height: 406px;
+}
