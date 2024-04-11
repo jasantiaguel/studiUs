@@ -14,7 +14,7 @@
     background: var(--med-green-85);
     border-bottom-right-radius: 16px;
     border-top-right-radius: 16px;
-    filter: drop-shadow(4px 8px 32px var(--dark-green));
+    filter: drop-shadow(4px 8px 32px var(--drop-shadow-2-2-16));
     z-index: 2;
     margin-top: 45px;
 }
@@ -74,3 +74,24 @@
 .topContainer {
     padding: 0 16px;
 }
+
+.descriptionBox{
+    position: relative;
+    width: 362.97px;
+    height: 94px;
+    border-radius: 16px;
+    background-color: var(--bright-af);
+}
+
+.description{
+    width: 337.19px;
+    height: 94px;
+    position: relative;
+    left: 10px;
+    top: 15px;
+}
+
+/* <div className="QuizContent" style={{width: 362.97, height: 94, position: 'relative', boxShadow: '2px 2px 16px rgba(46, 56, 77, 0.35)', backdropFilter: 'blur(8px)'}}>
+  <div className="Rectangle95" style={{width: 362.97, height: 94, left: 0, top: 0, position: 'absolute', background: '#FDFFFD', borderRadius: 16}} />
+  <div className="Content" style={{width: 337.19, height: 64, left: 12.37, top: 16, position: 'absolute', color: 'black', fontSize: 16, fontFamily: 'Inter', fontWeight: '400', lineHeight: 20.64, wordWrap: 'break-word'}}>Your approach to Use a system that adapts based on what you know and don't know is similar to the Lietnar System method!</div>
+</div> */
