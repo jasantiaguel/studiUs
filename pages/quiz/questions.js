@@ -70,16 +70,23 @@ export default function Questions() {
     }
     //back button
     const handleBack = () => {
-        setAnswerSubmitted(false);
-        setAnswerSelected(null);
-        setAnswerIsSelected(false);
-        if (currentQuestion > 0) {
-            setCurrentQuestion(currentQuestion - 1);
+        if (!answerSubmitted) {
+            if (currentQuestion > 0) {
+                setCurrentQuestion(currentQuestion - 1);
+            }
+            else {
+                router.push("./home");
+            }
         }
         else {
-            router.push("./home");
+            if (answerSelected.method.includes("Feynman")) setFeynman(feynman - answerSelected.value);
+            if (answerSelected.method.includes("Leitner")) setLeitner(leitner - answerSelected.value);
+            if (answerSelected.method.includes("SQ3R/PQ4R")) setQR(qr - answerSelected.value);
+            if (answerSelected.method.includes("Retrieval")) setRetrieval(retrieval - answerSelected.value);
+            setAnswerSubmitted(false);
         }
-    }
+        setAnswerIsSelected(false);  
+        setAnswerSelected(null);    }
     return (
         <div className="frame">
             <HeadArea />
@@ -117,9 +124,7 @@ export default function Questions() {
                                         <p className={styles.description}>{answerSelected.description}</p>
                                     </div>
                                 </div>
-                                
                             </>
-                            
                     }
                 </div>
                 <div className={styles.bottom}>
@@ -158,7 +163,7 @@ export default function Questions() {
                         }
                     </div>
                     {
-                        popup && <InfoPopUp methodName={answerSelected.method[0]} onclick={() => setPopup(null)}/>
+                        popup && <InfoPopUp methodName={answerSelected.method} onclick={() => setPopup(null)}/>
                     }
                     <div className={styles.progressContainer}>
                         <button tabIndex={9} onClick={handleBack} className={styles.buttonOverride}>
