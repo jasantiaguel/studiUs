@@ -4,8 +4,7 @@
     justify-content: space-between;
     height: 100%;
     padding: 32px;
-    background-image: url("/images/topography6.svg");
-    background-position: -100% 20%;
+    background-image: url("/images/graphic.topo2.svg");
 }
 
 .quizHeader{
@@ -35,18 +34,14 @@
 .questionName{
     z-index: 1;
     position: relative;
-    margin-top: -40px;
-    margin-bottom: -60px;
     width: 344px;
-    margin-left: 18px;
     color: var(--dark-blue);
 }
 .questions {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-left: 25px;
-    margin-right: 25px;
     height: 406px;
+    justify-items: center;
 }
 
 .buttons {
