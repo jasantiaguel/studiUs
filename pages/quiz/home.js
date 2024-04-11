@@ -26,12 +26,18 @@ export default function Quiz() {
                         </Link>
                     </div>
                 </div>
+                <h2>Study Methods</h2>
                 <div className={styles.studyMethods}>
                 {
                     studyMethods.map((method) => {
                         return <PopupButton methodName={method.name}/>
                     })
                 }
+                </div>
+                <div className={styles.resources}>
+                    <h3>Resources</h3>
+                    <p>More information from credible sources!</p>
+                    <Button text="Read More"/>
                 </div>
             </div>
             <Footer/>
