@@ -25,6 +25,7 @@ export default function Questions() {
     const [answerIsSelected, setAnswerIsSelected] = useState(false); // is an answer selected
     const [answerSelected, setAnswerSelected] = useState(); // the actual answer selected
     const [answerSubmitted, setAnswerSubmitted] = useState(false); // is the answer submitted
+    const [prevAnswer, setPrevAnswer] = useState({});
 
     const [popup, setPopup] = useState(false); //for "learn more" overlay
 
@@ -58,6 +59,7 @@ export default function Questions() {
     }
     const handleNextQuestion = () => {
         setAnswerSubmitted(false);
+        setPrevAnswer(answerSelected);
         if (currentQuestion < questions.length - 1) {
             setCurrentQuestion(currentQuestion + 1);
         }
@@ -73,6 +75,10 @@ export default function Questions() {
         if (!answerSubmitted) {
             if (currentQuestion > 0) {
                 setCurrentQuestion(currentQuestion - 1);
+                if (prevAnswer.method.includes("Feynman")) setFeynman(feynman - prevAnswer.value);
+                if (prevAnswer.method.includes("Leitner")) setLeitner(leitner - prevAnswer.value);
+                if (prevAnswer.method.includes("SQ3R/PQ4R")) setQR(qr - prevAnswer.value);
+                if (prevAnswer.method.includes("Retrieval")) setRetrieval(retrieval - prevAnswer.value);
             }
             else {
                 router.push("./home");
@@ -86,7 +92,9 @@ export default function Questions() {
             setAnswerSubmitted(false);
         }
         setAnswerIsSelected(false);  
-        setAnswerSelected(null);    }
+        setAnswerSelected(null);
+        setShowSubmit(false);
+    }
     return (
         <div className="frame">
             <HeadArea />
