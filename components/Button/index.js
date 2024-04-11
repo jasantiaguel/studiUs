@@ -1,25 +1,38 @@
 import styles from "./Button.module.css"
+import { useState } from "react";
 
-const sizeStyles = {
-    default: {
-        padding: '12px 28px'
-    },
-    chonky: {
-        padding: '16px 36px'
+export default function Button({text, onclick, bgColor='var(--med-blue)', bgColorHover='var(--dark-blue)', size='default', width, tabIndex, onKeyDown}) {
+    const sizeStyles = {
+        default: {
+            padding: '12px 28px'
+        },
+        chonky: {
+            padding: '16px 36px'
+        }
     }
-}
+    
+    if (bgColor === "var(--med-green)") {
+        bgColorHover = "var(--dark-green)";
+    }
 
-export default function Button({text, onclick, bgColor='var(--med-blue)', size='default', width, tabIndex, onKeyDown}) {
+    const hoverStyle = {
+        backgroundColor: bgColorHover
+    }
+    
+    const [hover, setHover] = useState(false);
+
     return(
         <button 
             tabIndex={tabIndex}
             onClick={onclick} 
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
             onKeyDown={onKeyDown}
             className={styles.main}
             style={{
-                backgroundColor: bgColor,
+                backgroundColor: !hover ? bgColor: bgColorHover,
                 padding: sizeStyles[size].padding,
-                width: width || 'auto'
+                width: width || 'auto',
             }}
         >
             {text}

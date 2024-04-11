@@ -10,9 +10,9 @@ export default function InfoPopUp({methodName, onclick}) {
             <div className={styles.container}>
                 <h2>The {method.name}</h2>
                 <h4>{method.sub}</h4>
-                <h2>Description</h2>
+                <h3>Description</h3>
                 <p>{method.description}</p>
-                <h2>How To Use</h2>
+                <h3>How To Use</h3>
                 <ol>
                     {
                         method.howToUse.map((point) => {
@@ -20,7 +20,7 @@ export default function InfoPopUp({methodName, onclick}) {
                         })
                     }
                 </ol>
-                <h2>Benefits</h2>
+                <h3>Benefits</h3>
                 <ul>
                     {
                         method.benefits.map((point) => {
@@ -28,7 +28,7 @@ export default function InfoPopUp({methodName, onclick}) {
                         })
                     }
                 </ul>
-                <h2>Who Can Benefit</h2>
+                <h3>Who Can Benefit</h3>
                 <p>{method.whoCanBenefit}</p>
             </div>
         </div>

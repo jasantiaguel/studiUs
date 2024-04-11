@@ -93,11 +93,19 @@
     padding: 4px 16px;
 }
 
+
 .progressContainer {
     margin: auto;
 }
 
-/* <div className="QuizContent" style={{width: 362.97, height: 94, position: 'relative', boxShadow: '2px 2px 16px rgba(46, 56, 77, 0.35)', backdropFilter: 'blur(8px)'}}>
-  <div className="Rectangle95" style={{width: 362.97, height: 94, left: 0, top: 0, position: 'absolute', background: '#FDFFFD', borderRadius: 16}} />
-  <div className="Content" style={{width: 337.19, height: 64, left: 12.37, top: 16, position: 'absolute', color: 'black', fontSize: 16, fontFamily: 'Inter', fontWeight: '400', lineHeight: 20.64, wordWrap: 'break-word'}}>Your approach to Use a system that adapts based on what you know and don't know is similar to the Lietnar System method!</div>
-</div> */
+.img{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 340px;
+    height: auto;
+}
+

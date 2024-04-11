@@ -114,7 +114,7 @@ body {
 }
 
 .frame {
-  background-color: #eee;
+  background: var(--blue-bg-gradient), #eee;
   width: 430px;
   height: 932px;
   margin: auto;
