@@ -107,8 +107,9 @@ export default function Questions() {
                             <>
                                 <div className={styles.content}>
                                     <div className={styles.questionContainer}>
-                                        <Question answerData={answerSelected} onclick={null} currentQuestion={currentQuestion}/> 
+                                        <Question answerData={answerSelected} onclick={null}/> 
                                     </div>
+                               
                                     <div className={styles.descriptionBox}>  
                                         <p className={styles.description}>{answerSelected.description}</p>
                                     </div>
