@@ -12,11 +12,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: relative;
     border-radius: 24px 24px 0 0;
     width: 430px;
-    height: 68px;
-    bottom: 88px;
+    height: 88px;
     margin: 0 auto;
     left: 0;
     right: 0;

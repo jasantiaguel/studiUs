@@ -8,15 +8,13 @@ export default function NavTab({ image, activeImage, path }) {
 
 
     return (
-        <div className={styles.container}>
-            <Link href={path}>
-                {
-                    currentPage ?
-                    <Image src={image} width={32} height={32} className={styles.icon}/>:
-                    <Image src={activeImage} width={32} height={32} className={styles.icon}/>
-                }
-            </Link>
-        </div>
+        <Link href={path} className={styles.container}>
+            {
+                currentPage ?
+                <Image src={image} width={32} height={32} className={styles.icon}/>:
+                <Image src={activeImage} width={32} height={32} className={styles.icon}/>
+            }
+        </Link>
     )
 }
 
