@@ -7,7 +7,8 @@ export default function Button({text, onclick, bgColor='var(--med-blue)', bgColo
             padding: '12px 28px'
         },
         chonky: {
-            padding: '16px 36px'
+            padding: '16px 36px',
+            height: "51px"
         }
     }
     
@@ -32,6 +33,7 @@ export default function Button({text, onclick, bgColor='var(--med-blue)', bgColo
             style={{
                 backgroundColor: !hover ? bgColor: bgColorHover,
                 padding: sizeStyles[size].padding,
+                height: sizeStyles[size].height,
                 width: width || 'auto',
             }}
         >

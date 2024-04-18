@@ -5,6 +5,7 @@ import HeadArea from "@/components/HeadArea";
 import GroupCard from "@/components/GroupCard";
 import { groups } from "@/data/groups";
 import { useState } from "react";
+import Button from "@/components/Button";
 
 export default function Groups() {
     const [groupData, setGroupData] = useState(groups);
@@ -22,6 +23,9 @@ export default function Groups() {
                     })
                 }
             </main>
+            <div className={styles.createButton}>
+                <Button text="Create Group" size="chonky" width="398px"/>
+            </div>
             <Footer/>
         </div>
     )

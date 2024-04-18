@@ -1,11 +1,7 @@
 import NavTab from "@/components/NavTab"
 import styles from "./Footer.module.css"
 
-
-
 export default function Footer() {
-const icon ={}
-
     return(
         <div className={styles.footer}>
             <NavTab image="/images/icon.home.svg" activeImage="/images/icon.home-selected.svg" path="/"/>
