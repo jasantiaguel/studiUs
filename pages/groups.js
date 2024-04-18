@@ -23,6 +23,8 @@ export default function Groups() {
                     })
                 }
             </main>
+            {
+            }
             <div className={styles.createButton}>
                 <Button text="Create Group" size="chonky" width="398px"/>
             </div>
