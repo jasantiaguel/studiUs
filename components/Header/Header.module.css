@@ -1,19 +1,9 @@
 .header {
     display: flex;
     flex-flow: row;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
-    width: 398px;
-    padding: 0 16px;
+    width: 382px;
+    padding: 0 24px;
     height: 88px;
-    background-color: var(--bright-af-80);
-}
-.logo {
-    width: 32px;
-    height: 32px;
-}
-
-.profile {
-    width: 32px;
-    height: 32px;
 }
