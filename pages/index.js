@@ -19,7 +19,7 @@ export default function Home() {
         <Switch/>
         {
           data && data.map((group) => {
-            return <GroupCard title={group.title} description={group.description} tags={group.tags}/>
+            return <GroupCard group={group}/>
           })
         }
       </main>

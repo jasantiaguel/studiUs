@@ -1,10 +1,10 @@
 import styles from "./Header.module.css";
 import Menu from "@/components/Menu";
-import Link from "next/link";
 
-export default function Header() {
+export default function Header({name}) {
     return(
         <div className={styles.header}>
+            <h1>{name}</h1>
             <Menu/>
         </div>
     )
