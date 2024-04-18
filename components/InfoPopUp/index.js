@@ -6,7 +6,7 @@ export default function InfoPopUp({methodName, onclick}) {
         return method.name == methodName;
     })
     return(
-        <div className={styles.background} onClick={onclick}>
+        <>
             <div className={styles.container}>
                 <h2>The {method.name}</h2>
                 <h4>{method.sub}</h4>
@@ -31,6 +31,7 @@ export default function InfoPopUp({methodName, onclick}) {
                 <h3>Who Can Benefit</h3>
                 <p>{method.whoCanBenefit}</p>
             </div>
-        </div>
+            <div className={styles.background} onClick={onclick}/>
+        </>
     )
 }

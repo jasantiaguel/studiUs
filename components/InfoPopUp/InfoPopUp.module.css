@@ -9,7 +9,7 @@
     display: flex;
     flex-flow: column;
     overflow: auto;
-    position: relative;
+    position: absolute;
     top: 128px;
     z-index: 10;
     -ms-overflow-style: none;

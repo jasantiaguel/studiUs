@@ -1,15 +1,19 @@
+import GroupInfo from "@/components/GroupInfo";
+import Tag from "@/components/Tag";
 import { useEffect, useState } from "react";
 import styles from "./GroupCard.module.css";
 
 export default function Card({group}) {
     const [isActive, setIsActive] = useState(false);
+    const [popup, setPopup] = useState(false);
     useEffect(() => {
         if (group.status === "In Progress") setIsActive(true);
     }, [])
     
     return(
+        <>
         <div className={styles.all}>
-            <div className={isActive ? styles.active : styles.inactive}>
+            <div className={isActive ? styles.active : styles.inactive} onClick={() => setPopup(true)}>
                 <div className={styles.top}>
                     <div>
                         <h3 className={styles.title}>{group.title}</h3>
@@ -24,9 +28,7 @@ export default function Card({group}) {
                     {
                         group.tags.map((tag) => {
                             return(
-                                <div className={styles.tag}>
-                                    {tag}
-                                </div>
+                                <Tag text={tag}/>
                             )
                         })
                     }
@@ -43,5 +45,9 @@ export default function Card({group}) {
                 </div>
             </div>
         </div>
+        {
+            popup && <GroupInfo group={group} onclick={() => setPopup(false)}/>
+        }
+        </>
     )
 }
