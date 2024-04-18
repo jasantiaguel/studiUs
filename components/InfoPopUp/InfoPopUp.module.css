@@ -12,6 +12,8 @@
     position: relative;
     top: 128px;
     z-index: 10;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .background {
