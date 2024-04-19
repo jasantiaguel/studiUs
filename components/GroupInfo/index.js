@@ -2,6 +2,7 @@ import Tag from "../Tag"
 import styles from "./GroupInfo.module.css"
 
 export default function GroupInfo({onclick, group}) {
+    
     return(
         <>
             <div className={styles.container}>
