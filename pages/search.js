@@ -10,7 +10,6 @@ export default function Search() {
         <div className="frame">
             <HeadArea/>
             <main className={styles.main}>
-                <Map/>
                 <Header name="Search"/>
                 <h1>StudiUs</h1>
             </main>

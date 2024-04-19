@@ -20,8 +20,8 @@ export default function Card({group}) {
                         <p className={styles.status}>{group.status}</p>
                     </div>
                     <div className={styles.timeBlock} style={isActive?{backgroundColor: "var(--bright-green)", color: "black"}:{backgroundColor: "var(--med-green-85)", color: "white"}}>
-                        <p style={{fontWeight: "var(--font-weight-bold)"}}>{group.time[0]}</p>
-                        <p>{group.time[1]}</p>
+                        <p style={{fontWeight: "var(--font-weight-bold)"}}>{group.time.day}</p>
+                        <p>{group.time.time}</p>
                     </div>
                 </div> 
                 <div className={styles.tags}>
@@ -35,7 +35,7 @@ export default function Card({group}) {
                 </div>
             </div>
             <div className={styles.footer}>
-                <p style={{fontWeight: "var(--font-weight-bold)"}}>{group.location}</p>
+                <p style={{fontWeight: "var(--font-weight-bold)", margin: "0"}}>{group.location}</p>
                 <div className={styles.icons}>
                     {
                         group.members.map(() => {

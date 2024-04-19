@@ -1,20 +1,28 @@
 .all {
-    margin-bottom: 32px;
+    margin-bottom: 24px;
+}
+.all p, .all h3 {
+    margin: 0;
 }
 
 .active {
     background-color: var(--med-green);
     color: var(--bright-af);
 }
+.active:hover {
+    background-color: var(--med-green-85);
+}
 
 .inactive {
-    background-color: var(--bright-green);
+    background-color: var(--light-green-85);
+}
+.inactive:hover{
+    background-color: var(--light-green);
 }
 
 .tags {
     display: flex;
     flex-flow: row;
-    margin-top: 32px;
     flex-wrap: wrap;
 }
 
@@ -22,10 +30,10 @@
     padding: 16px;
     border-radius: 16px;
     width: 366px;
-}
-
-.active h3, .active p, .inactive h3, .inactive p {
-    margin: 0;
+    height: 104px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
 }
 
 .top {
@@ -41,9 +49,10 @@
 }
 
 .footer {
+    margin-top: 8px;
     display: flex;
     flex-flow: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
 }
 
