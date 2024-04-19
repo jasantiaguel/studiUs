@@ -7,9 +7,9 @@ export default function Search() {
     return(
         <div className="frame">
             <HeadArea/>
-            <Header/>
             <main className={styles.main}>
-                <h1>StudiUs</h1>
+              <Header name="Search"/>
+              <h1>StudiUs</h1>
             </main>
             <Footer/>
         </div>

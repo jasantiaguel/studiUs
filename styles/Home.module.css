@@ -1,3 +1,25 @@
 .main {
-  
+  display: flex;
+  flex-flow: column;
+  overflow: scroll;
+}
+
+.main::-webkit-scrollbar {
+  display: none;
+}
+
+.homeWelcomeSection {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  margin: 8px 0 24px;
+}
+
+.welcomeMessage {
+  display: flex;
+  flex-flow: column;
+}
+
+.welcomeMessage p {
+  margin: 0;
 }
