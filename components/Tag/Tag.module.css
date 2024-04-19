@@ -1,7 +1,7 @@
 .tag {
     padding: 4px 12px;
     margin: 0 2px;
-    background-color: var(--light-green);
+    background-color: var(--bright-green);
     font-size: var(--caption-1);
     border-radius: 16px;
 }

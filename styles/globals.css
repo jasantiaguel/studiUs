@@ -75,7 +75,6 @@
   /****"BACKDROP-BLUR"****/
   --backdrop-blur: blur(8px)
 }
-
 h1, h2, h3 {
   font-weight: var(--font-weight-bold);
 }
@@ -104,7 +103,6 @@ p {
 }
 
 .caption1 {
-  margin-top: 0;
   font-size: var(--caption-1)
 }
 
