@@ -8,7 +8,7 @@ export default function Button({text, onclick, bgColor='var(--med-blue)', bgColo
         },
         chonky: {
             padding: '16px 36px',
-            height: "51px"
+            height: "56px"
         }
     }
     

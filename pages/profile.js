@@ -57,9 +57,8 @@ export default function profile() {
     return (
         <div className="frame">
             <HeadArea/>
-            <Header />
             <div className={styles.main}>
-
+              <Header/>
                 <div className='profileTop'>
                     <Image width={32} height={32} className={styles.profilePicture} />
                     <p>profile</p>

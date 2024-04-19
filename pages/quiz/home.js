@@ -14,7 +14,7 @@ export default function Quiz() {
     return(
         <div className="frame">
             <HeadArea/>
-            <Header/>
+            <Header name="Methods"/>
             <div className={styles.main}>
                 <div className={styles.top}>
                     <Image src="/images/img.studymethods.svg" width={150} height={186}/>
@@ -22,7 +22,7 @@ export default function Quiz() {
                         <h2>Trouble Studying?</h2>
                         <p>Take our quiz and find what study method works best for you!</p>
                         <Link href="./questions">
-                            <Button text={"Start Quiz"}/>
+                            <Button text={"Start Quiz"} size="chonky"/>
                         </Link>
                     </div>
                 </div>
