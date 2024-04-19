@@ -4,11 +4,13 @@ import { useState } from "react";
 export default function Button({text, onclick, bgColor='var(--med-blue)', bgColorHover='var(--dark-blue)', size='default', width, tabIndex, onKeyDown}) {
     const sizeStyles = {
         default: {
-            padding: '12px 28px'
+            padding: '12px 28px',
+            borderRadius: "24px"
         },
         chonky: {
             padding: '16px 36px',
-            height: "56px"
+            height: "56px",
+            borderRadius: "32px"
         }
     }
     
@@ -35,6 +37,7 @@ export default function Button({text, onclick, bgColor='var(--med-blue)', bgColo
                 padding: sizeStyles[size].padding,
                 height: sizeStyles[size].height,
                 width: width || 'auto',
+                borderRadius: sizeStyles[size].borderRadius
             }}
         >
             {text}

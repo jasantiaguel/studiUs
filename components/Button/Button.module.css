@@ -1,6 +1,5 @@
 .main {
     border: none;
-    border-radius: 24px;
     font-weight: var(--font-weight-bold);
     font-size: var(--size-body);
     filter: drop-shadow(var(--drop-shadow-2-2-16));
