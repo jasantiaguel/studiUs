@@ -14,6 +14,8 @@
 .tags {
     display: flex;
     flex-flow: row;
+    margin-top: 32px;
+    flex-wrap: wrap;
 }
 
 .active, .inactive {
@@ -24,15 +26,6 @@
 
 .active h3, .active p, .inactive h3, .inactive p {
     margin: 0;
-}
-
-.tag {
-    padding: 4px 12px;
-    margin: 0 2px;
-    margin-top: 32px;
-    background-color: var(--light-green);
-    font-size: var(--caption-1);
-    border-radius: 16px;
 }
 
 .top {

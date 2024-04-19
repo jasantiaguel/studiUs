@@ -17,7 +17,7 @@ export default function Menu() {
                     <p onClick={handleClick}>close</p>
                 </div> : null
             }
-            <Image src="/" width={32} height={32} onClick={handleClick}/>
+            <Image src="/images/icon.burger-menu.svg" width={32} height={32} onClick={handleClick}/>
         </>
     )
 }
