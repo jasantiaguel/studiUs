@@ -1,10 +1,12 @@
+import { usePathname } from "next/navigation"
 import Button from "../Button"
 import Map from "../Map"
 import Tag from "../Tag"
 import styles from "./GroupInfo.module.css"
 
 export default function GroupInfo({onclick, group}) {
-    
+    const path = usePathname();
+
     return(
         <>
         <div className={styles.overlay}>
@@ -34,7 +36,11 @@ export default function GroupInfo({onclick, group}) {
                     }
                 </ul>
             </div>
-            <Button text="Leave Group" width="398px" size="chonky" bgColor="var(--med-red)" bgColorHover="var(--bold-red)"/>
+            {
+                path === "/groups" ?
+                <Button text="Leave Group" width="398px" size="chonky" bgColor="var(--med-red)" bgColorHover="var(--bold-red)"/>:
+                <Button text="Join Group" width="398px" size="chonky" bgColor="var(--med-blue)" bgColorHover="var(--bold-blue)"/>
+            }
         </div>
         <div className={styles.background} onClick={onclick}/>
         </>

@@ -1,3 +1,18 @@
 .main {
     
 }
+
+.searchBar{
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    background-color: var(--bright-af);
+    border-radius: 16px;
+    margin-bottom: 20px;
+}
+
+.filterSection {
+    display: flex;
+    flex-flow: row;
+  }

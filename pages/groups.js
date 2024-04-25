@@ -7,9 +7,17 @@ import Banner from "@/components/Banner";
 import { groups } from "@/data/groups";
 import { useState } from "react";
 import Button from "@/components/Button";
+import CreateOverlay from "@/components/CreateOverlay";
 
 export default function Groups() {
     const [groupData, setGroupData] = useState(groups);
+    const [showCreate, setShowCreate] = useState(false);
+
+    const newGroup = (data) => {
+      let a = [...groupData];
+      a.unshift(data);
+      setGroupData(a);
+    }
     
     return(
         <div className="frame">
@@ -38,8 +46,19 @@ export default function Groups() {
                 text="+ Create Group" 
                 size="chonky2" 
                 width="398px"
+                onclick={() => setShowCreate(true)}
               />
           </div>
+          {
+            showCreate &&
+            <CreateOverlay
+              onclick={() => {
+                setShowCreate(false);
+                console.log(groupData);
+              }}
+              newGroup={newGroup}
+            />
+          }
           <Footer/>
         </div>
     )

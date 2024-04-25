@@ -7,7 +7,8 @@ export let groups = [
         location: "BCIT Library",
         members: ["Jon", "Jerome", "Nathan"],
         status: "In Progress",
-        coords: {centerPoint: "49.249234265894394,-123.00899574963694", circlePoint: "49.24936795802063,-123.00199080213194"}
+        coords: {centerPoint: "49.249234265894394,-123.00899574963694", circlePoint: "49.24936795802063,-123.00199080213194"},
+        category: "Chemistry"
     },
     {
         title: "Mega Marketers",
@@ -50,7 +51,8 @@ export let schedGroups = [
         location: "BCIT Library",
         members: ["Jon", "Jerome", "Nathan"],
         status: "Starts in 3 days",
-        coords: {centerPoint: "49.249234265894394,-123.00899574963694", circlePoint: "49.24936795802063,-123.00199080213194"}
+        coords: {centerPoint: "49.249234265894394,-123.00899574963694", circlePoint: "49.24936795802063,-123.00199080213194"},
+        category: "Marketing"
     },
     {
         title: "JavaCrisps",
@@ -60,6 +62,8 @@ export let schedGroups = [
         location: "BCIT Library",
         members: ["Jon", "Jerome"],
         status: "Starts in 3 days",
-        coords: {centerPoint: "49.249234265894394,-123.00899574963694", circlePoint: "49.24936795802063,-123.00199080213194"}
+        coords: {centerPoint: "49.249234265894394,-123.00899574963694", circlePoint: "49.24936795802063,-123.00199080213194"},
+        category: "Computer Science"
+
     }
 ];

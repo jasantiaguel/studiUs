@@ -4,9 +4,14 @@
   overflow: scroll;
   padding: 0 16px;
   width: 398px;
+<<<<<<< HEAD
+=======
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+>>>>>>> c5ef1f89f9ba23fb9b8d3b373a7452bf8e2feec1
 }
 
-.main::-webkit-scrollbar {
+.main:-webkit-scrollbar {
   display: none;
 }
 
