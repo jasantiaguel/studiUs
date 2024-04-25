@@ -8,7 +8,8 @@ export default function Card({group}) {
     const [popup, setPopup] = useState(false);
     useEffect(() => {
         if (group.status === "In Progress") setIsActive(true);
-    }, [])
+        else setIsActive(false);
+    }, [group])
     
     return(
         <>
@@ -24,7 +25,7 @@ export default function Card({group}) {
                     </div>
                     <div 
                         className={styles.timeBlock} 
-                        style={isActive?{backgroundColor: "var(--bright-green)", 
+                        style={isActive?{backgroundColor: "var(--bright-af-75)", 
                         color: "black"}:{backgroundColor: "var(--med-green-85)", 
                         color: "white"}}
                     >

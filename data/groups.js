@@ -1,4 +1,4 @@
-export let groups = [
+export const groups = [
     {
         title: "Beans, Barbies, Borat",
         description: "This is a short description set by creator of the group. This includes anything from heads up to any more personal...",
@@ -32,7 +32,7 @@ export let groups = [
     }
 ];
 
-export let schedGroups = [
+export const schedGroups = [
     {
         title: "Beans, Barbies, Borat",
         description: "This is a short description set by creator of the group. This includes anything from heads up to any more personal...",
@@ -64,6 +64,5 @@ export let schedGroups = [
         status: "Starts in 3 days",
         coords: {centerPoint: "49.249234265894394,-123.00899574963694", circlePoint: "49.24936795802063,-123.00199080213194"},
         category: "Computer Science"
-
     }
 ];

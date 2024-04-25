@@ -14,10 +14,10 @@
 }
 
 .inactive {
-    background-color: var(--light-green-85);
+    background-color: var(--bright-af-75);
 }
 .inactive:hover{
-    background-color: var(--light-green);
+    background-color: var(--bright-af);
 }
 
 .tags {

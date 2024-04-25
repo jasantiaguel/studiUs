@@ -52,10 +52,7 @@ export default function Groups() {
           {
             showCreate &&
             <CreateOverlay
-              onclick={() => {
-                setShowCreate(false);
-                console.log(groupData);
-              }}
+              onclick={() => setShowCreate(false)}
               newGroup={newGroup}
             />
           }

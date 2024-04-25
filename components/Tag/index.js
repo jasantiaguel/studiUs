@@ -10,6 +10,7 @@ export default function Tag({
             margin: '0 2px',
             fontSize: 'var(--caption-1)',
             borderRadius: '16px',
+            textColor: 'var(--dark-green)'
         },
         filter: {
             fontSize: 'var(--sub-body)',
