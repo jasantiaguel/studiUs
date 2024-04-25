@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import HeadArea from "@/components/HeadArea";
 import Header from "@/components/Header";
 import styles from "@/styles/Results.module.css";
+import PieChart from "@/components/Graph";
 
 import { useRouter } from "next/router";
 
@@ -54,6 +55,7 @@ export default function Results() {
                         })
                     }
                 </div>
+                <PieChart/>
             </div>
             <Link href="/quiz/home"><Button text="Quiz Home"/></Link>
             <Footer/>
