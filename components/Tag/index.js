@@ -2,7 +2,7 @@ import styles from "./Tag.module.css"
 
 export default function Tag({
         text, 
-        type='default', 
+        type='tag', 
     }) {
     const typeStyles = {
         tag: {

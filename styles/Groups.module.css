@@ -21,4 +21,5 @@
     right: 0;
     background-color: var(--bright-af);
     top: 770px;
+    z-index: 1;
 }

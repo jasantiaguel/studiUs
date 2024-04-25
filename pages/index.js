@@ -6,17 +6,19 @@ import Banner from "@/components/Banner";
 import styles from "@/styles/Home.module.css";
 import Tag from "@/components/Tag";
 
-import { groups } from "@/data/groups.js";
+import { groups, schedGroups } from "@/data/groups.js";
 import HeadArea from "@/components/HeadArea";
 
 export default function Home() {
   const data = groups;
+  const schedData = schedGroups;
   
   return (
     <div className="frame">
       <HeadArea/>
+      <Header name="Home"/>
       <main className={styles.main}>
-        <Header name="Home"/>
+
         <section className={styles.homeWelcomeSection}>
           <div style={{
             backgroundColor: "gray", 
@@ -50,6 +52,15 @@ export default function Home() {
           })
         }
         <h2>Upcoming</h2>
+        {
+          schedData && schedData.map((schedGroups) => {
+            return <GroupCard group={schedGroups}/>
+          })
+        }
+        {/* This is a filler section to make the bottom of page not cut off */}
+        <section className={styles.bottomFiller} style={{margin: '40px 0'}}>
+          <p> </p>
+        </section>
       </main>
       <Footer/>
     </div>

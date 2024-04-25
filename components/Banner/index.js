@@ -9,14 +9,16 @@ export default function Banner({title1, title3, body, buttonSpace, buttonText}) 
       <div className={styles.bannerBg}>
         <p style={{
           fontSize: "var(--title-3)", 
-          margin: "24px 0 0"
+          margin: "24px 0 0",
+          color: "var(--bright-af)"
         }}>
           {title3}
         </p>
         <p style={{
           fontSize: "var(--title-1)", 
           fontWeight: "var(--font-weight-bold)",
-          margin: "8px 0"
+          margin: "8px 0",
+          color: "var(--bright-af)"
         }}>
           {title1}
         </p>

@@ -24,6 +24,7 @@
     background-color: var(--bright-af);
     gap: 8px;
     top: 770px;
+    z-index: 1;
 }
 
 .profileTags {

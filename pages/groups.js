@@ -14,8 +14,8 @@ export default function Groups() {
     return(
         <div className="frame">
           <HeadArea/>
+          <Header name="Your Groups"/>
           <main className={styles.main}>
-            <Header name="Your Groups"/>
             <Banner 
               title3="Looking for groups to join?" 
               title1="Explore Nearby" 
@@ -28,6 +28,7 @@ export default function Groups() {
                     return <GroupCard group={group}/>
                 })
             }
+            {/* This is a filler section to make the bottom of page not cut off */}
             <section className={styles.bottomFiller} style={{margin: '180px 0'}}>
               <p> </p>
             </section>

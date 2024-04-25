@@ -1,5 +1,6 @@
 :root {
   /****TYPE****/
+  --logo: 64px;
   --large-title: 28px;
   --largerer-title: 32px;
   --title-1: 24px;
@@ -15,6 +16,8 @@
   --font-weight-regular: 400;
   --font-weight-semibold: 550;
   --font-weight-bold: 700;
+
+  --rajdhani: "Rajdhani", sans-serif;
 
   /****GREEN****/
   --dark-green: #234422;
@@ -110,6 +113,7 @@ body {
   font-family: "Inter", sans-serif;
   background-color: #333;
   margin: 0;
+  color: var(--dark-green);
 }
 
 .frame {

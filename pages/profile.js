@@ -59,7 +59,7 @@ export default function profile() {
     return (
         <div className="frame">
             <HeadArea/>
-            <Header name='Profile'/>
+            <Header bgColor='var(--bright-af)'/>
                 <section className={styles.profileSection}>
                 {/* Replace below with profile photo */}
                 <div style={{
@@ -67,7 +67,7 @@ export default function profile() {
                     width: "74px", 
                     height: "74px", 
                     borderRadius: "74px",
-                    margin: '16px 0 0'
+                    margin: '-40px 0 0',
                     }}>
                 </div>
                 <h1 style={{
@@ -78,7 +78,7 @@ export default function profile() {
                 </h1>
                 <p style={{margin: '0'}}>BCIT</p>
                 <p style={{margin: '0'}}>Digital Design & Development</p>
-                <p style={{margin: '8px 0 0'}}>She/Her - It's a beautiful day to code!</p>
+                <p style={{margin: '8px 0 0', color: 'var(--med-green)'}}>She/Her - It's a beautiful day to code!</p>
                     <section className={styles.profileTags}>
                         <Tag text="UI/UX" type="profileTag"/>
                         <Tag text="JavaScript" type="profileTag"/>

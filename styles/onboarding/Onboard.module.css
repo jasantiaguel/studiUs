@@ -1,0 +1,24 @@
+.main {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  padding: 0 32px;
+}
+
+.introTitle {
+  font-size: var(--large-title);
+  color: var(--bright-af);
+  font-family: var(--rajdhani);
+  margin: 422px 0 0;
+  width: 366px;
+}
+
+.title {
+  font-size: var(--logo);
+  color: var(--bright-af);
+  margin: 6px 0 24px;
+}
+
+.description {
+  width: 288px;
+}
