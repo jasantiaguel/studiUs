@@ -13,13 +13,21 @@ export default function Card({group}) {
     return(
         <>
         <div className={styles.all}>
-            <div className={isActive ? styles.active : styles.inactive} onClick={() => setPopup(true)}>
+            <div 
+                className={isActive ? styles.active : styles.inactive} 
+                onClick={() => setPopup(true)}
+            >
                 <div className={styles.top}>
                     <div>
                         <h3 className={styles.title}>{group.title}</h3>
                         <p className={styles.status}>{group.status}</p>
                     </div>
-                    <div className={styles.timeBlock} style={isActive?{backgroundColor: "var(--bright-green)", color: "black"}:{backgroundColor: "var(--med-green-85)", color: "white"}}>
+                    <div 
+                        className={styles.timeBlock} 
+                        style={isActive?{backgroundColor: "var(--bright-green)", 
+                        color: "black"}:{backgroundColor: "var(--med-green-85)", 
+                        color: "white"}}
+                    >
                         <p style={{fontWeight: "var(--font-weight-bold)"}}>{group.time.day}</p>
                         <p>{group.time.time}</p>
                     </div>
@@ -28,7 +36,7 @@ export default function Card({group}) {
                     {
                         group.tags.map((tag) => {
                             return(
-                                <Tag text={tag}/>
+                                <Tag text={tag} size='tag'/>
                             )
                         })
                     }

@@ -4,6 +4,7 @@ import Switch from "@/components/Switch";
 import GroupCard from "@/components/GroupCard";
 import Banner from "@/components/Banner";
 import styles from "@/styles/Home.module.css";
+import Tag from "@/components/Tag";
 
 import { groups } from "@/data/groups.js";
 import HeadArea from "@/components/HeadArea";
@@ -33,14 +34,22 @@ export default function Home() {
         <Banner 
           title3="Discover Your Perfect Study Method" 
           title1="Take Our Short Quiz" 
-          buttonSpace="182px"
+          buttonSpace="166px"
           buttonText="StudiUs Quiz"
         />
+        <section className={styles.filterSection}>
+          <Tag text='Sort' size='filter'/>
+          <Tag text='Music' size='filter'/>
+          <Tag text='Anime' size='filter'/>
+          <Tag text='Food' size='filter'/>
+        </section>
+        <h2>Today</h2>
         {
           data && data.map((group) => {
             return <GroupCard group={group}/>
           })
         }
+        <h2>Upcoming</h2>
       </main>
       <Footer/>
     </div>

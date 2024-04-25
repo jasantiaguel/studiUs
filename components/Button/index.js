@@ -10,7 +10,8 @@ export default function Button({text, onclick, textColor='var(--bright-af)', bgC
         chonky: {
             padding: '16px 36px',
             height: "56px",
-            borderRadius: "32px"
+            borderRadius: "32px",
+            fontSize: 'var(--title-2)'
         }
     }
     
@@ -38,7 +39,8 @@ export default function Button({text, onclick, textColor='var(--bright-af)', bgC
                 height: sizeStyles[size].height,
                 color: textColor,
                 width: width,
-                borderRadius: sizeStyles[size].borderRadius
+                borderRadius: sizeStyles[size].borderRadius,
+                fontSize: sizeStyles[size].fontSize
             }}
         >
             {text}

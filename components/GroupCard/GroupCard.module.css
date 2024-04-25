@@ -44,8 +44,8 @@
 
 .timeBlock {
     text-align: center;
-    padding: 8px;
-    border-radius: 16px;
+    padding: 6px 16px;
+    border-radius: 10px;
 }
 
 .footer {
