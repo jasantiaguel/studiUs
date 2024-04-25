@@ -1,18 +1,33 @@
 .main {
-    
+    display: flex;
+    flex-flow: column;
 }
 
-.profilePicture{
-    width: 100px;
-    height: 100px;
+.profileSection {
+    background-color: var(--bright-af);
+    width: 398px;
+    padding: 0 16px;
+    border-radius: 0 0 0 24px;
 }
 
-.form{
-    border: none;
-    border-bottom: 1px solid var(--black);
-    margin-bottom: 10px;
-    width: 250px;
-    outline: none;
-    display: block;
+.navbarButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border-radius: 24px 24px 0 0;
+    width: 430px;
+    height: 75px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    background-color: var(--bright-af);
+    gap: 8px;
+    top: 770px;
+}
 
+.profileTags {
+    display: flex;
+    flex-flow: row;
+    margin: 16px 0;
 }

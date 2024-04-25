@@ -142,12 +142,15 @@ export default function Questions() {
                             <>
                                 {
                                     answerIsSelected &&
-                                    <Button 
-                                        tabIndex={5} 
-                                        onclick={handleNext}
-                                        text="Submit" 
-                                        bgColor="var(--med-green)" 
-                                    /> // "Submits selected answer"
+                                    <div style={{marginLeft: "auto"}}>
+                                        <Button 
+                                            tabIndex={5} 
+                                            onclick={handleNext}
+                                            text="Submit" 
+                                            bgColor="var(--med-green)" 
+                                        />
+                                    </div>
+                                    // "Submits selected answer"
                                 }
                             </>
                             :
@@ -173,12 +176,12 @@ export default function Questions() {
                     {
                         popup && <InfoPopUp methodName={answerSelected.method} onclick={() => setPopup(null)}/>
                     }
-                    <div className={styles.progressContainer}>
-                        <button tabIndex={9} onClick={handleBack} className={styles.buttonOverride}>
-                            <Image src='/images/back.arrow.svg' width={41} height={48}/>
-                        </button>
-                        <ProgressBar progress={currentQuestion} length={questions.length} />
-                    </div>
+                </div>
+                <div className={styles.progressContainer}>
+                    <button tabIndex={9} onClick={handleBack} className={styles.buttonOverride}>
+                        <Image src='/images/back.arrow.svg' width={41} height={48}/>
+                    </button>
+                    <ProgressBar progress={currentQuestion} length={questions.length} />
                 </div>
             </div>
             <Footer />

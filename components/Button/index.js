@@ -1,14 +1,32 @@
 import styles from "./Button.module.css"
 import { useState } from "react";
 
-export default function Button({text, onclick, textColor='var(--bright-af)', bgColor='var(--med-blue)', bgColorHover='var(--dark-blue)', size='default', width="auto", tabIndex, onKeyDown}) {
+export default function Button({
+        text, 
+        onclick, 
+        textColor='var(--bright-af)', 
+        bgColor='var(--med-blue)', 
+        bgColorHover='var(--dark-blue)', 
+        size='default', width="auto", 
+        tabIndex, 
+        onKeyDown
+    }) {
     const sizeStyles = {
         default: {
-            padding: '12px 28px'
+            padding: '12px 28px',
+            borderRadius: "24px"
         },
         chonky: {
             padding: '16px 36px',
-            height: "56px"
+            height: "56px",
+            borderRadius: "32px",
+            fontSize: 'var(--title-2)'
+        },
+        chonky2: {
+            padding: '16px 36px',
+            height: "56px",
+            borderRadius: "32px",
+            fontSize: 'var(--size-body)'
         }
     }
     
@@ -36,6 +54,8 @@ export default function Button({text, onclick, textColor='var(--bright-af)', bgC
                 height: sizeStyles[size].height,
                 color: textColor,
                 width: width,
+                borderRadius: sizeStyles[size].borderRadius,
+                fontSize: sizeStyles[size].fontSize
             }}
         >
             {text}

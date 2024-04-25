@@ -19,20 +19,23 @@ export default function Groups() {
             <Banner 
               title3="Looking for groups to join?" 
               title1="Explore Nearby" 
-              buttonSpace="224px"
+              buttonSpace="216px"
               buttonText="Explore"
             />
-            <h2>Joined</h2>
+            <h2 style={{margin: '0 0 16px'}}>Joined</h2>
             {
                 groupData.map((group) => {
                     return <GroupCard group={group}/>
                 })
             }
+            <section className={styles.bottomFiller} style={{margin: '180px 0'}}>
+              <p> </p>
+            </section>
           </main>
           <div className={styles.createButton}>
               <Button 
-                text="Create Group" 
-                size="chonky" 
+                text="+ Create Group" 
+                size="chonky2" 
                 width="398px"
               />
           </div>

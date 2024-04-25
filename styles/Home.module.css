@@ -2,6 +2,7 @@
   display: flex;
   flex-flow: column;
   overflow: scroll;
+  padding: 0 16px;
 }
 
 .main::-webkit-scrollbar {
@@ -22,4 +23,9 @@
 
 .welcomeMessage p {
   margin: 0;
+}
+
+.filterSection {
+  display: flex;
+  flex-flow: row;
 }

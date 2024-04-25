@@ -1,8 +1,7 @@
 .footer {
+    position: absolute;
     display: flex;
     flex-flow: row;
     width: 430px;
     height: 88px;
-    border-top-left-radius: 32px;
-    border-top-right-radius: 32px;
 }
