@@ -43,7 +43,7 @@ export default function Results() {
                 <h2 className={styles.header}>{`${winner.method} is the most effective approach for your learning style`}</h2>
                 <h4>{`${winner.percentage}% of your answers corresponded to ${winner.method}`}</h4>
                 <p>Here is a summary of your results:</p>
-                <div className={styles.resultsDisplay}>
+                {/* <div className={styles.resultsDisplay}>
                     {
                         results.map((result) => {
                             return(
@@ -54,8 +54,8 @@ export default function Results() {
                             )
                         })
                     }
-                </div>
-                <PieChart/>
+                </div> */}
+                <PieChart results={results}/>
             </div>
             <Link href="/quiz/home"><Button text="Quiz Home"/></Link>
             <Footer/>

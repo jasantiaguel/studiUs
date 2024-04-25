@@ -1,5 +1,4 @@
-import { Pie } from "react-chartjs-2"
-
+import { Pie } from "react-chartjs-2";
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -7,8 +6,9 @@ import {
     Tooltip,
     Legend
 } from 'chart.js';
-
 import { useState, useEffect } from 'react';
+import { useRouter } from "next/router";
+
 
 ChartJS.register(
     CategoryScale,
@@ -17,34 +17,30 @@ ChartJS.register(
     Legend
 )
 
-export default function PieChart() {
+export default function PieChart({results}) {
     const [chartData, setChartData] = useState({
         datasets: []
     });
     const [chartOptions, setChartOptions] = useState({});
-
+ 
     useEffect(() => {
         setChartData({
-            labels: ["Red", "Bllue", "Yellow", "Green", "Purple", "Orange"],
+            type: 'pie', // Change type to 'pie'
+            labels: ["SPQR/PQ4R", "Leitner", "Retrieval", "Feynman"],
             datasets: [
                 {
-                    label: '# of Votes',
-                    data: [10,6,15,20,12,4],
+                    data: results,
                     borderColor: [
                         'rgb(53, 162, 235)',
-                        'rgb(23, 162, 65)',
+                        'rgb(0, 162, 65)',
                         'rgb(53, 32, 235)',
                         'rgb(53, 162, 5)',
-                        'rgb(123, 5, 25)',
-                        'rgb(32, 32, 24)',
                     ],
                     backgroundColor: [
                         'rgb(53, 162, 235, 0.4)',
                         'rgb(23, 162, 65, 0.4)',
                         'rgb(53, 32, 235, 0.4)',
-                        'rgb(53, 162, 5, 0.4)',
-                        'rgb(123, 5, 25, 0.4)',
-                        'rgb(32, 32, 24, 0.4)',
+                        'rgb(53, 262, 5, 0.4)',
                     ],
                     borderWidth: 1,
                 }
@@ -53,30 +49,24 @@ export default function PieChart() {
 
         setChartOptions({
             plugins: {
-                type: 'doughnut',
                 legend: {
                     position: 'top'
                 },
                 title: {
                     display: true,
-                    text: 'Daily Revenue'
+                    text: 'Studius Quiz Results'
                 },
                 maintainAspectRatio: false,
                 responsive: true
-
-            }
+            },
+            cutout: '60%' // Hole size
         })
 
-    })
+    }, [])
 
-
-
-  return (
-    <>
-    <div>
-        <Pie data={chartData} options={chartOptions} style={{width: "250px" , height: "250px"}}/>
-    </div>
-    </>
-    
-  )
+    return (
+        <div>
+            <Pie data={chartData} options={chartOptions} style={{ width: "250px", height: "250px" }} />
+        </div>
+    )
 }
