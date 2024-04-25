@@ -4,5 +4,7 @@
     flex-flow: row;
     width: 430px;
     height: 88px;
+    background-color: var(--bright-af);
     top: 844px;
+    border-radius: 24px 24px 0 0;
 }

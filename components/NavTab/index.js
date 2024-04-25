@@ -12,7 +12,7 @@ export default function NavTab({ image, activeImage, path }) {
             {
                 currentPage ?
                 <Image src={image} width={50} height={41} className={styles.icon}/>:
-                <Image src={activeImage} width={42} height={50} className={styles.icon}/>
+                <Image src={activeImage} width={50} height={50} className={styles.icon}/>
             }
         </Link>
     )

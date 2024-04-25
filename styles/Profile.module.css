@@ -8,6 +8,7 @@
     width: 398px;
     padding: 0 16px;
     border-radius: 0 0 0 24px;
+    z-index: 1;
 }
 
 .navbarButtons {
@@ -31,4 +32,12 @@
     display: flex;
     flex-flow: row;
     margin: 16px 0;
+}
+
+.bgImage {
+    position: absolute;
+    width: 430px;
+    height: 932px;
+    z-index: 0;
+    overflow: hidden;
 }
