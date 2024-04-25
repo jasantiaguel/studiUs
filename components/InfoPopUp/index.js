@@ -31,7 +31,7 @@ export default function InfoPopUp({methodName, onclick}) {
                 <h3>Who Can Benefit</h3>
                 <p>{method.whoCanBenefit}</p>
             </div>
-            <div className={styles.background} onClick={onclick}/>
+            <div className="overlaybg" onClick={onclick}/>
         </>
     )
 }

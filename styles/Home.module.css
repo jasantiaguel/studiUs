@@ -3,9 +3,12 @@
   flex-flow: column;
   overflow: scroll;
   padding: 0 16px;
+  width: 398px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-.main::-webkit-scrollbar {
+.main:-webkit-scrollbar {
   display: none;
 }
 
