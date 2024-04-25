@@ -12,13 +12,23 @@ import CreateOverlay from "@/components/CreateOverlay";
 export default function Groups() {
     const [groupData, setGroupData] = useState(groups);
     const [showCreate, setShowCreate] = useState(false);
+    const [groupToRemove, setGroupToRemove] = useState();
 
     const newGroup = (data) => {
       let a = [...groupData];
       a.unshift(data);
       setGroupData(a);
     }
-    
+
+    const returnGroup = (data) => {
+      setGroupToRemove(data);
+    }
+
+    const removeGroup = () => {
+      let a = [...groupData];
+      setGroupData(a.filter(e => e !== groupToRemove));
+    }
+
     return(
         <div className="frame">
           <HeadArea/>
@@ -29,11 +39,12 @@ export default function Groups() {
               title1="Explore Nearby" 
               buttonSpace="216px"
               buttonText="Explore"
+              path="/"
             />
             <h2 style={{margin: '0 0 16px'}}>Joined</h2>
             {
                 groupData.map((group) => {
-                    return <GroupCard group={group}/>
+                    return <GroupCard group={group} todo={removeGroup} returnGroup={returnGroup}/>
                 })
             }
             {/* This is a filler section to make the bottom of page not cut off */}

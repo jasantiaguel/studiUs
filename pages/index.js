@@ -46,6 +46,7 @@ export default function Home() {
           title1="Take Our Short Quiz" 
           buttonSpace="164px"
           buttonText="StudiUs Quiz"
+          path="/quiz/home"
         />
         <section className={styles.filterSection}>
           <Tag text='Sort' type='filter'/>

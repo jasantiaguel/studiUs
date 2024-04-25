@@ -42,7 +42,7 @@ export default function CreateOverlay({onclick, newGroup}) {
             </div>
             <label>Location & Time</label>
             <Map/>
-            <input type="date" value="2024-04-25"/>
+            <input type="date" value="2024-04-27"/>
             <button onClick={handleClick}>Create group</button>
         </div>
         <div className="overlaybg" onClick={onclick}/>
