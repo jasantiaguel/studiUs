@@ -22,8 +22,8 @@ export default function Groups() {
     return(
         <div className="frame">
           <HeadArea/>
-          <Header name="Your Groups"/>
           <main className={styles.main}>
+            <Header name="Your Groups"/>
             <Banner 
               title3="Looking for groups to join?" 
               title1="Explore Nearby" 

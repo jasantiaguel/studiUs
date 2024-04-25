@@ -18,8 +18,8 @@ export default function profile() {
                 />
             </div>
             <HeadArea/>
-            <Header bgColor='var(--bright-af)'/>
                 <section className={styles.profileSection}>
+                <Header bgColor='var(--bright-af)'/>
                 {/* Replace below with profile photo */}
                 <div style={{
                     backgroundColor: "gray", 

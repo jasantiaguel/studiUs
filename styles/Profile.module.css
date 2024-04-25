@@ -1,6 +1,11 @@
 .main {
     display: flex;
     flex-flow: column;
+    overflow: scroll;
+}
+
+.main::-webkit-scrollbar {
+    display: none;
 }
 
 .profileSection {
@@ -25,7 +30,7 @@
     background-color: var(--bright-af);
     gap: 8px;
     top: 770px;
-    z-index: 1;
+    z-index: 3;
 }
 
 .profileTags {

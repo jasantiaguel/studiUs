@@ -14,8 +14,8 @@ export default function Quiz() {
     return(
         <div className="frame">
             <HeadArea/>
-            <Header name="Methods"/>
             <div className={styles.main}>
+                <Header name="Methods"/>
                 <div className={styles.top}>
                     <Image src="/images/img.studymethods.svg" width={150} height={186}/>
                     <div className={styles.methodsBanner}>

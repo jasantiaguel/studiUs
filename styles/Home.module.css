@@ -8,7 +8,7 @@
   -ms-overflow-style: none;
 }
 
-.main:-webkit-scrollbar {
+.main::-webkit-scrollbar {
   display: none;
 }
 
@@ -31,4 +31,17 @@
 .filterSection {
   display: flex;
   flex-flow: row;
+}
+
+.bgImage {
+  position: absolute;
+  width: 430px;
+  height: 932px;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bgTopo {
+  position: absolute;
+  transform: translate(-18%, -2%);
 }

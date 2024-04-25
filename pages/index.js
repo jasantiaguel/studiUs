@@ -5,6 +5,7 @@ import GroupCard from "@/components/GroupCard";
 import Banner from "@/components/Banner";
 import styles from "@/styles/Home.module.css";
 import Tag from "@/components/Tag";
+import Image from "next/image";
 
 import { groups, schedGroups } from "@/data/groups.js";
 import HeadArea from "@/components/HeadArea";
@@ -15,10 +16,17 @@ export default function Home() {
   
   return (
     <div className="frame">
+      <div className={styles.bgImage}>
+        <Image 
+          src="/images/topographic/graphic.topo4.svg" 
+          width={755} 
+          height={1095} 
+          className={styles.bgTopo}
+        />
+      </div>
       <HeadArea/>
-      <Header name="Home"/>
       <main className={styles.main}>
-
+        <Header name="Home"/>
         <section className={styles.homeWelcomeSection}>
           <div style={{
             backgroundColor: "gray", 

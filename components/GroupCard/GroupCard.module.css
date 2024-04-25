@@ -1,5 +1,6 @@
 .all {
     margin-bottom: 24px;
+    z-index: 1;
 }
 .all p, .all h3 {
     margin: 0;

@@ -51,7 +51,13 @@
   --light-blue-85: #618F8ED9; /* 85% opacity */
   --bright-blue: #87B1AF;
   
-  --blue-bg-gradient: linear-gradient(0deg, rgba(93,147,142,0.45) 0%, rgba(93,147,142,0) 100%);
+  --blue-bg-gradient: linear-gradient(
+      180deg, 
+      rgba(93, 147, 141, 0.25) 0%, 
+      rgba(93, 147, 141, 0) 20%, 
+      rgba(93, 147, 141, 0) 45%, 
+      rgba(93,147,142,0.25) 100%
+      );
   
   /****RED***/
   --dark-red: #782D2F;

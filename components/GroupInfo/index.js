@@ -4,7 +4,7 @@ import Map from "../Map"
 import Tag from "../Tag"
 import styles from "./GroupInfo.module.css"
 
-export default function GroupInfo({onclick, group, function}) {
+export default function GroupInfo({onclick, group}) {
     const path = usePathname();
 
     return(
