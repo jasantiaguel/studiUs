@@ -4,8 +4,12 @@ import Map from "../Map"
 import Tag from "../Tag"
 import styles from "./GroupInfo.module.css"
 
-export default function GroupInfo({onclick, group, function}) {
+export default function GroupInfo({onclick, group, todo=null, returnGroup=null}) {
     const path = usePathname();
+    const leaveGroup = () => {
+        todo && todo();
+    }
+    returnGroup && returnGroup(group);
 
     return(
         <>
@@ -38,7 +42,7 @@ export default function GroupInfo({onclick, group, function}) {
             </div>
             {
                 path === "/groups" ?
-                <Button text="Leave Group" width="398px" size="chonky" bgColor="var(--med-red)" bgColorHover="var(--bold-red)"/>:
+                <Button onclick={leaveGroup} text="Leave Group" width="398px" size="chonky" bgColor="var(--med-red)" bgColorHover="var(--bold-red)"/>:
                 <Button text="Join Group" width="398px" size="chonky" bgColor="var(--med-blue)" bgColorHover="var(--bold-blue)"/>
             }
         </div>

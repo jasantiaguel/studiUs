@@ -3,13 +3,23 @@ import Tag from "@/components/Tag";
 import { useEffect, useState } from "react";
 import styles from "./GroupCard.module.css";
 
-export default function Card({group}) {
+export default function Card({group, todo=null, returnGroup=null}) {
     const [isActive, setIsActive] = useState(false);
     const [popup, setPopup] = useState(false);
+
     useEffect(() => {
         if (group.status === "In Progress") setIsActive(true);
         else setIsActive(false);
     }, [group])
+
+    const handleButton = () => {
+        setPopup(false);
+        todo && todo();
+    }
+
+    const returnData = (data) => {
+        returnGroup && returnGroup(data);
+    }
     
     return(
         <>
@@ -55,7 +65,7 @@ export default function Card({group}) {
             </div>
         </div>
         {
-            popup && <GroupInfo group={group} onclick={() => setPopup(false)}/>
+            popup && <GroupInfo group={group} todo={handleButton} returnGroup={returnData} onclick={() => setPopup(false)}/>
         }
         </>
     )

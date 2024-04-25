@@ -3,7 +3,7 @@ import Button from "../Button";
 import Link from "next/link";
 import { useState } from "react";
 
-export default function Banner({title1, title3, body, buttonSpace, buttonText}) {
+export default function Banner({title1, title3, body, buttonSpace, buttonText, path=""}) {
   return(
     <section className={styles.bannerSection}>
       <div className={styles.bannerBg}>
@@ -22,7 +22,7 @@ export default function Banner({title1, title3, body, buttonSpace, buttonText}) 
         }}>
           {title1}
         </p>
-        <Link href="" className={styles.buttonPos} style={{marginLeft: `${buttonSpace}`}}>
+        <Link href={path} className={styles.buttonPos} style={{marginLeft: `${buttonSpace}`}}>
           <Button text={`${buttonText}`} size="chonky"/>
         </Link>
       </div>
