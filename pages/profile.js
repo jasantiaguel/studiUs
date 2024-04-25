@@ -3,61 +3,20 @@ import Footer from '@/components/Footer'
 import styles from "@/styles/Profile.module.css";
 import Image from "next/image";
 import Button from "@/components/Button";
-import { useState, useEffect } from 'react';
 import HeadArea from '@/components/HeadArea';
 import Tag from '@/components/Tag';
 
 export default function profile() {
-    const [formValues, setFormValues] = useState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        checked: false
-    })
-
-    const [isHidden, setIsHidden] = useState(true)
-    const [showForm, setShowForm] = useState(true)
-
-    useEffect(() => {
-        if (formValues.firstName && formValues.lastName && formValues.email && formValues.checked) {
-            setIsHidden(false)
-        } else {
-            setIsHidden(true)
-        }
-
-    }, [formValues])
-
-
-    const handleChange = (e) => {
-        let name = e.target.name;
-        let value = e.target.value;
-        console.log(value)
-
-        if (e.target.type === 'checkbox') {
-            console.log(e.target.checked)
-            value = e.target.checked;
-            setFormValues({
-                ...formValues,
-                checked: value
-            })
-            return;
-        }
-
-        setFormValues({
-            ...formValues,
-            [name]: value
-        })
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        setShowForm(false)
-    }
-
-
-
     return (
         <div className="frame">
+            <div className={styles.bgImage}>
+                <Image 
+                    src="/images/topographic/graphic.topo4.svg" 
+                    width={755} 
+                    height={1095} 
+                    className={styles.bgTopo}
+                />
+            </div>
             <HeadArea/>
             <Header bgColor='var(--bright-af)'/>
                 <section className={styles.profileSection}>
@@ -68,6 +27,7 @@ export default function profile() {
                     height: "74px", 
                     borderRadius: "74px",
                     margin: '-40px 0 0',
+                    zIndex: '1',
                     }}>
                 </div>
                 <h1 style={{
@@ -115,8 +75,7 @@ export default function profile() {
                         bgColor='var(--bright-blue)'
                     />
                 </div>
-            <Footer />
+            <Footer bdRadius='0'/>
         </div>
-
     )
 }

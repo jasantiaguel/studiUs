@@ -59,7 +59,7 @@ export default function Groups() {
               newGroup={newGroup}
             />
           }
-          <Footer/>
+          <Footer bdRadius={0}/>
         </div>
     )
 }

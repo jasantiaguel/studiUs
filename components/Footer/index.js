@@ -1,9 +1,9 @@
 import NavTab from "@/components/NavTab"
 import styles from "./Footer.module.css"
 
-export default function Footer() {
+export default function Footer({bdRadius}) {
     return(
-        <div className={styles.footer}>
+        <div className={styles.footer} style={{borderRadius: bdRadius}}>
             <NavTab image="/images/icon.home-selected.svg" activeImage="/images/icon.home.svg" path="/"/>
             <NavTab image="/images/icon.search-selected.svg" activeImage="/images/icon.search.svg" path="/search"/>
             <NavTab image="/images/icon.groups-selected.svg" activeImage="/images/icon.groups.svg" path="/groups"/>
