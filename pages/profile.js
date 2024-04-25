@@ -105,13 +105,14 @@ export default function profile() {
             <div className={styles.navbarButtons}>
                     <Button 
                         text="Edit Profile" 
-                        size="chonky" 
+                        size="chonky2" 
                         width="191px"
                     />
                     <Button 
                         text="Log Out" 
-                        size="chonky" 
+                        size="chonky2" 
                         width="191px"
+                        bgColor='var(--bright-blue)'
                     />
                 </div>
             <Footer />

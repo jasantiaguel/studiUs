@@ -35,7 +35,7 @@ export default function Groups() {
           <div className={styles.createButton}>
               <Button 
                 text="+ Create Group" 
-                size="chonky" 
+                size="chonky2" 
                 width="398px"
               />
           </div>

@@ -21,6 +21,12 @@ export default function Button({
             height: "56px",
             borderRadius: "32px",
             fontSize: 'var(--title-2)'
+        },
+        chonky2: {
+            padding: '16px 36px',
+            height: "56px",
+            borderRadius: "32px",
+            fontSize: 'var(--size-body)'
         }
     }
     
