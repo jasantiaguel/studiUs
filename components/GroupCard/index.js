@@ -36,7 +36,7 @@ export default function Card({group}) {
                     {
                         group.tags.map((tag) => {
                             return(
-                                <Tag text={tag} size='tag'/>
+                                <Tag text={tag} type='tag'/>
                             )
                         })
                     }

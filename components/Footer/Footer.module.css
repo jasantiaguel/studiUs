@@ -1,6 +1,8 @@
 .footer {
+    position: absolute;
     display: flex;
     flex-flow: row;
     width: 430px;
-    height: 88px;
+    height: 84px;
+    top: 844px;
 }

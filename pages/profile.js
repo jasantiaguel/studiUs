@@ -2,8 +2,10 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import styles from "@/styles/Profile.module.css";
 import Image from "next/image";
+import Button from "@/components/Button";
 import { useState, useEffect } from 'react';
 import HeadArea from '@/components/HeadArea';
+import Tag from '@/components/Tag';
 
 export default function profile() {
     const [formValues, setFormValues] = useState({
@@ -57,41 +59,61 @@ export default function profile() {
     return (
         <div className="frame">
             <HeadArea/>
+            <Header name='Profile'/>
+                <section className={styles.profileSection}>
+                {/* Replace below with profile photo */}
+                <div style={{
+                    backgroundColor: "gray", 
+                    width: "74px", 
+                    height: "74px", 
+                    borderRadius: "74px",
+                    margin: '16px 0 0'
+                    }}>
+                </div>
+                <h1 style={{
+                    fontSize: 'var(--large-title)',
+                    margin: '16px 0 0'
+                }}>
+                    Alira Ivanova
+                </h1>
+                <p style={{margin: '0'}}>BCIT</p>
+                <p style={{margin: '0'}}>Digital Design & Development</p>
+                <p style={{margin: '8px 0 0'}}>She/Her - It's a beautiful day to code!</p>
+                    <section className={styles.profileTags}>
+                        <Tag text="UI/UX" type="profileTag"/>
+                        <Tag text="JavaScript" type="profileTag"/>
+                        <Tag text="Russian" type="profileTag"/>
+                        <Tag text="Coffee" type="profileTag"/>
+                    </section>
+                </section>
             <div className={styles.main}>
-              <Header/>
-                <div className='profileTop'>
-                    <Image width={32} height={32} className={styles.profilePicture} />
-                    <p>profile</p>
-                    <p>program display</p>
-                    <div>
-                        <button>connect</button>
-                        <button>message</button>
-
+                <section className={styles.studyHourSection}>
+                    <h2 style={{margin: '32px 0 16px'}}>Study Hours</h2>
+                    {/* Replace below with graph */}
+                    <div style={{
+                        backgroundColor: "gray", 
+                        width: "398px", 
+                        height: "204px", 
+                        borderRadius: "16px",
+                        }}>
                     </div>
-                </div>
-
-                <div>
-                    <p>Bio:</p>
-                </div>
-
-                <div className={styles.form}>
-                    {showForm ? <form onSubmit={handleSubmit}>
-                        <h3>Preferences</h3>
-                        <label>Program:</label>
-                        <input type="text" value={formValues.program} id="program" name="program" pattern="[A-Za-z]{2,}" onChange={handleChange} />
-                        <label>Location:</label>
-                        <input type="text" value={formValues.location} id="location" name="location" pattern="[A-Za-z]{2,}" onChange={handleChange} />
-                        <label>Language:</label>
-                        <input type="text" value={formValues.language} id="language" name="language" pattern="[A-Za-z]{2,}" onChange={handleChange} />
-                        <label>Do you agree to the terms?</label>
-                        <input type="checkbox" checked={formValues.checked} id="terms" name="terms" onChange={handleChange} />
-                        {!isHidden && <button className='contactSubmit' type="submit">Submit</button>}
-                    </form> :
-                        <div>Thank you, your form has been submitted </div>}
-                </div>
-
-
+                </section>
+                <section className={styles.topSubjectsSection}>
+                    <h2 style={{margin: '32px 0 16px'}}>Top Subjects</h2>
+                </section>
             </div>
+            <div className={styles.navbarButtons}>
+                    <Button 
+                        text="Edit Profile" 
+                        size="chonky" 
+                        width="191px"
+                    />
+                    <Button 
+                        text="Log Out" 
+                        size="chonky" 
+                        width="191px"
+                    />
+                </div>
             <Footer />
         </div>
 

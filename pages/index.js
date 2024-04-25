@@ -34,16 +34,16 @@ export default function Home() {
         <Banner 
           title3="Discover Your Perfect Study Method" 
           title1="Take Our Short Quiz" 
-          buttonSpace="166px"
+          buttonSpace="164px"
           buttonText="StudiUs Quiz"
         />
         <section className={styles.filterSection}>
-          <Tag text='Sort' size='filter'/>
-          <Tag text='Music' size='filter'/>
-          <Tag text='Anime' size='filter'/>
-          <Tag text='Food' size='filter'/>
+          <Tag text='Sort' type='filter'/>
+          <Tag text='Music' type='filter'/>
+          <Tag text='Anime' type='filter'/>
+          <Tag text='Food' type='filter'/>
         </section>
-        <h2>Today</h2>
+        <h2 style={{margin: '32px 0 16px'}}>Today</h2>
         {
           data && data.map((group) => {
             return <GroupCard group={group}/>

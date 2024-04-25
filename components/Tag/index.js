@@ -1,7 +1,10 @@
 import styles from "./Tag.module.css"
 
-export default function Tag({text, size='default'}) {
-    const sizeStyles = {
+export default function Tag({
+        text, 
+        type='default', 
+    }) {
+    const typeStyles = {
         tag: {
             padding: '4px 12px',
             margin: '0 2px',
@@ -11,8 +14,15 @@ export default function Tag({text, size='default'}) {
         filter: {
             fontSize: 'var(--sub-body)',
             padding: '8px 18px',
-            marginRight: '8px',
+            margin: '0 8px 0 0',
             backgroundColor: 'var(--bright-af-75)',
+        },
+        profileTag: {
+            fontSize: 'var(--sub-body)',
+            padding: '8px 18px',
+            margin: '0 8px 0 0',
+            backgroundColor: 'var(--med-green)',
+            textColor: 'var(--bright-af)',
         }
     }
 
@@ -20,10 +30,11 @@ export default function Tag({text, size='default'}) {
         <div 
             className={styles.tag} 
             style={{
-                fontSize: sizeStyles[size].fontSize,
-                padding: sizeStyles[size].padding,
-                marginRight: sizeStyles[size].marginRight,
-                backgroundColor: sizeStyles[size].backgroundColor
+                fontSize: typeStyles[type].fontSize,
+                padding: typeStyles[type].padding,
+                margin: typeStyles[type].margin,
+                backgroundColor: typeStyles[type].backgroundColor,
+                color: typeStyles[type].textColor,
             }}
         >
             {text}

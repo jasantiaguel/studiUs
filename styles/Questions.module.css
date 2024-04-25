@@ -56,10 +56,12 @@
 }
 
 .bottom {
+    position: absolute;
     display: flex;
     flex-flow: column;
     gap: 8px;
-    margin-top: auto;
+    top: 708px;
+    width: 398px;
 }
 
 .content {

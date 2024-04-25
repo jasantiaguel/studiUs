@@ -1,7 +1,16 @@
 import styles from "./Button.module.css"
 import { useState } from "react";
 
-export default function Button({text, onclick, textColor='var(--bright-af)', bgColor='var(--med-blue)', bgColorHover='var(--dark-blue)', size='default', width="auto", tabIndex, onKeyDown}) {
+export default function Button({
+        text, 
+        onclick, 
+        textColor='var(--bright-af)', 
+        bgColor='var(--med-blue)', 
+        bgColorHover='var(--dark-blue)', 
+        size='default', width="auto", 
+        tabIndex, 
+        onKeyDown
+    }) {
     const sizeStyles = {
         default: {
             padding: '12px 28px',
