@@ -10,7 +10,6 @@
 
 ## Packages installed
 - Install packages: `npm install`
-- `npm install --save chart.js react-chartjs-2`
 - Run: `npm run dev`
 
 ## Link to style guide repo
