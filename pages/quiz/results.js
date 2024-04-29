@@ -18,8 +18,8 @@ export default function Results() {
 
     //percentages
     let QR = results[0].value/total*100;
-    let RETRIEVAL = results[1].value/total*100;
-    let LEITNER = results[2].value/total*100;
+    let LEITNER = results[1].value/total*100;
+    let RETRIEVAL = results[2].value/total*100;
     let FEYNMAN = results[3].value/total*100;
 
     function determineMethod() {

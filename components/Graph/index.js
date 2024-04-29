@@ -7,7 +7,6 @@ import {
     Legend
 } from 'chart.js';
 import { useState, useEffect } from 'react';
-import { useRouter } from "next/router";
 
 
 ChartJS.register(
@@ -22,7 +21,7 @@ export default function PieChart({results}) {
         datasets: []
     });
     const [chartOptions, setChartOptions] = useState({});
- 
+
     useEffect(() => {
         setChartData({
             type: 'pie', // Change type to 'pie'
@@ -63,7 +62,7 @@ export default function PieChart({results}) {
         })
 
     }, [])
-
+    console.log(chartData);
     return (
         <div>
             <Pie data={chartData} options={chartOptions} style={{ width: "250px", height: "250px" }} />
