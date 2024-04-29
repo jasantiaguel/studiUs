@@ -6,10 +6,17 @@ export default function CreateOverlay({onclick, newGroup}) {
     const [title, setTitle] = useState("Title");
     const [description, setDescription] = useState("Description");
     const [tags, setTags] = useState([]);
+    
+    //custom tag stuff
     const [tagInputDisplay, setTagInputDisplay] = useState({display: "none"});
+    const [tagDisplay, setTagDisplay] = useState(["Javascript", "Chill", "Design"]);
     const [custom, setCustom] = useState(false);
     const [customText, setCustomText] = useState("Custom");
     const [customTag, setCustomTag] = useState("");
+
+    //date stuff
+    const [date, setDate] = useState("");
+    const [time, setTime] = useState("");
     
     const handleClick = () => {
         onclick();
@@ -17,7 +24,7 @@ export default function CreateOverlay({onclick, newGroup}) {
             title: title,
             description: description,
             tags: tags,
-            time: {day: "Saturday", time: "12:30PM"},
+            time: new Date(parseInt(date.substring(0, 4)), parseInt(date.substring(5, 7))-1, parseInt(date.substring(8, 10)), parseInt(time.substring(0, 2)), parseInt(time.substring(3, 5))), //YYYY, MM, DD, HOURS, MINUTES, SECONDS
             location: "BCIT Library",
             members: ["Jerome"],
             status: "Starts in 1 day",
@@ -47,7 +54,6 @@ export default function CreateOverlay({onclick, newGroup}) {
             setTagDisplay([...tagDisplay, customTag]);
         }
     }
-    const [tagDisplay, setTagDisplay] = useState(["Javascript", "Chill", "Design"]);
     return(
         <>
         <div className={styles.container}>
@@ -55,9 +61,9 @@ export default function CreateOverlay({onclick, newGroup}) {
             <input type="text" placeholder="Description" onChange={e => setDescription(e.currentTarget.value)}/>
             <div>
                 {
-                    tagDisplay.map((tag) => {
+                    tagDisplay.map((value) => {
                         return(
-                            <label>{tag}<input type="checkbox" value={tag} onChange={handleTags}/></label>
+                            <label>{value}<input type="checkbox" value={value} onChange={handleTags}/></label>
                         );
                     })
                 }
@@ -66,7 +72,8 @@ export default function CreateOverlay({onclick, newGroup}) {
             </div>
             <label>Location & Time</label>
             <Map/>
-            <input type="date" value="2024-04-27"/>
+            <input type="date" onChange={(e) => setDate(e.currentTarget.value)}/>
+            <input type="time" onChange={(e) => setTime(e.currentTarget.value)}/>
             <button onClick={handleClick}>Create group</button>
         </div>
         <div className="overlaybg" onClick={onclick}/>

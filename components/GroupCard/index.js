@@ -20,6 +20,18 @@ export default function Card({group, todo=null, returnGroup=null}) {
     const returnData = (data) => {
         returnGroup && returnGroup(data);
     }
+
+    function dateParser(dayNum) {
+        switch (dayNum) {
+            case 1: return "Monday"
+            case 2: return "Tuesday"
+            case 3: return "Wednesday"
+            case 4: return "Thursday"
+            case 5: return "Friday"
+            case 6: return "Saturday"
+            case 7: return "Sunday"
+        }
+    }
     
     return(
         <>
@@ -39,8 +51,8 @@ export default function Card({group, todo=null, returnGroup=null}) {
                         color: "black"}:{backgroundColor: "var(--med-green-85)", 
                         color: "white"}}
                     >
-                        <p style={{fontWeight: "var(--font-weight-bold)"}}>{group.time.day}</p>
-                        <p>{group.time.time}</p>
+                        <p style={{fontWeight: "var(--font-weight-bold)"}}>{dateParser(group.time.getDay())}</p>
+                        <p>{`${group.time.getHours()}:${group.time.getMinutes()}`}</p>
                     </div>
                 </div> 
                 <div className={styles.tags}>
