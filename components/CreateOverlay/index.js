@@ -6,6 +6,10 @@ export default function CreateOverlay({onclick, newGroup}) {
     const [title, setTitle] = useState("Title");
     const [description, setDescription] = useState("Description");
     const [tags, setTags] = useState([]);
+    const [tagInputDisplay, setTagInputDisplay] = useState({display: "none"});
+    const [custom, setCustom] = useState(false);
+    const [customText, setCustomText] = useState("Custom");
+    const [customTag, setCustomTag] = useState("");
     
     const handleClick = () => {
         onclick();
@@ -29,16 +33,36 @@ export default function CreateOverlay({onclick, newGroup}) {
             setTags(tags.splice(e.target.value, 1));
         }
     }
-    
+
+    const handleCustomTag = () => {
+        if (!custom) {
+            setTagInputDisplay({display: "inline"});
+            setCustom(true);
+            setCustomText("Add");
+        }
+        else {
+            setTagInputDisplay({display: "none"});
+            setCustom(false);
+            setCustomText("Custom");
+            setTagDisplay([...tagDisplay, customTag]);
+        }
+    }
+    const [tagDisplay, setTagDisplay] = useState(["Javascript", "Chill", "Design"]);
     return(
         <>
         <div className={styles.container}>
             <input type="text" placeholder="Title" onChange={e => setTitle(e.currentTarget.value)}/>
             <input type="text" placeholder="Description" onChange={e => setDescription(e.currentTarget.value)}/>
             <div>
-                <label>Tag<input type="checkbox" value="Tag" onChange={handleTags}/></label>
-                <label>Tag 2<input type="checkbox" value="Tag 2" onChange={handleTags}/></label>
-                <label>Tag 3<input type="checkbox" value="Tag 3" onChange={handleTags}/></label>
+                {
+                    tagDisplay.map((tag) => {
+                        return(
+                            <label>{tag}<input type="checkbox" value={tag} onChange={handleTags}/></label>
+                        );
+                    })
+                }
+                <input type="text" placeholder="Tag" style={tagInputDisplay} onChange={e => setCustomTag(e.currentTarget.value)}></input>
+                <button onClick={handleCustomTag}>{customText}</button>
             </div>
             <label>Location & Time</label>
             <Map/>
