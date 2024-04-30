@@ -11,6 +11,7 @@
   "dependencies": {
     "bingmaps": "^2.0.3",
     "chart.js": "^4.4.2",
+    "framer-motion": "^11.1.7",
     "next": "14.1.4",
     "react": "^18",
     "react-bingmaps": "^3.6.1",

@@ -7,3 +7,9 @@
     padding: 62px 8px 16px;
     z-index: 1;
 }
+
+.headerFont {
+  font-size: var(--largerer-title); 
+  font-weight: var(--font-weight-bold);
+  margin: 0px;
+}
