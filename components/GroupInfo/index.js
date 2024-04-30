@@ -4,7 +4,7 @@ import Map from "../Map"
 import Tag from "../Tag"
 import styles from "./GroupInfo.module.css"
 
-export default function GroupInfo({onclick, group, todo=null, returnGroup=null}) {
+export default function GroupInfo({onclick, group, todo=null, returnGroup=null, day, time}) {
     const path = usePathname();
     const leaveGroup = () => {
         todo && todo();
@@ -25,7 +25,7 @@ export default function GroupInfo({onclick, group, todo=null, returnGroup=null})
                 }
                 </div>
                 <Map centerPoint={group.coords.centerPoint} circlePoint={group.coords.circlePoint}/>
-                <p><span style={{fontWeight: "var(--font-weight-bold"}}>{group.location}</span> {group.time.day}, {group.time.time}</p>
+                <p><span style={{fontWeight: "var(--font-weight-bold"}}>{group.location}</span> {day}, {time}</p>
                 <h3>Members</h3>
                 <ul>
                     {
