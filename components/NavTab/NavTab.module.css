@@ -1,20 +1,10 @@
-.tab {
-    min-width: 20%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.icon {
-    width: 50px;
-    height: 40px;
-}
 .container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     border-radius: 24px;
     width: 430px;
-    height: 88px;
+    height: 57px;
+    padding: 0 0 31px 0;
     background-color: var(--bright-af);
 }
