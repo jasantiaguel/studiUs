@@ -35,10 +35,8 @@ export default function Card({group, todo=null, returnGroup=null}) {
 
     function timeParser(hours, minutes) {
         let meridiem = "AM";
-        if (hours > 12) {
-            hours -= 12;
-            meridiem = "PM"
-        }
+        if (hours > 12) hours -= 12;
+        if (hours >= 12) meridiem = "PM";
         if (hours.length < 2) hours = '0'+hours;
         if (minutes.length < 2) minutes = '0'+minutes;
         return `${hours}:${minutes}${meridiem}`
