@@ -4,7 +4,7 @@
     padding-top: 32px;
     padding: 16px;
     background-color: var(--bright-af);
-    margin: auto;
+    margin: 0 auto;
     border-radius: 16px;
     display: flex;
     flex-flow: column;
@@ -15,4 +15,19 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
     gap: 8px;
+    left: 0;
+    right: 0;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 430px;
+    height: 932px;
+    background-color: #00000080;
+    z-index: 9;
 }

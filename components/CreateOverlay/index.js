@@ -55,28 +55,27 @@ export default function CreateOverlay({onclick, newGroup}) {
         }
     }
     return(
-        <>
-        <div className={styles.container}>
-            <input type="text" placeholder="Title" onChange={e => setTitle(e.currentTarget.value)}/>
-            <input type="text" placeholder="Description" onChange={e => setDescription(e.currentTarget.value)}/>
-            <div>
-                {
-                    tagDisplay.map((value) => {
-                        return(
-                            <label>{value}<input type="checkbox" value={value} onChange={handleTags}/></label>
-                        );
-                    })
-                }
-                <input type="text" placeholder="Tag" style={tagInputDisplay} onChange={e => setCustomTag(e.currentTarget.value)}></input>
-                <button onClick={handleCustomTag}>{customText}</button>
+        <div className={styles.background} onClick={onclick}>
+            <div className={styles.container}>
+                <input type="text" placeholder="Title" onChange={e => setTitle(e.currentTarget.value)}/>
+                <input type="text" placeholder="Description" onChange={e => setDescription(e.currentTarget.value)}/>
+                <div>
+                    {
+                        tagDisplay.map((value) => {
+                            return(
+                                <label>{value}<input type="checkbox" value={value} onChange={handleTags}/></label>
+                            );
+                        })
+                    }
+                    <input type="text" placeholder="Tag" style={tagInputDisplay} onChange={e => setCustomTag(e.currentTarget.value)}></input>
+                    <button onClick={handleCustomTag}>{customText}</button>
+                </div>
+                <label>Location & Time</label>
+                <Map/>
+                <input type="date" onChange={(e) => setDate(e.currentTarget.value)}/>
+                <input type="time" onChange={(e) => setTime(e.currentTarget.value)}/>
+                <button onClick={handleClick}>Create group</button>
             </div>
-            <label>Location & Time</label>
-            <Map/>
-            <input type="date" onChange={(e) => setDate(e.currentTarget.value)}/>
-            <input type="time" onChange={(e) => setTime(e.currentTarget.value)}/>
-            <button onClick={handleClick}>Create group</button>
         </div>
-        <div className="overlaybg" onClick={onclick}/>
-        </>
     )
 }

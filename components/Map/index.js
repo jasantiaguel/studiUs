@@ -21,6 +21,6 @@ export default function Map({centerPoint="49.249234265894394,-123.00899574963694
         })
     }, [])
     return (
-        <Image src={map} width={width} height={height} style={{borderRadius: "16px"}}/>
+        <Image src={map} width={width} height={height} style={{borderRadius: "16px"}} alt="Map"/>
     );
 };
