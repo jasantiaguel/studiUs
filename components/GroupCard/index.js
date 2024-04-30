@@ -8,7 +8,7 @@ export default function Card({group, todo=null, returnGroup=null}) {
     const [popup, setPopup] = useState(false);
 
     useEffect(() => {
-        if (group.status === "In Progress") setIsActive(true);
+        if (group.status() === "In Progress") setIsActive(true);
         else setIsActive(false);
     }, [group])
 
@@ -32,6 +32,20 @@ export default function Card({group, todo=null, returnGroup=null}) {
             case 7: return "Sunday"
         }
     }
+
+    function timeParser(hours, minutes) {
+        let meridiem = "AM";
+        if (hours > 12) {
+            hours -= 12;
+            meridiem = "PM"
+        }
+        if (hours.length < 2) hours = '0'+hours;
+        if (minutes.length < 2) minutes = '0'+minutes;
+        return `${hours}:${minutes}${meridiem}`
+    }
+
+    let day = dateParser(group.time.getDay());
+    let time = timeParser(''+group.time.getHours(), ''+group.time.getMinutes());
     
     return(
         <>
@@ -43,7 +57,7 @@ export default function Card({group, todo=null, returnGroup=null}) {
                 <div className={styles.top}>
                     <div>
                         <h3 className={styles.title}>{group.title}</h3>
-                        <p className={styles.status}>{group.status}</p>
+                        <p className={styles.status}>{group.status()}</p>
                     </div>
                     <div 
                         className={styles.timeBlock} 
@@ -51,8 +65,8 @@ export default function Card({group, todo=null, returnGroup=null}) {
                         color: "black"}:{backgroundColor: "var(--med-green-85)", 
                         color: "white"}}
                     >
-                        <p style={{fontWeight: "var(--font-weight-bold)"}}>{dateParser(group.time.getDay())}</p>
-                        <p>{`${group.time.getHours()}:${group.time.getMinutes()}`}</p>
+                        <p style={{fontWeight: "var(--font-weight-bold)"}}>{day}</p>
+                        <p>{time}</p>
                     </div>
                 </div> 
                 <div className={styles.tags}>
@@ -77,7 +91,7 @@ export default function Card({group, todo=null, returnGroup=null}) {
             </div>
         </div>
         {
-            popup && <GroupInfo group={group} todo={handleButton} returnGroup={returnData} onclick={() => setPopup(false)}/>
+            popup && <GroupInfo group={group} todo={handleButton} returnGroup={returnData} onclick={() => setPopup(false)} day={day} time={time}/>
         }
         </>
     )

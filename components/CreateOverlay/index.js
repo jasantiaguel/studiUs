@@ -1,6 +1,6 @@
 import Map from "../Map";
 import styles from "./CreateOverlay.module.css"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function CreateOverlay({onclick, newGroup}) {
     const [title, setTitle] = useState("Title");
@@ -15,9 +15,25 @@ export default function CreateOverlay({onclick, newGroup}) {
     const [customTag, setCustomTag] = useState("");
 
     //date stuff
-    const [date, setDate] = useState("");
-    const [time, setTime] = useState("");
-    
+    const [date, setDate] = useState(todaysDate());
+    const [time, setTime] = useState(todaysTime());
+
+    function todaysTime() {
+        let today = new Date();
+        let minutes = ''+(today.getMinutes());
+        if (minutes.length < 2) minutes = '0' + minutes;
+        return `${today.getHours()}:${minutes}`;
+    }
+
+    function todaysDate() {
+        let today = new Date();
+        let month = '' + (today.getMonth()+1);
+        let day = '' + today.getDate();
+        if (month.length < 2) month = '0' + month;
+        if (day.length < 2) day = '0' + day;
+        return `${today.getFullYear()}-${month}-${day}`;
+    }
+
     const handleClick = () => {
         onclick();
         newGroup({
@@ -27,7 +43,16 @@ export default function CreateOverlay({onclick, newGroup}) {
             time: new Date(parseInt(date.substring(0, 4)), parseInt(date.substring(5, 7))-1, parseInt(date.substring(8, 10)), parseInt(time.substring(0, 2)), parseInt(time.substring(3, 5))), //YYYY, MM, DD, HOURS, MINUTES, SECONDS
             location: "BCIT Library",
             members: ["Jerome"],
-            status: "Starts in 1 day",
+            status: function() {
+                let rightNow = new Date();
+                let diff = this.time.getTime() - rightNow.getTime();
+                if (diff < 0) {
+                    return "In Progress";
+                }
+                return `Starts in ${
+                    Math.round((Math.floor(diff/10000)*10)/60/60)
+                } hours`           
+            },
             coords: {centerPoint: "49.249234265894394,-123.00899574963694", circlePoint: "49.24936795802063,-123.00199080213194"}
         })
     }
@@ -54,8 +79,9 @@ export default function CreateOverlay({onclick, newGroup}) {
             setTagDisplay([...tagDisplay, customTag]);
         }
     }
+
     return(
-        <div className={styles.background} onClick={onclick}>
+        <>
             <div className={styles.container}>
                 <input type="text" placeholder="Title" onChange={e => setTitle(e.currentTarget.value)}/>
                 <input type="text" placeholder="Description" onChange={e => setDescription(e.currentTarget.value)}/>
@@ -72,10 +98,11 @@ export default function CreateOverlay({onclick, newGroup}) {
                 </div>
                 <label>Location & Time</label>
                 <Map/>
-                <input type="date" onChange={(e) => setDate(e.currentTarget.value)}/>
-                <input type="time" onChange={(e) => setTime(e.currentTarget.value)}/>
+                <input type="date" value={date} onChange={(e) => setDate(e.currentTarget.value)}/>
+                <input type="time" value={time} onChange={(e) => setTime(e.currentTarget.value)}/>
                 <button onClick={handleClick}>Create group</button>
             </div>
-        </div>
+        <div className={styles.background} onClick={onclick}/>
+        </>
     )
 }
