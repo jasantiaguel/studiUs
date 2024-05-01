@@ -8,7 +8,7 @@ export default function Card({group, todo=null, returnGroup=null}) {
     const [popup, setPopup] = useState(false);
 
     useEffect(() => {
-        if (group.status() === "In Progress") setIsActive(true);
+        if (getStatus(group.time) === "In Progress") setIsActive(true);
         else setIsActive(false);
     }, [group])
 
@@ -29,17 +29,28 @@ export default function Card({group, todo=null, returnGroup=null}) {
             case 4: return "Thursday"
             case 5: return "Friday"
             case 6: return "Saturday"
-            case 7: return "Sunday"
+            case 0: return "Sunday"
         }
     }
 
     function timeParser(hours, minutes) {
         let meridiem = "AM";
-        if (hours > 12) hours -= 12;
         if (hours >= 12) meridiem = "PM";
+        if (hours > 12) hours -= 12;
         if (hours.length < 2) hours = '0'+hours;
         if (minutes.length < 2) minutes = '0'+minutes;
         return `${hours}:${minutes}${meridiem}`
+    }
+
+    function getStatus(date) {
+        let now = new Date();
+        let difference = date.getTime() - now.getTime();
+        if (difference < 0) {
+            return "In Progress";
+        }
+        return `Starts in ${
+            Math.round((Math.floor(difference/10000)*10)/60/60)
+        } hours`
     }
 
     let day = dateParser(group.time.getDay());
@@ -55,7 +66,7 @@ export default function Card({group, todo=null, returnGroup=null}) {
                 <div className={styles.top}>
                     <div>
                         <h3 className={styles.title}>{group.title}</h3>
-                        <p className={styles.status}>{group.status()}</p>
+                        <p className={styles.status}>{getStatus(group.time)}</p>
                     </div>
                     <div 
                         className={styles.timeBlock} 

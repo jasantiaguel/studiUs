@@ -13,7 +13,7 @@ import Map from "@/components/Map";
 
 export default function Results() {
   const router = useRouter();
-  const selectedSubject = JSON.stringify(router.query.subject);
+  const selectedSubject = router.query.subject;
 
   const [groupData, setGroupData] = useState(groups);
   

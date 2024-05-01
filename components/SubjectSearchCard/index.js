@@ -5,16 +5,10 @@ import styles from "./SubjectCard.module.css";
 import Link from "next/link";
 
 export default function SubjectSearchCard({ title }) {
-  const [selected, setSelected] = useState('');
-
-  const handleSubjectSelect = () => {
-    setSelected({title});
-  }
-
+  
   return(
     <Link 
-      onClick={handleSubjectSelect} 
-      href={{ pathname: "/search/results", query: { subject: JSON.stringify(selected) } }}
+      href={{ pathname: "/search/results", query: { subject: title } }}
       style={{textDecoration: 'none'}}
     >
       <section className={styles.fullCard}>
