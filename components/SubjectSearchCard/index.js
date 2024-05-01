@@ -4,16 +4,19 @@ import GroupCard from "@/components/GroupCard";
 import styles from "./SubjectCard.module.css";
 import Link from "next/link";
 
-export default function SubjectSearchCard({ title, onSelect }) {
-  const [selected, setSelected] = useState(false);
+export default function SubjectSearchCard({ title }) {
+  const [selected, setSelected] = useState('');
 
-  const handleSelect = () => {
-    setSelected(true);
-    onSelect(title);
+  const handleSubjectSelect = () => {
+    setSelected({title});
   }
 
   return(
-    <Link href="/search/results" onClick={handleSelect} style={{textDecoration: 'none'}}>
+    <Link 
+      onClick={handleSubjectSelect} 
+      href={{ pathname: "/search/results", query: { subject: JSON.stringify(selected) } }}
+      style={{textDecoration: 'none'}}
+    >
       <section className={styles.fullCard}>
         <div className={styles.overCard}>
         </div>

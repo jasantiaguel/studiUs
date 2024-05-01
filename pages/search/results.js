@@ -7,15 +7,19 @@ import { groups } from "@/data/groups";
 import Image from "next/image";
 import Tag from "@/components/Tag";
 import GroupCard from "@/components/GroupCard";
+import { useRouter } from "next/router";
 
 import Map from "@/components/Map";
 
-export default function Results({ selectedSubject }) {
+export default function Results() {
+  const router = useRouter();
+  const selectedSubject = JSON.stringify(router.query.subject);
+
   const [groupData, setGroupData] = useState(groups);
   
   useEffect(() => {
-    const filteredGroups = groups.filter(group =>
-    group.tags.includes(selectedSubject)
+    const filteredGroups = groupData.filter(groupData =>
+    groupData.tags.includes(selectedSubject)
   );
   setGroupData(filteredGroups);
   }, [selectedSubject]);
@@ -37,9 +41,11 @@ export default function Results({ selectedSubject }) {
         </section>
         <h2 style={{margin: '32px 0 16px'}}>Results for {selectedSubject}</h2>
         <section className={styles.searchResultsContainer}>
-          {groupData.map(group => (
-            <GroupCard group={group} key={group.title}/>
-          ))}
+          {
+            groupData && groupData.map(group => {
+            return <GroupCard group={group}/>
+            })
+          }
         </section>
 
         {/* This is a filler section to make the bottom of page not cut off */}

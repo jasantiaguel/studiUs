@@ -12,10 +12,6 @@ import SubjectSearchCard from "@/components/SubjectSearchCard";
 import Map from "@/components/Map";
 
 export default function Search() {
-  const [selectedSubject, setSelectedSubject] = useState("");
-  const handleSubjectSelect = (subject) => {
-    setSelectedSubject(subject);
-  };
   
   return(
     <div className="frame">
@@ -41,7 +37,7 @@ export default function Search() {
         <h2 style={{margin: '32px 0 16px'}}>Science</h2>
         <section className={styles.subjectSection}>
           <SubjectSearchCard title='Biology'/>
-          <SubjectSearchCard title='Chemistry' onSelect={handleSubjectSelect}/>
+          <SubjectSearchCard title='Chemistry'/>
           <SubjectSearchCard title='Physics'/>
           <SubjectSearchCard title='Environmental St...'/>
         </section>
