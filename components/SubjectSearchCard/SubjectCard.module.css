@@ -20,4 +20,6 @@
   font-weight: var(--font-weight-bold); 
   color: var(--bright-af);
   margin: 4px 0 0 16px;
+  width: 175px;
+  text-overflow: ellipsis;
 }

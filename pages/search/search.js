@@ -31,7 +31,7 @@ export default function Search() {
         <h2 style={{margin: '32px 0 16px'}}>Computer & Technology</h2>
         <section className={styles.subjectSection}>
           <SubjectSearchCard title='Computer Scienc...'/>
-          <SubjectSearchCard title='Front End Develo...'/>
+          <SubjectSearchCard title='Front End'/>
           <SubjectSearchCard title='Digital Design & D...'/>
         </section>
         <h2 style={{margin: '32px 0 16px'}}>Science</h2>
