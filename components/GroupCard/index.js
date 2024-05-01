@@ -50,7 +50,7 @@ export default function Card({group, todo=null, returnGroup=null}) {
         }
         return `Starts in ${
             Math.round((Math.floor(difference/10000)*10)/60/60)
-        } hours`
+        } hour${Math.round((Math.floor(difference/10000)*10)/60/60) > 1 ? 's':''}`
     }
 
     let day = dateParser(group.time.getDay());
