@@ -17,7 +17,7 @@ export default function Footer({bdRadius}) {
             <NavTab 
               image="/images/icon.search-selected.svg" 
               activeImage="/images/icon.search.svg" 
-              path="/search"
+              path="/search/search"
               width={41}
               height={50}
               activeHeight={41}

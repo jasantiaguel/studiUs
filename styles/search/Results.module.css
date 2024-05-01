@@ -1,0 +1,25 @@
+.main {
+  display: flex;
+  flex-flow: column;
+  overflow: scroll;
+  padding: 0 16px;
+  width: 398px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.searchBar{
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  background-color: var(--bright-af);
+  border-radius: 16px;
+  margin-bottom: 20px;
+  filter: drop-shadow(var(--drop-shadow-2-2-16));
+}
+
+.filterSection {
+  display: flex;
+  flex-flow: row;
+}

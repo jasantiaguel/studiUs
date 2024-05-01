@@ -4,6 +4,7 @@
   height: 148px;
   border-radius: 16px;
   background-color: var(--med-green);
+  filter: drop-shadow(var(--drop-shadow-2-2-16));
 }
 
 .overCard {
