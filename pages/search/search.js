@@ -7,7 +7,7 @@ import { groups } from "@/data/groups";
 import Image from "next/image";
 import Tag from "@/components/Tag";
 import GroupCard from "@/components/GroupCard";
-import SubjectSearchCard from "@/components/Subject Search Card";
+import SubjectSearchCard from "@/components/SubjectSearchCard";
 
 import Map from "@/components/Map";
 
