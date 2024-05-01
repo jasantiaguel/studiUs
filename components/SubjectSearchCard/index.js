@@ -14,7 +14,7 @@ export default function SubjectSearchCard({ title }) {
   return(
     <Link 
       onClick={handleSubjectSelect} 
-      href={{ pathname: "/search/results", query: { subject: JSON.stringify(selected) } }}
+      href={{ pathname: "/search/results", query: { subject: title } }}
       style={{textDecoration: 'none'}}
     >
       <section className={styles.fullCard}>
