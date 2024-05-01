@@ -2,8 +2,7 @@
     display: flex;
     flex-flow: column;
     height: 100%;
-    padding: 16px;
-    background-image: url("/images/graphic.topo2.svg");
+    padding: 0 16px;
     width: 398px;
 }
 

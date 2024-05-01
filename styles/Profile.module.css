@@ -14,6 +14,7 @@
     padding: 0 16px;
     border-radius: 0 0 0 24px;
     z-index: 1;
+    filter: drop-shadow(var(--drop-shadow-4-8-32));
 }
 
 .navbarButtons {

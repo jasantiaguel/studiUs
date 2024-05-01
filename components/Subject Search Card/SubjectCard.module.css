@@ -1,0 +1,22 @@
+.fullCard {
+  position: relative;
+  width: 191px;
+  height: 148px;
+  border-radius: 16px;
+  background-color: var(--med-green);
+}
+
+.overCard {
+  position: relative;
+  margin-right: 207px;
+  width: 191px;
+  height: 119px;
+  border-radius: 16px 16px 0 16px;
+  background-color: var(--bright-af);
+}
+
+.subjectTitle {
+  font-weight: var(--font-weight-bold); 
+  color: var(--bright-af);
+  margin: 4px 0 0 16px;
+}

@@ -78,7 +78,7 @@
   --white-shaded-85: #DFE9DFD9; /* 85% opacity */
 
   /****"DROP-SHADOW"****/
-  --drop-shadow-2-2-16: 2px 2px 16px #2E384D59;
+  --drop-shadow-2-2-16: 2px 2px 8px #2E384D59;
   --drop-shadow-4-8-32: 4px 8px 32px #2E384D59;
 
   /****"BACKDROP-BLUR"****/

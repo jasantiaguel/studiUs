@@ -9,6 +9,7 @@
 .active {
     background-color: var(--med-green);
     color: var(--bright-af);
+    filter: drop-shadow(var(--drop-shadow-2-2-16));
 }
 .active:hover {
     background-color: var(--med-green-85);
@@ -16,6 +17,7 @@
 
 .inactive {
     background-color: var(--bright-af-75);
+    filter: drop-shadow(var(--drop-shadow-2-2-16));
 }
 .inactive:hover{
     background-color: var(--bright-af);

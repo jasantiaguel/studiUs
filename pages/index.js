@@ -16,14 +16,14 @@ export default function Home() {
   
   return (
     <div className="frame">
-      <div className={styles.bgImage}>
+      {/* <div className={styles.bgImage}>
         <Image 
           src="/images/topographic/graphic.topo4.svg" 
           width={755} 
           height={1095} 
           className={styles.bgTopo}
         />
-      </div>
+      </div> */}
       <HeadArea/>
       <main className={styles.main}>
         <Header name="Home"/>
@@ -60,7 +60,7 @@ export default function Home() {
             return <GroupCard group={group}/>
           })
         }
-        <h2>Upcoming</h2>
+        <h2 style={{margin: '8px 0 16px'}}>Upcoming</h2>
         {
           schedData && schedData.map((schedGroups) => {
             return <GroupCard group={schedGroups}/>
