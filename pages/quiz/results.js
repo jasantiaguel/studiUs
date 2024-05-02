@@ -10,7 +10,8 @@ import { useRouter } from "next/router";
 
 export default function Results() {
     const router = useRouter();
-    const results = JSON.parse(router.query.results);
+    let results = [0,0,0,0];
+    if (router.query.results) results = JSON.parse(router.query.results);
     let total = 0;
     results.forEach((result) => {
         total += result.value;
@@ -29,6 +30,7 @@ export default function Results() {
         if (LEITNER == max) return {method: "Leitner", percentage: LEITNER};
         if (RETRIEVAL == max) return {method: "Retrieval", percentage: RETRIEVAL};
         if (FEYNMAN == max) return {method: "Feynman", percentage: FEYNMAN};
+        return {method: "None", percentage: 0};
     }
 
     let winner = determineMethod();
