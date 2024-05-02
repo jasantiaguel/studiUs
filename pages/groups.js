@@ -8,6 +8,7 @@ import { groups } from "@/data/groups";
 import { useState } from "react";
 import Button from "@/components/Button";
 import CreateOverlay from "@/components/CreateOverlay";
+import Image from "next/image";
 
 export default function Groups() {  
   const [groupData, setGroupData] = useState(groups);
@@ -31,6 +32,14 @@ export default function Groups() {
 
   return(
       <div className="frame">
+        <div className={styles.bgImage}>
+        <Image 
+          src="/images/topographic/graphic.topo2.svg" 
+          width={656} 
+          height={748} 
+          className={styles.bgTopo}
+        />
+      </div>
         <HeadArea/>
         <main className={styles.main}>
           <Header name="Your Groups"/>
@@ -40,6 +49,7 @@ export default function Groups() {
             buttonSpace="216px"
             buttonText="Explore"
             path="/"
+            bgImage="/images/groups.banner-bg.png"
           />
           <h2 style={{margin: '0 0 16px'}}>Joined</h2>
           {

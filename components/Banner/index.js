@@ -3,10 +3,10 @@ import Button from "../Button";
 import Link from "next/link";
 import { useState } from "react";
 
-export default function Banner({title1, title3, body, buttonSpace, buttonText, path=""}) {
+export default function Banner({title1, title3, buttonSpace, buttonText, path="", bgImage}) {
   return(
     <section className={styles.bannerSection}>
-      <div className={styles.bannerBg}>
+      <div className={styles.bannerBg} style={{backgroundImage: `url(${bgImage})`}}>
         <p style={{
           fontSize: "var(--title-3)", 
           margin: "24px 0 0",

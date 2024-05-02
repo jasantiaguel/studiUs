@@ -93,7 +93,15 @@ export default function Card({group, todo=null, returnGroup=null}) {
                 <div className={styles.icons}>
                     {
                         group.members.map(() => {
-                            return <div style={{backgroundColor: "gray", width: "28px", height: "28px", borderRadius: "32px"}}></div>
+                            return <div 
+                                        style={{
+                                        backgroundImage: "url('/images/icon.profile-filled-small.svg')", 
+                                        backgroundPosition: "center",
+                                        width: "28px", 
+                                        height: "28px", 
+                                        borderRadius: "32px"
+                                        }}>
+                                    </div>
                         })
                     }
                 </div>

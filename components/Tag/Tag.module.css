@@ -4,5 +4,4 @@
     font-size: var(--caption-1);
     border-radius: 16px;
     z-index: 1;
-    filter: drop-shadow(var(--drop-shadow-2-2-16));
 }

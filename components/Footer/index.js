@@ -34,7 +34,7 @@ export default function Footer({bdRadius}) {
               image="/images/icon.quiz-selected.svg" 
               activeImage="/images/icon.quiz.svg" 
               path="/quiz/home"
-              width={50}
+              width={80}
               height={50}
               activeHeight={41}
             />

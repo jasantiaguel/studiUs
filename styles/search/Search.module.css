@@ -8,6 +8,19 @@
   -ms-overflow-style: none;
 }
 
+.bgImage {
+  position: absolute;
+  width: 430px;
+  height: 932px;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bgTopo {
+  position: absolute;
+  transform: translate(-32%, 0);
+}
+
 .searchBar{
   display: flex;
   padding-top: 10px;
@@ -22,10 +35,11 @@
 .filterSection {
   display: flex;
   flex-flow: row;
+  gap: 8px;
 }
 
 .subjectSection {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;;
+  gap: 16px;
 }

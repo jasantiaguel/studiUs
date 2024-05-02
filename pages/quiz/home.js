@@ -39,6 +39,11 @@ export default function Quiz() {
                     <p>More information from credible sources!</p>
                     <Button text="Read More"/>
                 </div>
+
+                {/* This is a filler section to make the bottom of page not cut off */}
+                <section className={styles.bottomFiller} style={{margin: '120px 0'}}>
+                <p> </p>
+                </section>
             </div>
             <Footer/>
         </div>

@@ -7,7 +7,6 @@ export default function Tag({
     const typeStyles = {
         tag: {
             padding: '4px 12px',
-            margin: '0 2px',
             fontSize: 'var(--caption-1)',
             borderRadius: '16px',
             textColor: 'var(--dark-green)'
@@ -15,15 +14,15 @@ export default function Tag({
         filter: {
             fontSize: 'var(--sub-body)',
             padding: '8px 18px',
-            margin: '0 8px 0 0',
-            backgroundColor: 'var(--bright-af-75)',
+            backgroundColor: 'var(--bright-af)',
+            filter: 'drop-shadow(var(--drop-shadow-2-2-16))'
         },
         profileTag: {
             fontSize: 'var(--sub-body)',
             padding: '8px 18px',
-            margin: '0 8px 0 0',
             backgroundColor: 'var(--med-green)',
             textColor: 'var(--bright-af)',
+            filter: 'drop-shadow(var(--drop-shadow-2-2-16))'
         }
     }
 
@@ -36,6 +35,7 @@ export default function Tag({
                 margin: typeStyles[type].margin,
                 backgroundColor: typeStyles[type].backgroundColor,
                 color: typeStyles[type].textColor,
+                filter: typeStyles[type].filter
             }}
         >
             {text}
