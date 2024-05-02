@@ -23,7 +23,7 @@ export default function CreateOverlay({onclick, newGroup}) {
 
     //location
     const [location, setLocation] = useState({
-        name: "No Location",
+        name: "BCIT Library",
         coords: {centerPoint: "49.249234265894394,-123.00899574963694", circlePoint: "49.24936795802063,-123.00199080213194"}
     })
     let locations = [
