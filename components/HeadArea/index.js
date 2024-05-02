@@ -2,7 +2,7 @@ import Head from "next/head";
 export default function HeadArea() {
     return(
         <Head>
-            <title>studiUs</title>
+            <title>StudiUs</title>
             <meta name="description" content="StudiUs"/>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="icon" href="/images/logo/favicon.svg" />
