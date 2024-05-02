@@ -22,16 +22,15 @@ export default function profile() {
                 
             <div className={styles.main}>
                 <section className={styles.profileSection}>
-                    <Header bgColor='var(--bright-af)'/>
+                    <Header name='ㅤ' bgColor='var(--bright-af)'/>
                     {/* Replace below with profile photo */}
                     <div style={{
-                        backgroundColor: "gray",
                         backgroundImage: "url('/images/profile.alira-photo.png')", 
                         backgroundPosition: "center",
                         width: "74px", 
                         height: "74px", 
                         borderRadius: "74px",
-                        margin: '-40px 0 0',
+                        margin: '-72px 0 0',
                         zIndex: '1',
                         }}>
                     </div>

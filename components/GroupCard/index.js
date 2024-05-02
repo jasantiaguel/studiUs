@@ -71,7 +71,7 @@ export default function Card({group, todo=null, returnGroup=null}) {
                     <div 
                         className={styles.timeBlock} 
                         style={isActive?{backgroundColor: "var(--bright-af-75)", 
-                        color: "black"}:{backgroundColor: "var(--med-green-85)", 
+                        color: "var(--dark-green"}:{backgroundColor: "var(--med-green-85)", 
                         color: "white"}}
                     >
                         <p style={{fontWeight: "var(--font-weight-bold)"}}>{day}</p>

@@ -3,7 +3,7 @@ export default function HeadArea() {
     return(
         <Head>
             <title>studiUs</title>
-            <meta name="description" content="studiUs"/>
+            <meta name="description" content="StudiUs"/>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="icon" href="/images/logo/favicon.svg" />
             <link rel="preconnect" href="https://fonts.googleapis.com"/>
