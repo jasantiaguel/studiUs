@@ -16,20 +16,21 @@ export default function Home() {
   
   return (
     <div className="frame">
-      {/* <div className={styles.bgImage}>
+      <div className={styles.bgImage}>
         <Image 
           src="/images/topographic/graphic.topo4.svg" 
           width={755} 
           height={1095} 
           className={styles.bgTopo}
         />
-      </div> */}
+      </div>
       <HeadArea/>
       <main className={styles.main}>
         <Header name="Home"/>
         <section className={styles.homeWelcomeSection}>
           <div style={{
-            backgroundColor: "gray", 
+            backgroundColor: "gray",
+            backgroundImage: "url('/images/greeting.profile-photo.png')", 
             width: "40px", 
             height: "40px", 
             borderRadius: "40px",
@@ -47,6 +48,7 @@ export default function Home() {
           buttonSpace="164px"
           buttonText="StudiUs Quiz"
           path="/quiz/home"
+          bgImage="/images/home.banner-bg.png"
         />
         <section className={styles.filterSection}>
           <Tag text='Sort' type='filter'/>

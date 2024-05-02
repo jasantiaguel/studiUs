@@ -10,6 +10,19 @@
     display: none;
 }
 
+.bgImage {
+    position: absolute;
+    width: 430px;
+    height: 932px;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.bgTopo {
+    position: absolute;
+    transform: translate(-21%, 10%);
+}
+
 .createButton {
     display: flex;
     justify-content: center;

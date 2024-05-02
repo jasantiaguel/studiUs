@@ -22,4 +22,5 @@
 .filterSection {
   display: flex;
   flex-flow: row;
+  gap: 8px;
 }

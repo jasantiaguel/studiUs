@@ -18,6 +18,20 @@ export default function CreateOverlay({onclick, newGroup}) {
     const [date, setDate] = useState(todaysDate());
     const [time, setTime] = useState(todaysTime());
 
+    //members
+    const [members, setMembers] = useState(["Jerome"]);
+
+    //location
+    const [location, setLocation] = useState({
+        name: "No Location",
+        coords: {centerPoint: "49.249234265894394,-123.00899574963694", circlePoint: "49.24936795802063,-123.00199080213194"}
+    })
+    let locations = [
+        "BCIT Library",
+        "Burnaby Public Library",
+        "Starbucks"
+    ]
+
     function todaysTime() {
         let today = new Date();
         let minutes = ''+(today.getMinutes());
@@ -41,19 +55,9 @@ export default function CreateOverlay({onclick, newGroup}) {
             description: description,
             tags: tags,
             time: new Date(parseInt(date.substring(0, 4)), parseInt(date.substring(5, 7))-1, parseInt(date.substring(8, 10)), parseInt(time.substring(0, 2)), parseInt(time.substring(3, 5))), //YYYY, MM, DD, HOURS, MINUTES, SECONDS
-            location: "BCIT Library",
-            members: ["Jerome"],
-            status: function() {
-                let rightNow = new Date();
-                let diff = this.time.getTime() - rightNow.getTime();
-                if (diff < 0) {
-                    return "In Progress";
-                }
-                return `Starts in ${
-                    Math.round((Math.floor(diff/10000)*10)/60/60)
-                } hours`           
-            },
-            coords: {centerPoint: "49.249234265894394,-123.00899574963694", circlePoint: "49.24936795802063,-123.00199080213194"}
+            members: members,
+            location: location.name,
+            coords: location.coords
         })
     }
 
@@ -80,6 +84,12 @@ export default function CreateOverlay({onclick, newGroup}) {
         }
     }
 
+    function getCoords(locationName) {
+        if (locationName === "BCIT Library") return {centerPoint: "49.249234265894394,-123.00899574963694", circlePoint: "49.24936795802063,-123.00199080213194"};
+        if (locationName === "Burnaby Public Library") return {circlePoint: "49.22830066960166,-123.00645433238849", centerPoint: "49.23294399299716,-123.01548055074332"};
+        if (locationName === "Starbucks") return {circlePoint: "49.256500573312074,-123.00687841485916", centerPoint: "49.25503999698177,-122.99757892021863"};
+    }
+
     return(
         <>
             <div className={styles.container}>
@@ -98,6 +108,16 @@ export default function CreateOverlay({onclick, newGroup}) {
                 </div>
                 <label>Location & Time</label>
                 <Map/>
+                <select onChange={(e) => setLocation({
+                    name: e.currentTarget.value,
+                    coords: getCoords(e.currentTarget.value)
+                })}>
+                    {
+                        locations.map((location) => {
+                            return <option value={location}>{location}</option>
+                        })
+                    }
+                </select>
                 <input type="date" value={date} onChange={(e) => setDate(e.currentTarget.value)}/>
                 <input type="time" value={time} onChange={(e) => setTime(e.currentTarget.value)}/>
                 <button onClick={handleClick}>Create group</button>

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Button from "@/components/Button";
 import HeadArea from '@/components/HeadArea';
 import Tag from '@/components/Tag';
+import SubjectSearchCard from '@/components/SubjectSearchCard';
 
 export default function profile() {
     return (
@@ -18,27 +19,31 @@ export default function profile() {
                 />
             </div>
             <HeadArea/>
+                
+            <div className={styles.main}>
                 <section className={styles.profileSection}>
-                <Header bgColor='var(--bright-af)'/>
-                {/* Replace below with profile photo */}
-                <div style={{
-                    backgroundColor: "gray", 
-                    width: "74px", 
-                    height: "74px", 
-                    borderRadius: "74px",
-                    margin: '-40px 0 0',
-                    zIndex: '1',
+                    <Header bgColor='var(--bright-af)'/>
+                    {/* Replace below with profile photo */}
+                    <div style={{
+                        backgroundColor: "gray",
+                        backgroundImage: "url('/images/profile.alira-photo.png')", 
+                        backgroundPosition: "center",
+                        width: "74px", 
+                        height: "74px", 
+                        borderRadius: "74px",
+                        margin: '-40px 0 0',
+                        zIndex: '1',
+                        }}>
+                    </div>
+                    <h1 style={{
+                        fontSize: 'var(--large-title)',
+                        margin: '16px 0 0'
                     }}>
-                </div>
-                <h1 style={{
-                    fontSize: 'var(--large-title)',
-                    margin: '16px 0 0'
-                }}>
-                    Alira Ivanova
-                </h1>
-                <p style={{margin: '0'}}>BCIT</p>
-                <p style={{margin: '0'}}>Digital Design & Development</p>
-                <p style={{margin: '8px 0 0', color: 'var(--med-green)'}}>She/Her - It's a beautiful day to code!</p>
+                        Alira Ivanova
+                    </h1>
+                    <p style={{margin: '0'}}>BCIT</p>
+                    <p style={{margin: '0'}}>Digital Design & Development</p>
+                    <p style={{margin: '8px 0 0', color: 'var(--med-green)'}}>She/Her - It's a beautiful day to code!</p>
                     <section className={styles.profileTags}>
                         <Tag text="UI/UX" type="profileTag"/>
                         <Tag text="JavaScript" type="profileTag"/>
@@ -46,20 +51,26 @@ export default function profile() {
                         <Tag text="Coffee" type="profileTag"/>
                     </section>
                 </section>
-            <div className={styles.main}>
+                <h2 style={{margin: '32px 0 16px', width: '398px'}}>Study Hours</h2>
                 <section className={styles.studyHourSection}>
-                    <h2 style={{margin: '32px 0 16px'}}>Study Hours</h2>
                     {/* Replace below with graph */}
                     <div style={{
-                        backgroundColor: "gray", 
+                        backgroundImage: "url('/images/card.study-time.svg')",
                         width: "398px", 
                         height: "204px", 
                         borderRadius: "16px",
                         }}>
                     </div>
                 </section>
+                <h2 style={{margin: '32px 0 16px', width: '398px'}}>Top Subjects</h2>
                 <section className={styles.topSubjectsSection}>
-                    <h2 style={{margin: '32px 0 16px'}}>Top Subjects</h2>
+                    <SubjectSearchCard title='Computer Science'/>
+                    <SubjectSearchCard title='Front End Development'/>
+                </section>
+
+                {/* This is a filler section to make the bottom of page not cut off */}
+                <section className={styles.bottomFiller} style={{margin: '88px 0'}}>
+                <p> </p>
                 </section>
             </div>
             <div className={styles.navbarButtons}>

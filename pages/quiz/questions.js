@@ -172,9 +172,6 @@ export default function Questions() {
                             </>
                         }
                     </div>
-                    {
-                        popup && <InfoPopUp methodName={answerSelected.method} onclick={() => setPopup(null)}/>
-                    }
                 </div>
                 <div className={styles.progressContainer}>
                     <button tabIndex={9} onClick={handleBack} className={styles.buttonOverride}>
@@ -183,6 +180,9 @@ export default function Questions() {
                     <ProgressBar progress={currentQuestion} length={questions.length} />
                 </div>
             </div>
+            {
+                popup && <InfoPopUp methodName={answerSelected.method} onclick={() => setPopup(null)}/>
+            }
             <Footer />
         </div>
     )

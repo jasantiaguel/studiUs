@@ -2,6 +2,7 @@
     display: flex;
     flex-flow: column;
     overflow: scroll;
+    align-items: center;
 }
 
 .main::-webkit-scrollbar {
@@ -29,7 +30,7 @@
     left: 0;
     right: 0;
     background-color: var(--bright-af);
-    gap: 8px;
+    gap: 16px;
     top: 770px;
     z-index: 3;
 }
@@ -38,6 +39,7 @@
     display: flex;
     flex-flow: row;
     margin: 16px 0;
+    gap: 8px;
 }
 
 .bgImage {
@@ -46,4 +48,10 @@
     height: 932px;
     z-index: 0;
     overflow: hidden;
+}
+
+.topSubjectsSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
 }
