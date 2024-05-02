@@ -3,7 +3,7 @@ import HeadArea from "@/components/HeadArea";
 
 import Map from "@/components/Map";
 
-export default function Search() {
+export default function Onboard() {
   return(
     <div className="frame">
       <HeadArea/>
