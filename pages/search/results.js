@@ -39,13 +39,13 @@ export default function Results() {
           <Tag text='Food' type='filter'/>
           <Tag text='Quiet' type='filter'/>
         </section>
-        <h2 style={{margin: '32px 0 16px'}}>Results for: {selectedSubject}</h2>
+        <h2 style={{margin: '32px 0'}}>Study Groups for "{selectedSubject}"</h2>
         <section className={styles.searchResultsContainer}>
           {
             groupData.length > 0 ? (
               groupData.map(group => <GroupCard group={group} />)
             ) : (
-              <p>Oops! No groups for this subject yet.</p>
+              <p style={{margin: '0'}}>Oops! No groups for this subject yet.</p>
             )
           }
         </section>

@@ -11,16 +11,16 @@ export default function Footer({bdRadius}) {
               activeImage="/images/icon.home.svg" 
               path="/"
               width={35}
-              height={50}
-              activeHeight={41}
+              height={51}
+              activeHeight={42}
             />
             <NavTab 
               image="/images/icon.search-selected.svg" 
               activeImage="/images/icon.search.svg" 
               path="/search/search"
               width={41}
-              height={50}
-              activeHeight={41}
+              height={51}
+              activeHeight={42}
             />
             <NavTab 
               image="/images/icon.groups-selected.svg" 
@@ -43,8 +43,8 @@ export default function Footer({bdRadius}) {
               activeImage="/images/icon.profile.svg" 
               path="/profile"
               width={38}
-              height={50}
-              activeHeight={41}
+              height={51}
+              activeHeight={42}
             />
         </div>
     )
