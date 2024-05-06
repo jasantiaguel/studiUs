@@ -23,7 +23,7 @@ export const groups = [
     {
         title: "JavaCrisps",
         description: "Looking for chill peeps to practice some coding, preferably JavaScript! Exams coming up and I needa prepaaare. Anyone is welcome!",
-        tags: ["Front End", "JavaScript", "Coding", "Coffee"],
+        tags: ["Front End Development", "JavaScript", "Coding", "Coffee"],
         time: new Date(2024, 4, 2, 14, 0),
         location: "BCIT Library",
         members: ["Jon", "Jerome"],

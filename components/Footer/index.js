@@ -2,10 +2,10 @@ import NavTab from "@/components/NavTab"
 import styles from "./Footer.module.css"
 import { usePathname } from "next/navigation";
 
-export default function Footer({bdRadius}) {
+export default function Footer({bdRadius, dshadow}) {
 
     return(
-        <div className={styles.footer} style={{borderRadius: bdRadius}}>
+        <div className={styles.footer} style={{borderRadius: bdRadius, filter: dshadow}}>
             <NavTab 
               image="/images/icon.home-selected.svg" 
               activeImage="/images/icon.home.svg" 

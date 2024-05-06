@@ -7,13 +7,14 @@
   width: 398px;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  z-index: 2;
 }
 
 .bgImage {
   position: absolute;
   width: 430px;
   height: 932px;
-  z-index: 0;
+  z-index: 1;
   overflow: hidden;
 }
 
@@ -38,7 +39,6 @@
   flex-flow: row;
   gap: 8px;
   width: 432px;
-  filter: drop-shadow(var(--drop-shadow-2-2-16));
 }
 
 .filterSectionScroll {

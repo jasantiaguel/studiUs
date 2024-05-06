@@ -5,6 +5,7 @@
     width: 430px;
     height: 88px;
     background-color: var(--bright-af);
+    filter: drop-shadow(var(--drop-shadow-4-8-32));
     top: 844px;
     border-radius: 24px 24px 0 0;
     z-index: 2;

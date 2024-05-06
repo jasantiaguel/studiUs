@@ -19,7 +19,6 @@ export default function profile() {
                 />
             </div>
             <HeadArea/>
-                
             <div className={styles.main}>
                 <section className={styles.profileSection}>
                     <Header name='ㅤ' bgColor='var(--bright-af)'/>
@@ -85,7 +84,7 @@ export default function profile() {
                         bgColor='var(--bright-blue)'
                     />
                 </div>
-            <Footer bdRadius='0'/>
+            <Footer bdRadius='0' dshadow='drop-shadow(var(--drop-shadow-4-80-32))'/>
         </div>
     )
 }

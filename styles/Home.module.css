@@ -7,6 +7,7 @@
   width: 398px;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  z-index: 2;
 }
 
 .main::-webkit-scrollbar {
@@ -56,7 +57,7 @@
   position: absolute;
   width: 430px;
   height: 932px;
-  z-index: 0;
+  z-index: 1;
   overflow: hidden;
 }
 

@@ -9,7 +9,8 @@ export default function Button({
         bgColorHover='var(--dark-blue)', 
         size='default', width="auto", 
         tabIndex, 
-        onKeyDown
+        onKeyDown,
+        zIndex
     }) {
     const sizeStyles = {
         default: {
@@ -55,7 +56,7 @@ export default function Button({
                 color: textColor,
                 width: width,
                 borderRadius: sizeStyles[size].borderRadius,
-                fontSize: sizeStyles[size].fontSize
+                fontSize: sizeStyles[size].fontSize,
             }}
         >
             {text}
