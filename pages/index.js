@@ -51,10 +51,15 @@ export default function Home() {
           bgImage="/images/home.banner-bg.png"
         />
         <section className={styles.filterSection}>
-          <Tag text='Sort' type='filter'/>
-          <Tag text='Music' type='filter'/>
-          <Tag text='Anime' type='filter'/>
-          <Tag text='Food' type='filter'/>
+          <section className={styles.filterSectionScroll}>
+            <Tag text='Sort' type='filter'/>
+            <Tag text='Music' type='filter'/>
+            <Tag text='Anime' type='filter'/>
+            <Tag text='Food' type='filter'/>
+            <Tag text='Food' type='filter'/>
+            <Tag text='Food' type='filter'/>
+            <Tag text='Pizza' type='filter'/>
+          </section>
         </section>
         <h2 style={{margin: '32px 0 16px'}}>Today</h2>
         {

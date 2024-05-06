@@ -15,7 +15,7 @@ export default function Tag({
             fontSize: 'var(--sub-body)',
             padding: '8px 18px',
             backgroundColor: 'var(--bright-af)',
-            filter: 'drop-shadow(var(--drop-shadow-2-2-16))'
+            // filter: 'drop-shadow(var(--drop-shadow-2-2-16))'
         },
         profileTag: {
             fontSize: 'var(--sub-body)',

@@ -1,7 +1,8 @@
 .main {
   display: flex;
   flex-flow: column;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   padding: 0 16px;
   width: 398px;
   scrollbar-width: none;
@@ -31,7 +32,24 @@
 .filterSection {
   display: flex;
   flex-flow: row;
+  width: 432px;
   gap: 8px;
+}
+
+.filterSectionScroll {
+  position: relative;
+  left: -16px;
+  padding: 0 16px;
+  display: flex;
+  flex-flow: row;
+  gap: 8px;
+  width: 100%;
+  overflow-x: scroll;
+  filter: drop-shadow(var(--drop-shadow-2-2-16));
+}
+
+.filterSectionScroll::-webkit-scrollbar {
+  display: none;
 }
 
 .bgImage {

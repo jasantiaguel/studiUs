@@ -30,11 +30,16 @@ export default function Search() {
           <Image src='/images/icon.magnifying-glass.svg' width={21.6} height={24}/>
         </div>
         <section className={styles.filterSection}>
-          <Tag text='Sort' type='filter'/>
-          <Tag text='Music' type='filter'/>
-          <Tag text='Anime' type='filter'/>
-          <Tag text='Food' type='filter'/>
-          <Tag text='Quiet' type='filter'/>
+          <section className={styles.filterSectionScroll}>
+            <Tag text='Sort' type='filter'/>
+            <Tag text='Music' type='filter'/>
+            <Tag text='Anime' type='filter'/>
+            <Tag text='Food' type='filter'/>
+            <Tag text='Quiet' type='filter'/>
+            <Tag text='Quiet' type='filter'/>
+            <Tag text='Quiet' type='filter'/>
+            <Tag text='Quiet' type='filter'/>
+          </section>
         </section>
         <h2 style={{margin: '32px 0 16px'}}>Computer & Technology</h2>
         <section className={styles.subjectSection}>
