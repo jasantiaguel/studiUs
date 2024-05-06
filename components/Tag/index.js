@@ -1,5 +1,6 @@
-import { handleClientScriptLoad } from "next/script"
 import styles from "./Tag.module.css"
+import Link from "next/link"
+import { useState } from "react"
 
 export default function Tag({
         text, 
@@ -52,8 +53,23 @@ export default function Tag({
                 {text}
             </div>
             :
-            <Link>
-            
+            <Link 
+              href={{ pathname: "/search/results", query: { subject: text } }}
+              style={{textDecoration: 'none', color: 'inherit'}}
+            >
+              <div
+                className={styles.tag} 
+                style={{ 
+                  fontSize: typeStyles[type].fontSize,
+                  padding: typeStyles[type].padding,
+                  margin: typeStyles[type].margin,
+                  backgroundColor: typeStyles[type].backgroundColor,
+                  color: typeStyles[type].textColor,
+                  filter: typeStyles[type].filter,
+                }}
+              >
+                {text}
+              </div>
             </Link>
         }
         </>
