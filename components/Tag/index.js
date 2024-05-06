@@ -1,9 +1,16 @@
+import { handleClientScriptLoad } from "next/script"
 import styles from "./Tag.module.css"
 
 export default function Tag({
         text, 
         type='tag', 
     }) {
+    const handleClick = () => {
+        if (type="filter") {
+            
+        }
+    }
+
     const typeStyles = {
         tag: {
             padding: '4px 12px',
@@ -27,18 +34,27 @@ export default function Tag({
     }
 
     return (
-        <div 
-            className={styles.tag} 
-            style={{
-                fontSize: typeStyles[type].fontSize,
-                padding: typeStyles[type].padding,
-                margin: typeStyles[type].margin,
-                backgroundColor: typeStyles[type].backgroundColor,
-                color: typeStyles[type].textColor,
-                filter: typeStyles[type].filter
-            }}
-        >
-            {text}
-        </div>
+        <>
+        {
+            type !== "filter" ?
+            <div 
+                className={styles.tag} 
+                style={{
+                    fontSize: typeStyles[type].fontSize,
+                    padding: typeStyles[type].padding,
+                    margin: typeStyles[type].margin,
+                    backgroundColor: typeStyles[type].backgroundColor,
+                    color: typeStyles[type].textColor,
+                    filter: typeStyles[type].filter
+                }}
+            >
+                {text}
+            </div>
+            :
+            <Link>
+            
+            </Link>
+        }
+        </>
     )
 }

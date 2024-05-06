@@ -10,7 +10,6 @@ export const groups = [
         location: "BCIT Library",
         members: ["Jon", "Jerome", "Nathan"],
         coords: {centerPoint: "49.249234265894394,-123.00899574963694", circlePoint: "49.24936795802063,-123.00199080213194"},
-        category: "Chemistry"
     },
     {
         title: "Mega Marketers",
