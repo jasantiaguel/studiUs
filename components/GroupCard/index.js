@@ -6,6 +6,17 @@ import styles from "./GroupCard.module.css";
 export default function Card({group, todo=null, returnGroup=null}) {
     const [isActive, setIsActive] = useState(false);
     const [popup, setPopup] = useState(false);
+    // const [tags, setTags] = useState(group.tags);
+    // const [tagChars, setTagChars] = useState(group.tags.toString());
+    const TAGLIMIT = 35;
+
+    function processTags(arr) {
+        let temp = [...arr];
+        if (arr.toString().length > TAGLIMIT) {
+            temp.unshift("...");
+        }
+        return temp;
+    }
 
     useEffect(() => {
         if (getStatus(group.time) === "In Progress") setIsActive(true);
@@ -80,7 +91,7 @@ export default function Card({group, todo=null, returnGroup=null}) {
                 </div> 
                 <div className={styles.tags}>
                     {
-                        group.tags.map((tag) => {
+                        processTags(group.tags).map((tag) => {
                             return(
                                 <Tag text={tag} type='tag'/>
                             )
