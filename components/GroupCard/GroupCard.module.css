@@ -27,7 +27,7 @@
     display: flex;
     flex-flow: row wrap;
     gap: 4px;
-    overflow-y: scroll;
+    overflow-y: hidden;
     height: 24px;
 }
 
