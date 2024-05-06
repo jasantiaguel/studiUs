@@ -15,17 +15,23 @@ export default function Results() {
   const router = useRouter();
   const selectedSubject = router.query.subject;
 
-  const [groupData, setGroupData] = useState(groups);
-  
-  useEffect(() => {
-    const filteredGroups = groupData.filter(groupData =>
-    groupData.tags.includes(selectedSubject)
-  );
-  setGroupData(filteredGroups);
-  }, [selectedSubject]);
+  function filter(groups) {
+    const filteredGroups = groups.filter(groups =>
+    groups.tags.includes(selectedSubject)
+    );
+    return filteredGroups;
+  }
 
   return(
     <div className="frame">
+      <div className={styles.bgImage}>
+        <Image 
+          src="/images/topographic/graphic.topo1.svg" 
+          width={1201} 
+          height={961} 
+          className={styles.bgTopo}
+        />
+      </div>
       <HeadArea/>
       <main className={styles.main}>
         <Header name="Search"/>
@@ -33,19 +39,24 @@ export default function Results() {
           <Image src='/images/icon.magnifying-glass.svg' width={21.6} height={24}/>
         </div>
         <section className={styles.filterSection}>
-          <Tag text='Sort' type='filter'/>
-          <Tag text='Music' type='filter'/>
-          <Tag text='Anime' type='filter'/>
-          <Tag text='Food' type='filter'/>
-          <Tag text='Quiet' type='filter'/>
+          <section className={styles.filterSectionScroll}>
+            <Tag text='Sort' type='filter'/>
+            <Tag text='Music' type='filter'/>
+            <Tag text='Anime' type='filter'/>
+            <Tag text='Food' type='filter'/>
+            <Tag text='Quiet' type='filter'/>
+            <Tag text='Quiet' type='filter'/>
+            <Tag text='Quiet' type='filter'/>
+            <Tag text='Quiet' type='filter'/>
+          </section>
         </section>
-        <h2 style={{margin: '32px 0'}}>Study Groups for "{selectedSubject}"</h2>
+        <h2 style={{margin: '32px 0', lineHeight: '150%'}}>Study Groups for "{selectedSubject}"</h2>
         <section className={styles.searchResultsContainer}>
           {
-            groupData.length > 0 ? (
-              groupData.map(group => <GroupCard group={group} />)
+            filter(groups).length > 0 ? (
+              filter(groups).map(group => <GroupCard group={group} />)
             ) : (
-              <p style={{margin: '0'}}>Oops! No groups for this subject yet.</p>
+              <p style={{margin: '0', lineHeight: '150%'}}>Oops, no groups have been scheduled for this subject yet!</p>
             )
           }
         </section>

@@ -80,6 +80,7 @@
   /****"DROP-SHADOW"****/
   --drop-shadow-2-2-16: 2px 2px 8px #2E384D59;
   --drop-shadow-4-8-32: 4px 8px 32px #2E384D59;
+  --drop-shadow-4-80-32: 4px -68px 32px #2E384D59;
 
   /****"BACKDROP-BLUR"****/
   --backdrop-blur: blur(8px)

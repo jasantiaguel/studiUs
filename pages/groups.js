@@ -77,7 +77,7 @@ export default function Groups() {
               onclick={() => setShowCreate(true)}
             />
         </div>
-        <Footer bdRadius={0}/>
+        <Footer bdRadius={0} dshadow='4px -32px 32px #2E384D59;'/>
       </div>
   )
 }

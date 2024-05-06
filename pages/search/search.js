@@ -73,7 +73,7 @@ export default function Search() {
           <p> </p>
         </section>
       </main>
-      <Footer/>
+      <Footer dshadow='4px -160px 32px #2E384D59'/>
     </div>
   )
 }

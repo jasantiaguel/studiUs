@@ -6,6 +6,20 @@
   width: 398px;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  z-index: 2;
+}
+
+.bgImage {
+  position: absolute;
+  width: 430px;
+  height: 932px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.bgTopo {
+  position: absolute;
+  transform: translate(-32%, 0);
 }
 
 .searchBar{
@@ -23,4 +37,21 @@
   display: flex;
   flex-flow: row;
   gap: 8px;
+  width: 432px;
+}
+
+.filterSectionScroll {
+  position: relative;
+  left: -16px;
+  padding: 0 16px;
+  display: flex;
+  flex-flow: row;
+  gap: 8px;
+  width: 100%;
+  overflow-x: scroll;
+  filter: drop-shadow(var(--drop-shadow-2-2-16));
+}
+
+.filterSectionScroll::-webkit-scrollbar {
+  display: none;
 }
