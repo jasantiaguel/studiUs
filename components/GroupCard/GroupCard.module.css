@@ -25,9 +25,10 @@
 
 .tags {
     display: flex;
-    flex-flow: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     gap: 4px;
+    overflow-y: scroll;
+    height: 24px;
 }
 
 .active, .inactive {
