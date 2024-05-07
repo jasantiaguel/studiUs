@@ -3,7 +3,7 @@ import Tag from "@/components/Tag";
 import { useEffect, useState } from "react";
 import styles from "./GroupCard.module.css";
 
-export default function Card({group, todo=null, returnGroup=null}) {
+export default function Card({group, todo=null, returnGroup=null, selectedTags}) {
     const [isActive, setIsActive] = useState(false);
     const [popup, setPopup] = useState(false);
     // const [tags, setTags] = useState(group.tags);
@@ -93,7 +93,7 @@ export default function Card({group, todo=null, returnGroup=null}) {
                     {
                         processTags(group.tags).map((tag) => {
                             return(
-                                <Tag text={tag} type='tag'/>
+                                <Tag text={tag} type={selectedTags.includes(tag) ? 'selected' : 'tag'}/>
                             )
                         })
                     }

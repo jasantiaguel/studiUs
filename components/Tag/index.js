@@ -26,6 +26,13 @@ export default function Tag({
             borderRadius: '16px',
             textColor: 'var(--dark-green)'
         },
+        selected: {
+            padding: '4px 12px',
+            fontSize: 'var(--caption-1)',
+            borderRadius: '16px',
+            textColor: 'var(--dark-green)',
+            backgroundColor: 'var(--bright-af)',
+        },
         filter: {
             fontSize: 'var(--sub-body)',
             padding: '8px 18px',
@@ -81,6 +88,21 @@ export default function Tag({
               filter: typeStyles[type].filter
             }}
             onClick={handleClick}
+          >
+            {text}
+          </div>
+          :
+          type === "selected" ?
+          <div 
+            className={styles.tag} 
+            style={{
+              fontSize: typeStyles[type].fontSize,
+              padding: typeStyles[type].padding,
+              margin: typeStyles[type].margin,
+              backgroundColor: typeStyles[type].backgroundColor,
+              color: typeStyles[type].textColor,
+              filter: typeStyles[type].filter
+            }}
           >
             {text}
           </div>

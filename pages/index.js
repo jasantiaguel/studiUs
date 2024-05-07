@@ -72,13 +72,13 @@ export default function Home() {
         <h2 style={{margin: '32px 0 16px'}}>Today</h2>
         {
           filter(data).map((group) => {
-            return <GroupCard group={group}/>
+            return <GroupCard group={group} selectedTags={selectedTags}/>
           })
         }
         <h2 style={{margin: '8px 0 16px'}}>Upcoming</h2>
         {
           filter(schedData).map((schedGroup) => {
-            return <GroupCard group={schedGroup}/>
+            return <GroupCard group={schedGroup} selectedTags={selectedTags}/>
           })
         }
         {/* This is a filler section to make the bottom of page not cut off */}
