@@ -58,7 +58,7 @@ export default function Results() {
         <section className={styles.searchResultsContainer}>
           {
             filter(groups).length > 0 ? (
-              filter(groups).map(group => <GroupCard group={group} />)
+              filter(groups).map(group => <GroupCard group={group} selectedTags={selectedTags}/>)
             ) : (
               <p style={{margin: '0', lineHeight: '150%'}}>Oops, no groups have been scheduled for this yet!</p>
             )

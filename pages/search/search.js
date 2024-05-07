@@ -38,7 +38,7 @@ export default function Search() {
             <Tag text='Anime' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
             <Tag text='Food' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
             <Tag text='Quiet' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
-            <Tag text='Quiet' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Coffee' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
             <Tag text='Quiet' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
             <Tag text='Quiet' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
           </section>
