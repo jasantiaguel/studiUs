@@ -12,7 +12,9 @@ import SubjectSearchCard from "@/components/SubjectSearchCard";
 import Map from "@/components/Map";
 
 export default function Search() {
-  
+
+  const [selectedTags, setSelectedTags] = useState([]);
+
   return(
     <div className="frame">
       <div className={styles.bgImage}>
@@ -31,14 +33,14 @@ export default function Search() {
         </div>
         <section className={styles.filterSection}>
           <section className={styles.filterSectionScroll}>
-            <Tag text='Sort' type='filter'/>
-            <Tag text='Music' type='filter'/>
-            <Tag text='Anime' type='filter'/>
-            <Tag text='Food' type='filter'/>
-            <Tag text='Quiet' type='filter'/>
-            <Tag text='Quiet' type='filter'/>
-            <Tag text='Quiet' type='filter'/>
-            <Tag text='Quiet' type='filter'/>
+            <Tag text='Sort' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Music' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Anime' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Food' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Quiet' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Quiet' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Quiet' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Quiet' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
           </section>
         </section>
         <h2 style={{margin: '32px 0 16px'}}>Computer & Technology</h2>

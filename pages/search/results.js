@@ -15,6 +15,8 @@ export default function Results() {
   const router = useRouter();
   const selectedSubject = router.query.subject;
 
+  const [selectedTags, setSelectedTags] = useState([]);
+
   function filter(groups) {
     const filteredGroups = groups.filter(groups =>
     groups.tags.includes(selectedSubject)
@@ -40,23 +42,25 @@ export default function Results() {
         </div>
         <section className={styles.filterSection}>
           <section className={styles.filterSectionScroll}>
-            <Tag text='Sort' type='filter'/>
-            <Tag text='Music' type='filter'/>
-            <Tag text='Anime' type='filter'/>
-            <Tag text='Food' type='filter'/>
-            <Tag text='Quiet' type='filter'/>
-            <Tag text='Quiet' type='filter'/>
-            <Tag text='Quiet' type='filter'/>
-            <Tag text='Quiet' type='filter'/>
+            <Tag text='Sort' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Music' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Anime' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Food' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Quiet' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Quiet' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Quiet' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Quiet' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
           </section>
         </section>
-        <h2 style={{margin: '32px 0', lineHeight: '150%'}}>Study Groups for "{selectedSubject}"</h2>
+        <h2 style={{margin: '32px 0', lineHeight: '150%'}}>
+          Study Groups for "{selectedTags.length > 0 ? selectedTags.join(', ') : selectedSubject}"
+        </h2>
         <section className={styles.searchResultsContainer}>
           {
             filter(groups).length > 0 ? (
               filter(groups).map(group => <GroupCard group={group} />)
             ) : (
-              <p style={{margin: '0', lineHeight: '150%'}}>Oops, no groups have been scheduled for this subject yet!</p>
+              <p style={{margin: '0', lineHeight: '150%'}}>Oops, no groups have been scheduled for this yet!</p>
             )
           }
         </section>

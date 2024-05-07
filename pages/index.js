@@ -1,18 +1,26 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import Switch from "@/components/Switch";
 import GroupCard from "@/components/GroupCard";
 import Banner from "@/components/Banner";
 import styles from "@/styles/Home.module.css";
 import Tag from "@/components/Tag";
 import Image from "next/image";
-
 import { groups, schedGroups } from "@/data/groups.js";
 import HeadArea from "@/components/HeadArea";
+import { useState } from "react";
 
 export default function Home() {
   const data = groups;
   const schedData = schedGroups;
+  const [selectedTags, setSelectedTags] = useState([]);
+
+  function filter(groups) {
+    if (selectedTags.length === 0) {
+      return groups;
+    } else {
+      return groups.filter(group => group.tags.some(tag => selectedTags.includes(tag)));
+    }
+  }
   
   return (
     <div className="frame">
@@ -52,25 +60,25 @@ export default function Home() {
         />
         <section className={styles.filterSection}>
           <section className={styles.filterSectionScroll}>
-            <Tag text='Sort' type='filter'/>
-            <Tag text='Music' type='filter'/>
-            <Tag text='Anime' type='filter'/>
-            <Tag text='Food' type='filter'/>
-            <Tag text='Food' type='filter'/>
-            <Tag text='Food' type='filter'/>
-            <Tag text='Pizza' type='filter'/>
+            <Tag text='Sort' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Music' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Anime' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Food' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Food' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Food' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Pizza' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
           </section>
         </section>
         <h2 style={{margin: '32px 0 16px'}}>Today</h2>
         {
-          data && data.map((group) => {
+          filter(data).map((group) => {
             return <GroupCard group={group}/>
           })
         }
         <h2 style={{margin: '8px 0 16px'}}>Upcoming</h2>
         {
-          schedData && schedData.map((schedGroups) => {
-            return <GroupCard group={schedGroups}/>
+          filter(schedData).map((schedGroup) => {
+            return <GroupCard group={schedGroup}/>
           })
         }
         {/* This is a filler section to make the bottom of page not cut off */}

@@ -1,16 +1,23 @@
 import styles from "./Tag.module.css"
 import Link from "next/link"
-import { useState } from "react"
 
 export default function Tag({
-        text, 
-        type='tag', 
+      text, 
+      type='tag', 
+      selectedTags=[],
+      setSelectedTags
     }) {
-    const handleClick = () => {
-        if (type="filter") {
-            
+
+    function handleClick() {
+      setSelectedTags(tags => {
+        if (tags.includes(text)) {
+          return tags.filter(t => t !== text);
+        } else {
+          return [...tags, text];
         }
+      });
     }
+    
 
     const typeStyles = {
         tag: {
@@ -23,8 +30,11 @@ export default function Tag({
             fontSize: 'var(--sub-body)',
             padding: '8px 18px',
             backgroundColor: 'var(--bright-af)',
-            backdropFilter: 'blur(8px)'
-            // filter: 'drop-shadow(var(--drop-shadow-2-2-16))'
+        },
+        homeFilter: {
+            fontSize: 'var(--sub-body)',
+            padding: '8px 18px',
+            backgroundColor: 'var(--bright-af)',
         },
         profileTag: {
             fontSize: 'var(--sub-body)',
@@ -38,39 +48,56 @@ export default function Tag({
     return (
         <>
         {
-            type !== "filter" ?
+          type === "filter" ?
+          <Link 
+            href={{ pathname: "/search/results", query: { subject: text } }}
+            style={{textDecoration: 'none', color: 'inherit'}}
+            onClick={handleClick}
+          >
             <div 
-                className={styles.tag} 
-                style={{
-                    fontSize: typeStyles[type].fontSize,
-                    padding: typeStyles[type].padding,
-                    margin: typeStyles[type].margin,
-                    backgroundColor: typeStyles[type].backgroundColor,
-                    color: typeStyles[type].textColor,
-                    filter: typeStyles[type].filter
-                }}
+              className={styles.tag} 
+              style={{
+                fontSize: typeStyles[type].fontSize,
+                padding: typeStyles[type].padding,
+                margin: typeStyles[type].margin,
+                backgroundColor: selectedTags.includes(text) ? 'var(--med-green)' : typeStyles[type].backgroundColor,
+                color: selectedTags.includes(text) ? 'var(--bright-af)' : typeStyles[type].color,
+                filter: typeStyles[type].filter
+              }}
             >
-                {text}
+              {text}
             </div>
-            :
-            <Link 
-              href={{ pathname: "/search/results", query: { subject: text } }}
-              style={{textDecoration: 'none', color: 'inherit'}}
-            >
-              <div
-                className={styles.tag} 
-                style={{ 
-                  fontSize: typeStyles[type].fontSize,
-                  padding: typeStyles[type].padding,
-                  margin: typeStyles[type].margin,
-                  backgroundColor: typeStyles[type].backgroundColor,
-                  color: typeStyles[type].textColor,
-                  filter: typeStyles[type].filter,
-                }}
-              >
-                {text}
-              </div>
-            </Link>
+          </Link>
+          :
+          type === "homeFilter" ?
+          <div 
+            className={styles.tag} 
+            style={{
+              fontSize: typeStyles[type].fontSize,
+              padding: typeStyles[type].padding,
+              margin: typeStyles[type].margin,
+              backgroundColor: selectedTags.includes(text) ? 'var(--med-green)' : typeStyles[type].backgroundColor,
+              color: selectedTags.includes(text) ? 'var(--bright-af)' : typeStyles[type].color,
+              filter: typeStyles[type].filter
+            }}
+            onClick={handleClick}
+          >
+            {text}
+          </div>
+          :
+          <div 
+            className={styles.tag} 
+            style={{
+              fontSize: typeStyles[type].fontSize,
+              padding: typeStyles[type].padding,
+              margin: typeStyles[type].margin,
+              backgroundColor: typeStyles[type].backgroundColor,
+              color: typeStyles[type].textColor,
+              filter: typeStyles[type].filter
+            }}
+          >
+            {text}
+          </div>
         }
         </>
     )
