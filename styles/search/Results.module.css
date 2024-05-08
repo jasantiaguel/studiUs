@@ -22,6 +22,11 @@
   transform: translate(-32%, 0);
 }
 
+.searchHeaderContainer {
+  display: flex;
+  flex-flow: row;
+}
+
 .searchBar{
   display: flex;
   padding-top: 10px;
