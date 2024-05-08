@@ -5,7 +5,7 @@ export default function Header({name, bgColor}) {
     return(
         <div style={{backgroundColor: bgColor}} className={styles.header}>
             <h2 className={styles.headerFont}>
-              {name}
+                {name}
             </h2>
             <Menu/>
         </div>

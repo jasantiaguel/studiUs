@@ -12,6 +12,7 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
     gap: 16px;
+    z-index: 10;
 }
 
 .overlay {

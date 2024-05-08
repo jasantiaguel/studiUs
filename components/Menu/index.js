@@ -11,11 +11,12 @@ export default function Menu() {
     return(
         <>
             {
-                expand ?
-                <div className={`${styles.menu}`}>
-                    <h1>burger menu</h1>
-                    <p onClick={handleClick}>close</p>
-                </div> : null
+                expand &&
+                <div className={styles.all}>
+                    <div className={`${styles.menu}`}>
+                    </div>
+                    <div className={styles.background} onClick={handleClick}/>
+                </div>
             }
             <Image src="/images/icon.burger-menu.svg" width={32} height={32} onClick={handleClick}/>
         </>
