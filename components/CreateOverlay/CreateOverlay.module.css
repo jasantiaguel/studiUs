@@ -9,14 +9,18 @@
     display: flex;
     flex-flow: column;
     overflow: auto;
-    position: absolute;
-    top: 128px;
-    z-index: 10;
     -ms-overflow-style: none;
     scrollbar-width: none;
     gap: 8px;
-    left: 0;
-    right: 0;
+}
+
+.overlay {
+    position: absolute;
+    top: 128px;
+    z-index: 10;
+    display: flex;
+    flex-flow: column;
+    gap: 16px;
 }
 
 .background {
@@ -30,4 +34,93 @@
     height: 932px;
     background-color: #00000080;
     z-index: 9;
+}
+
+.titleInput {
+    font-size: var(--title-1);
+    margin-top: 16px;
+    min-height: none;
+    background-color: #eee;
+    border-radius: 16px;
+    padding: 16px;
+    width: 334px;
+    border: none;
+}
+
+.descriptionInput {
+    border: none;
+    min-height: 48px;
+    background-color: #eee;
+    border-radius: 16px;
+    padding: 16px;
+    width: 334px;
+    resize: none;
+    font-family: "Inter", sans-serif;
+}
+
+.titleInput:focus, .descriptionInput:focus {
+    outline: none;
+}
+
+.tagInput {
+    padding: 4px 12px;
+    background-color: var(--bright-green);
+    font-size: var(--caption-1);
+    border-radius: 16px;
+    border: none;
+}
+
+.addCustom {
+    padding: 4px 12px;
+    background-color: var(--bright-green);
+    font-size: var(--caption-1);
+    border-radius: 16px;
+    border: none;
+}
+
+.addCustom:hover {
+    background-color: var(--med-green-85);
+    color: white;
+}
+
+.timeInput, .dateInput {
+    border: none;
+}
+
+.timeInput:hover, .dateInput:hover {
+    color: var(--med-green);
+}
+
+.timeInput:focus, .dateInput:focus {
+    outline: none;
+}
+
+.radioButtons {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.radioButton {
+    background-color: #eee;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.radioButton:hover {
+    background-color: var(--med-green-85);
+    color: white;
+}
+
+.locationSelect {
+    border: none;
+    border-radius: 16px;
+    padding: 4px 12px;
+    background-color: var(--bright-green)
+}
+
+.locationSelect:hover {
+    background-color: var(--med-green);
+    color: white;
 }

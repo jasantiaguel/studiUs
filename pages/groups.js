@@ -57,18 +57,19 @@ export default function Groups() {
                   return <GroupCard group={group} todo={removeGroup} returnGroup={returnGroup}/>
               })
           }
-          {
-              showCreate &&
-              <CreateOverlay
-                onclick={() => setShowCreate(false)}
-                newGroup={newGroup}
-              />
-            }
+          
           {/* This is a filler section to make the bottom of page not cut off */}
           <section className={styles.bottomFiller} style={{margin: '180px 0'}}>
             <p> </p>
           </section>
         </main>
+        {
+          showCreate &&
+          <CreateOverlay
+            onclick={() => setShowCreate(false)}
+            newGroup={newGroup}
+          />
+        }
         <div className={styles.createButton}>
             <Button 
               text="+ Create Group" 

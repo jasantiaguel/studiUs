@@ -1,4 +1,6 @@
+import Checkbox from "../Checkbox";
 import Map from "../Map";
+import Button from "../Button";
 import styles from "./CreateOverlay.module.css"
 import { useEffect, useState } from "react";
 
@@ -11,7 +13,7 @@ export default function CreateOverlay({onclick, newGroup}) {
     const [tagInputDisplay, setTagInputDisplay] = useState({display: "none"});
     const [tagDisplay, setTagDisplay] = useState(["Javascript", "Chill", "Design"]);
     const [custom, setCustom] = useState(false);
-    const [customText, setCustomText] = useState("Custom");
+    const [customText, setCustomText] = useState("+");
     const [customTag, setCustomTag] = useState("");
 
     //date stuff
@@ -19,18 +21,32 @@ export default function CreateOverlay({onclick, newGroup}) {
     const [time, setTime] = useState(todaysTime());
 
     //members
-    const [members, setMembers] = useState(["Jerome"]);
+    const [memberCount, setMemberCount] = useState(2);
+    function getMembers(count) {
+        let a=["Jerome"];
+        for (let i=0; i<count-1; i++) {
+            a.push("");
+        }
+        return a;
+    }
+    const groupMemberValues = [2, 3, 4];
 
     //location
+    const defaultLocation = "BCIT Library";
     const [location, setLocation] = useState({
-        name: "BCIT Library",
-        coords: {centerPoint: "49.249234265894394,-123.00899574963694", circlePoint: "49.24936795802063,-123.00199080213194"}
+        name: defaultLocation,
+        coords: getCoords(defaultLocation)
     })
     let locations = [
         "BCIT Library",
         "Burnaby Public Library",
         "Starbucks"
     ]
+    const [locationMap, setLocationMap] = useState(<Map centerPoint={location.coords.centerPoint} circlePoint={location.coords.circlePoint}/>)
+
+    useEffect(() => {
+        setLocationMap(<Map centerPoint={location.coords.centerPoint} circlePoint={location.coords.circlePoint}/>)
+    }, [location])
 
     function todaysTime() {
         let today = new Date();
@@ -55,31 +71,33 @@ export default function CreateOverlay({onclick, newGroup}) {
             description: description,
             tags: tags,
             time: new Date(parseInt(date.substring(0, 4)), parseInt(date.substring(5, 7))-1, parseInt(date.substring(8, 10)), parseInt(time.substring(0, 2)), parseInt(time.substring(3, 5))), //YYYY, MM, DD, HOURS, MINUTES, SECONDS
-            members: members,
+            members: getMembers(memberCount),
             location: location.name,
             coords: location.coords
         })
     }
 
-    const handleTags = (e) => {
-        if (e.target.checked) {
-            setTags([...tags, e.target.value]);
+    const selected = (tag) => {
+        let a = [...tags];
+        if (a.includes(tag)) {
+            a.splice(a.indexOf(tag), 1);
         }
         else {
-            setTags(tags.splice(e.target.value, 1));
+            a.push(tag);
         }
+        setTags(a);
     }
 
     const handleCustomTag = () => {
         if (!custom) {
             setTagInputDisplay({display: "inline"});
             setCustom(true);
-            setCustomText("Add");
+            // setCustomText("Add");
         }
         else {
             setTagInputDisplay({display: "none"});
             setCustom(false);
-            setCustomText("Custom");
+            // setCustomText("+");
             setTagDisplay([...tagDisplay, customTag]);
         }
     }
@@ -92,35 +110,53 @@ export default function CreateOverlay({onclick, newGroup}) {
 
     return(
         <>
-            <div className={styles.container}>
-                <input type="text" placeholder="Title" onChange={e => setTitle(e.currentTarget.value)}/>
-                <input type="text" placeholder="Description" onChange={e => setDescription(e.currentTarget.value)}/>
-                <div>
-                    {
-                        tagDisplay.map((value) => {
-                            return(
-                                <label>{value}<input type="checkbox" value={value} onChange={handleTags}/></label>
-                            );
-                        })
-                    }
-                    <input type="text" placeholder="Tag" style={tagInputDisplay} onChange={e => setCustomTag(e.currentTarget.value)}></input>
-                    <button onClick={handleCustomTag}>{customText}</button>
+            <div className={styles.overlay}>
+                <div className={styles.container}>
+                    <input className={styles.titleInput} type="text" placeholder="Title" onChange={e => setTitle(e.currentTarget.value)}/>
+                    <textarea className={styles.descriptionInput} placeholder="Description" onChange={e => setDescription(e.currentTarget.value)}/>
+                    <div style={{display: "flex", gap: "4px", flexWrap: "wrap"}}>
+                        {
+                            tagDisplay.map((value) => {
+                                return(
+                                    // <label className={styles.tag}>{value}<input className={styles.checkbox} type="checkbox" value={value} onChange={handleTags}/></label>
+                                    <Checkbox title={value} selected={selected}/>
+                                );
+                            })
+                        }
+                        <input className={styles.tagInput} size={(1+customTag.length*.65)} type="text" placeholder="Tag" style={tagInputDisplay} onChange={e => setCustomTag(e.currentTarget.value)}></input>
+                        <button className={styles.addCustom} style={custom ? {backgroundColor: "var(--med-green)", color: "white"} : null} onClick={handleCustomTag}>{customText}</button>
+                    </div>
+                    <h3 style={{marginBottom: "0", marginTop: "8px"}}>Location & Time</h3>
+                    {locationMap}
+                    <select className={styles.locationSelect} onChange={(e) => setLocation({
+                        name: e.currentTarget.value,
+                        coords: getCoords(e.currentTarget.value)
+                    })}>
+                        {
+                            locations.map((location) => {
+                                return <option value={location}>{location}</option>
+                            })
+                        }
+                    </select>
+                    <input className={styles.dateInput} type="date" value={date} onChange={(e) => setDate(e.currentTarget.value)}/>
+                    <input className={styles.timeInput} type="time" value={time} onChange={(e) => setTime(e.currentTarget.value)}/>
+                    <div className={styles.members}>
+                        <h3 style={{marginBottom: "0", marginTop: "8px"}}>Group Members</h3>
+                        <div className={styles.radioButtons}>
+                        {
+                            groupMemberValues.map((value) => {
+                                return(
+                                    <label className={styles.radioButton}>
+                                        {value}
+                                        <input type="radio" value={value} name="members" onChange={() => setMemberCount(value)}/>
+                                    </label>
+                                )
+                            })
+                        }
+                        </div>
+                    </div>
                 </div>
-                <label>Location & Time</label>
-                <Map/>
-                <select onChange={(e) => setLocation({
-                    name: e.currentTarget.value,
-                    coords: getCoords(e.currentTarget.value)
-                })}>
-                    {
-                        locations.map((location) => {
-                            return <option value={location}>{location}</option>
-                        })
-                    }
-                </select>
-                <input type="date" value={date} onChange={(e) => setDate(e.currentTarget.value)}/>
-                <input type="time" value={time} onChange={(e) => setTime(e.currentTarget.value)}/>
-                <button onClick={handleClick}>Create group</button>
+                <Button text="Create group" size="chonky" bgColor="var(--light-green)" textColor="white" bg width="398px" onclick={handleClick}/>
             </div>
         <div className={styles.background} onClick={onclick}/>
         </>
