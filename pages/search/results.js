@@ -36,7 +36,7 @@ export default function Results() {
       </div>
       <HeadArea/>
       <main className={styles.main}>
-        <Header name="Search"/>
+        <Header name="Search" backBtn={true}/>
         <div className={styles.searchBar}>
           <Image src='/images/icon.magnifying-glass.svg' width={21.6} height={24}/>
         </div>

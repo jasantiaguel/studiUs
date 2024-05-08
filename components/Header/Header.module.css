@@ -8,6 +8,12 @@
     z-index: 5;
 }
 
+.titleContainer {
+  display: flex;
+  flex-flow: row;
+  margin-left: -8px;
+}
+
 .headerFont {
   font-size: var(--largerer-title); 
   font-weight: var(--font-weight-bold);
