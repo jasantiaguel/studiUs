@@ -57,5 +57,5 @@
     font-weight: var(--font-weight-bold);
     text-decoration: none;
     color: var(--deep-blue);
-    filter: var(--drop-shadow-2-2-16);
+    filter: drop-shadow(var(--drop-shadow-2-2-16));
 }
