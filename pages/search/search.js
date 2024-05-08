@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import styles from "@/styles/search/Search.module.css"
 import HeadArea from "@/components/HeadArea";
-import { useState } from "react";
+import { useState , useEffect, useRef } from "react";
 import { groups } from "@/data/groups";
 import Image from "next/image";
 import Tag from "@/components/Tag";
@@ -12,8 +12,35 @@ import SubjectSearchCard from "@/components/SubjectSearchCard";
 import Map from "@/components/Map";
 
 export default function Search() {
-
   const [selectedTags, setSelectedTags] = useState([]);
+
+  const sliderRef = useRef(null);
+
+  useEffect(() => {
+    const slider = sliderRef.current;
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener('mousedown', (e) => {
+      isDown = true;
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    });
+    slider.addEventListener('mouseleave', () => {
+      isDown = false;
+    });
+    slider.addEventListener('mouseup', () => {
+      isDown = false;
+    });
+    slider.addEventListener('mousemove', (e) => {
+      if(!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const offset = (x - startX);
+      slider.scrollLeft = scrollLeft - offset;
+    });
+  }, []);
 
   return(
     <div className="frame">
@@ -32,7 +59,7 @@ export default function Search() {
           <Image src='/images/icon.magnifying-glass.svg' width={21.6} height={24}/>
         </div>
         <section className={styles.filterSection}>
-          <section className={styles.filterSectionScroll}>
+          <section className={styles.filterSectionScroll} ref={sliderRef}>
             <Tag text='Sort' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
             <Tag text='Music' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
             <Tag text='Anime' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />

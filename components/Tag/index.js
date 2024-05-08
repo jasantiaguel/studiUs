@@ -57,6 +57,7 @@ export default function Tag({
         {
           type === "filter" ?
           <Link 
+            className={styles.filterLink}
             href={{ pathname: "/search/results", query: { subject: text } }}
             style={{textDecoration: 'none', color: 'inherit'}}
             onClick={handleClick}

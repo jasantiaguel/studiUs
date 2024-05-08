@@ -37,8 +37,8 @@ export default function Home() {
       if(!isDown) return;
       e.preventDefault();
       const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX);
-      slider.scrollLeft = scrollLeft - walk;
+      const offset = (x - startX);
+      slider.scrollLeft = scrollLeft - offset;
     });
   }, []);
 

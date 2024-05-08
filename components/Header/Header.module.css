@@ -11,6 +11,7 @@
 .titleContainer {
   display: flex;
   flex-flow: row;
+  align-items: center;
   margin-left: -8px;
 }
 

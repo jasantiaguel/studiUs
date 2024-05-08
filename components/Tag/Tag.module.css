@@ -6,3 +6,7 @@
     z-index: 1;
     user-select: none;
 }
+
+.filterLink {
+    cursor: inherit;
+}

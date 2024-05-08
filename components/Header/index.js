@@ -13,7 +13,7 @@ export default function Header({ name , bgColor , backBtn }) {
                     <Image 
                         src='/images/icons/icon.back-arrow.svg' 
                         width={44} 
-                        height={41} 
+                        height={39} 
                         onClick={() => router.back()}
                     />
                 )}
