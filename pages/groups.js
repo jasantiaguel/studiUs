@@ -59,7 +59,7 @@ export default function Groups() {
           }
           
           {/* This is a filler section to make the bottom of page not cut off */}
-          <section className={styles.bottomFiller} style={{margin: '180px 0'}}>
+          <section className={styles.bottomFiller} style={{margin: '196px 0'}}>
             <p> </p>
           </section>
         </main>

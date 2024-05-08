@@ -7,12 +7,41 @@ import Tag from "@/components/Tag";
 import Image from "next/image";
 import { groups, schedGroups } from "@/data/groups.js";
 import HeadArea from "@/components/HeadArea";
-import { useState } from "react";
+import { useState , useEffect , useRef } from "react";
 
 export default function Home() {
   const data = groups;
   const schedData = schedGroups;
   const [selectedTags, setSelectedTags] = useState([]);
+
+  const sliderRef = useRef(null);
+
+  useEffect(() => {
+    const slider = sliderRef.current;
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener('mousedown', (e) => {
+      isDown = true;
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    });
+    slider.addEventListener('mouseleave', () => {
+      isDown = false;
+    });
+    slider.addEventListener('mouseup', () => {
+      isDown = false;
+    });
+    slider.addEventListener('mousemove', (e) => {
+      if(!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX);
+      slider.scrollLeft = scrollLeft - walk;
+    });
+  }, []);
+
 
   function filter(groups) {
     if (selectedTags.length === 0) {
@@ -59,7 +88,7 @@ export default function Home() {
           bgImage="/images/home.banner-bg.png"
         />
         <section className={styles.filterSection}>
-          <section className={styles.filterSectionScroll}>
+          <section className={styles.filterSectionScroll} ref={sliderRef}>
             <Tag text='Sort' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
             <Tag text='Music' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
             <Tag text='Anime' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />

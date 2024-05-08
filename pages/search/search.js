@@ -71,7 +71,7 @@ export default function Search() {
         <h2 style={{margin: '32px 0 16px'}}>More Coming Soon!</h2>
 
         {/* This is a filler section to make the bottom of page not cut off */}
-        <section className={styles.bottomFiller} style={{margin: '64px 0'}}>
+        <section className={styles.bottomFiller} style={{margin: '48px 0'}}>
           <p> </p>
         </section>
       </main>

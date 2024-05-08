@@ -4,4 +4,5 @@
     font-size: var(--caption-1);
     border-radius: 16px;
     z-index: 1;
+    user-select: none;
 }

@@ -47,6 +47,11 @@
   width: 100%;
   overflow-x: scroll;
   filter: drop-shadow(var(--drop-shadow-2-2-16));
+  cursor: grab;
+}
+
+.filterSectionScroll:active {
+  cursor: grabbing;
 }
 
 .filterSectionScroll::-webkit-scrollbar {
