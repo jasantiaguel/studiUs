@@ -9,6 +9,7 @@ import { useState } from "react";
 import Button from "@/components/Button";
 import CreateOverlay from "@/components/CreateOverlay";
 import Image from "next/image";
+import PopupButton from "@/components/PopupButton";
 
 export default function Groups() {  
   const [groupData, setGroupData] = useState(groups);
@@ -62,6 +63,15 @@ export default function Groups() {
           <section className={styles.bottomFiller} style={{margin: '196px 0'}}>
             <p> </p>
           </section>
+          <div className={styles.createButton}>
+            <Button 
+              text="+ Create Group" 
+              size="chonky2" 
+              width="398px"
+              onclick={() => setShowCreate(true)}
+            />
+        </div>
+          <Footer bdRadius={0} dshadow='4px -32px 32px #2E384D59;'/>
         </main>
         {
           showCreate &&
@@ -70,15 +80,6 @@ export default function Groups() {
             newGroup={newGroup}
           />
         }
-        <div className={styles.createButton}>
-            <Button 
-              text="+ Create Group" 
-              size="chonky2" 
-              width="398px"
-              onclick={() => setShowCreate(true)}
-            />
-        </div>
-        <Footer bdRadius={0} dshadow='4px -32px 32px #2E384D59;'/>
       </div>
   )
 }

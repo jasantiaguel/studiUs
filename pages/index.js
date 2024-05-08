@@ -114,8 +114,8 @@ export default function Home() {
         <section className={styles.bottomFiller} style={{margin: '40px 0'}}>
           <p> </p>
         </section>
+        <Footer/>
       </main>
-      <Footer/>
     </div>
   );
 }
