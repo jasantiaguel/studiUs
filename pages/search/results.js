@@ -14,6 +14,17 @@ import Map from "@/components/Map";
 export default function Results() {
   const router = useRouter();
   const selectedSubject = router.query.subject;
+  const results = router.query.search;
+
+  const [searchTerm, setSearchTerm] = useState('');
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    router.push(`/search/results?search=${searchTerm}`);
+  };
 
   const [selectedTags, setSelectedTags] = useState([]);
 
@@ -46,8 +57,9 @@ export default function Results() {
   }, []);
 
   function filter(groups) {
-    const filteredGroups = groups.filter(groups =>
-    groups.tags.includes(selectedSubject)
+    const filteredGroups = groups.filter(group =>
+      group.tags.includes(selectedSubject) ||
+      group.tags.includes(searchTerm || results)
     );
     return filteredGroups;
   }
@@ -65,9 +77,17 @@ export default function Results() {
       <HeadArea/>
       <main className={styles.main}>
         <Header name="Search" backBtn={true}/>
-        <div className={styles.searchBar}>
+        <section className={styles.searchBar}>
           <Image src='/images/icon.magnifying-glass.svg' width={21.6} height={24}/>
-        </div>
+          <form onSubmit={handleSearchSubmit}>
+            <input 
+              className={styles.searchInput} 
+              type="text" value={searchTerm} 
+              onChange={handleSearchChange}
+              placeholder="Search groups with tags"
+            />
+          </form>
+        </section>
         <section className={styles.filterSection}>
           <section className={styles.filterSectionScroll} ref={sliderRef}>
             <Tag text='Sort' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
@@ -81,7 +101,7 @@ export default function Results() {
           </section>
         </section>
         <h2 style={{margin: '32px 0', lineHeight: '150%'}}>
-          Study Groups for "{selectedTags.length > 0 ? selectedTags.join(', ') : selectedSubject}"
+          Study Groups with "{selectedTags.length > 0 ? selectedTags.join(', ') : selectedSubject || searchTerm || results}"
         </h2>
         <section className={styles.searchResultsContainer}>
           {

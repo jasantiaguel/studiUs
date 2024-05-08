@@ -23,8 +23,9 @@
   transform: translate(-32%, 0);
 }
 
-.searchBar{
+.searchBar {
   display: flex;
+  align-items: center;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 15px;
@@ -32,6 +33,20 @@
   border-radius: 16px;
   margin-bottom: 20px;
   filter: drop-shadow(var(--drop-shadow-2-2-16));
+}
+
+.searchInput {
+  margin-left: 8px;
+  width: 324px;
+  height: 24px;
+  border: none;
+  font-size: var(--body);
+  color: var(--dark-green);
+}
+
+.searchInput:focus {
+  border: none;
+  outline: none;
 }
 
 .filterSection {

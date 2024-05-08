@@ -2,7 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import styles from "@/styles/search/Search.module.css"
 import HeadArea from "@/components/HeadArea";
-import { useState , useEffect, useRef } from "react";
+import { useState , useEffect , useRef } from "react";
+import { useRouter } from "next/router";
 import { groups } from "@/data/groups";
 import Image from "next/image";
 import Tag from "@/components/Tag";
@@ -13,6 +14,18 @@ import Map from "@/components/Map";
 
 export default function Search() {
   const [selectedTags, setSelectedTags] = useState([]);
+
+  const router = useRouter();
+
+  const [searchTerm, setSearchTerm] = useState('');
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    router.push(`/search/results?search=${searchTerm}`);
+  };
 
   const sliderRef = useRef(null);
 
@@ -55,9 +68,17 @@ export default function Search() {
       <HeadArea/>
       <main className={styles.main}>
         <Header name="Search"/>
-        <div className={styles.searchBar}>
+        <section className={styles.searchBar}>
           <Image src='/images/icon.magnifying-glass.svg' width={21.6} height={24}/>
-        </div>
+          <form onSubmit={handleSearchSubmit}>
+            <input 
+              className={styles.searchInput} 
+              type="text" value={searchTerm} 
+              onChange={handleSearchChange}
+              placeholder="Search groups with tags"
+            />
+          </form>
+        </section>
         <section className={styles.filterSection}>
           <section className={styles.filterSectionScroll} ref={sliderRef}>
             <Tag text='Sort' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
