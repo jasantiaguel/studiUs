@@ -28,3 +28,34 @@
     top: 0;
     z-index: -1;
 }
+
+.top {
+    background-color: var(--med-green);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 224px;
+}
+
+.body {
+    padding: 24px;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 16px;
+}
+
+.button {
+    width: 133px;
+    height: 144px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F6FEF6;
+    border-radius: 16px;
+    font-weight: var(--font-weight-bold);
+    text-decoration: none;
+    color: var(--deep-blue);
+    filter: var(--drop-shadow-2-2-16);
+}
