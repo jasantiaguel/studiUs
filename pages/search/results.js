@@ -69,8 +69,8 @@ export default function Results() {
         <section className={styles.bottomFiller} style={{margin: '64px 0'}}>
           <p> </p>
         </section>
+        <Footer/>
       </main>
-      <Footer/>
     </div>
   )
 }

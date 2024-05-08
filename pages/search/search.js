@@ -74,8 +74,8 @@ export default function Search() {
         <section className={styles.bottomFiller} style={{margin: '64px 0'}}>
           <p> </p>
         </section>
+        <Footer dshadow='4px -160px 32px #2E384D59'/>
       </main>
-      <Footer dshadow='4px -160px 32px #2E384D59'/>
     </div>
   )
 }
