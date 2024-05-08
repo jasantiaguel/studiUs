@@ -17,7 +17,7 @@ export default function Quiz() {
             <div className={styles.main}>
                 <Header name="Methods"/>
                 <div className={styles.top}>
-                    <Image src="/images/img.studymethods.svg" width={150} height={186}/>
+                    <Image src="/images/img.studymethodsV2.svg" width={150} height={186}/>
                     <div className={styles.methodsBanner}>
                         <h2>Trouble Studying?</h2>
                         <p>Take our quiz and find what study method works best for you!</p>

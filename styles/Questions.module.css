@@ -101,11 +101,12 @@
 
 .img{
     position: absolute;
-    left: 0;
-    right: 0;
+    left: 60px;
+    right: 60px;
+    margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
-    width: 340px;
+    width: 400px;
     height: auto;
 }
 
