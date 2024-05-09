@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./Checkbox.module.css";
 
-export default function Checkbox({title, selected}) {
+export default function Checkbox({title, selected, customTag=null}) {
     const [isSelected, setIsSelected] = useState(false);
     
     const handleClick = () => {
@@ -15,7 +15,7 @@ export default function Checkbox({title, selected}) {
     }
     
     return(
-        <div className={isSelected ? styles.containerSelected : styles.container} onClick={handleClick}>
+        <div className={isSelected ? styles.containerSelected : styles.container} onClick={handleClick} onKeyDown={(e) => e.key === 'Enter' && customTag()}>
             {title}
         </div>
     )
