@@ -3,7 +3,7 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 import HeadArea from "@/components/HeadArea";
 import Header from "@/components/Header";
-import styles from "@/styles/Results.module.css";
+import styles from "@/styles/quiz/Results.module.css";
 import PieChart from "@/components/Graph";
 import Image from "next/image";
 

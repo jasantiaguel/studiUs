@@ -33,7 +33,7 @@ export default function Results() {
   useEffect(() => {
     const slider = sliderRef.current;
     let isDown = false;
-    let startX;
+    let startX; 
     let scrollLeft;
 
     slider.addEventListener('mousedown', (e) => {

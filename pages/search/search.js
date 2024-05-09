@@ -73,7 +73,7 @@ export default function Search() {
           <form onSubmit={handleSearchSubmit}>
             <input 
               className={styles.searchInput} 
-              type="text" value={searchTerm} 
+              type="text" value={searchTerm.toLowerCase()} 
               onChange={handleSearchChange}
               placeholder="Search for tags"
             />
