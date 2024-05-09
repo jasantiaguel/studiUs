@@ -5,6 +5,7 @@ import HeadArea from "@/components/HeadArea";
 import Header from "@/components/Header";
 import styles from "@/styles/Results.module.css";
 import PieChart from "@/components/Graph";
+import Image from "next/image";
 
 import { useRouter } from "next/router";
 
