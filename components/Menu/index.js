@@ -28,7 +28,7 @@ export default function Menu() {
                     <div className={styles.background} onClick={handleClick}/>
                 </div>
             }
-            <Image src="/images/icon.burger-menu.svg" width={32} height={32} onClick={handleClick}/>
+            <Image tabIndex={1} src="/images/icon.burger-menu.svg" width={32} height={32} onClick={handleClick}/>
         </>
     )
 }

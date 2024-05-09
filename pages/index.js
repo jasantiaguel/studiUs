@@ -101,7 +101,7 @@ export default function Home() {
         <h2 style={{margin: '32px 0 16px'}}>Today</h2>
         {
           filter(data).map((group) => {
-            return <GroupCard group={group} selectedTags={selectedTags} tabIndex={2}/>
+            return <GroupCard group={group} selectedTags={selectedTags} tabIndex={3}/>
           })
         }
         <h2 style={{margin: '8px 0 16px'}}>Upcoming</h2>

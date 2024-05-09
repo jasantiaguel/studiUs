@@ -22,7 +22,7 @@ export default function Banner({title1, title3, buttonSpace, buttonText, path=""
         }}>
           {title1}
         </p>
-        <Link href={path} className={styles.buttonPos} style={{marginLeft: `${buttonSpace}`}}>
+        <Link tabIndex={2} href={path} className={styles.buttonPos} style={{marginLeft: `${buttonSpace}`}}>
           <Button text={`${buttonText}`} size="chonky" tabIndex={2}/>
         </Link>
       </div>
