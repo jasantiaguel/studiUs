@@ -128,7 +128,7 @@ export default function CreateOverlay({onclick, newGroup}) {
                                 tagDisplay.map((value) => {
                                     return(
                                         // <label className={styles.tag}>{value}<input className={styles.checkbox} type="checkbox" value={value} onChange={handleTags}/></label>
-                                        <Checkbox title={value} selected={selected}/>
+                                        <Checkbox title={value} selected={selected} customTag={handleCustomTag}/>
                                     );
                                 })
                             }

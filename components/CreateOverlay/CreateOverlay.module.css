@@ -97,7 +97,8 @@
 
 .timeInput, .dateInput {
     border: none;
-    padding: 16px 40px;
+    width: 40%;
+    padding: 16px;
     background-color: #eee;
     border-radius: 16px;
 }

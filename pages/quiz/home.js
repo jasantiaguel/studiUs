@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Image from "next/image";
 import Button from "@/components/Button";
 
-import styles from "@/styles/Quiz.module.css";
+import styles from "@/styles/quiz/Quiz.module.css";
 import Link from "next/link";
 import HeadArea from "@/components/HeadArea";
 

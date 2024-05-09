@@ -3,7 +3,7 @@ import Tag from "@/components/Tag";
 import { useEffect, useState } from "react";
 import styles from "./GroupCard.module.css";
 
-export default function Card({group, todo=null, returnGroup=null, selectedTags=[]}) {
+export default function Card({group, todo=null, returnGroup=null, selectedTags=[], tabIndex=0}) {
     const [isActive, setIsActive] = useState(false);
     const [popup, setPopup] = useState(false);
     // const [tags, setTags] = useState(group.tags);
@@ -80,6 +80,7 @@ export default function Card({group, todo=null, returnGroup=null, selectedTags=[
             <div 
                 className={startsWithin24Hours ? styles.active : styles.inactive} 
                 onClick={() => setPopup(true)}
+                tabIndex={tabIndex + 1}
             >
                 <div className={styles.top}>
                     <div>
