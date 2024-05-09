@@ -89,10 +89,10 @@ export default function Home() {
         />
         <section className={styles.filterSection}>
           <section className={styles.filterSectionScroll} ref={sliderRef}>
-            <Tag text='Sort' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Outgoing' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
             <Tag text='Music' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
             <Tag text='Anime' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
-            <Tag text='Food' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Coding' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
             <Tag text='Coffee' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
             <Tag text='Food' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
             <Tag text='Pizza' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
@@ -104,7 +104,7 @@ export default function Home() {
             return <GroupCard group={group} selectedTags={selectedTags}/>
           })
         }
-        <h2 style={{margin: '8px 0 16px'}}>Upcoming</h2>
+        <h2 style={{margin: '8px 0 16px'}}>This Week</h2>
         {
           filter(schedData).map((schedGroup) => {
             return <GroupCard group={schedGroup} selectedTags={selectedTags}/>

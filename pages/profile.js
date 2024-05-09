@@ -21,7 +21,7 @@ export default function profile() {
             <HeadArea/>
             <div className={styles.main}>
                 <section className={styles.profileSection}>
-                    <Header name='ㅤ' bgColor='var(--bright-af)'/>
+                    <Header name='.' bgColor='var(--bright-af)'/>
                     {/* Replace below with profile photo */}
                     <div style={{
                         backgroundImage: "url('/images/profile.alira-photo.png')", 

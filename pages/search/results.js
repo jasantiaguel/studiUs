@@ -84,20 +84,19 @@ export default function Results() {
               className={styles.searchInput} 
               type="text" value={searchTerm} 
               onChange={handleSearchChange}
-              placeholder="Search groups with tags"
+              placeholder="Search for tags"
             />
           </form>
         </section>
         <section className={styles.filterSection}>
           <section className={styles.filterSectionScroll} ref={sliderRef}>
-            <Tag text='Sort' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
-            <Tag text='Music' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
-            <Tag text='Anime' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
-            <Tag text='Food' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
-            <Tag text='Quiet' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
-            <Tag text='Quiet' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
-            <Tag text='Quiet' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
-            <Tag text='Quiet' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Outgoing' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Music' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Anime' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Coding' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Coffee' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Food' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Pizza' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
           </section>
         </section>
         <h2 style={{margin: '32px 0', lineHeight: '150%'}}>

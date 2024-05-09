@@ -1,5 +1,19 @@
 .main {
     padding: 32px;
+    z-index: 2;
+}
+
+.bgImage {
+    position: absolute;
+    width: 430px;
+    height: 932px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.bgTopo {
+position: absolute;
+transform: translate(0, 5%);
 }
 
 .block {

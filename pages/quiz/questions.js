@@ -96,6 +96,14 @@ export default function Questions() {
     }
     return (
         <div className="frame">
+            <div className={styles.bgImage}>
+                <Image 
+                    src="/images/topographic/graphic.topo5.svg" 
+                    width={606} 
+                    height={925} 
+                    className={styles.bgTopo}
+                />
+            </div>
             <HeadArea />
             <Image src='/images/header.elipse.svg' width={430} height={313} className={styles.ellipseBackground}/> 
             <div className={styles.main}>

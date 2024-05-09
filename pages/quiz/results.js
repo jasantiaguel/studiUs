@@ -37,6 +37,14 @@ export default function Results() {
 
     return(
         <div className="frame">
+            <div className={styles.bgImage}>
+                <Image 
+                    src="/images/topographic/graphic.topo5.svg" 
+                    width={606} 
+                    height={925} 
+                    className={styles.bgTopo}
+                />
+            </div>
             <HeadArea/>
             <div className={styles.main}>
                 <div className={styles.quizHeader}>

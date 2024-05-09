@@ -4,6 +4,7 @@
     height: 100%;
     padding: 0 16px;
     width: 398px;
+    z-index: 2;
 }
 
 .quizHeader{
@@ -17,6 +18,19 @@
     filter: drop-shadow(var(--drop-shadow-4-8-32));
     z-index: 2;
     margin-top: 45px;
+}
+
+.bgImage {
+    position: absolute;
+    width: 430px;
+    height: 932px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.bgTopo {
+position: absolute;
+transform: translate(0, 5%);
 }
 
 .headerText{
