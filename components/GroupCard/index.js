@@ -57,12 +57,20 @@ export default function Card({group, todo=null, returnGroup=null, selectedTags=[
         let now = new Date();
         let difference = date.getTime() - now.getTime();
         if (difference < 0) {
-            return "In Progress";
+            return { status: "In Progress", startsWithin24Hours: true };
         }
-        return `Starts in ${
-            Math.round((Math.floor(difference/10000)*10)/60/60)
-        } hour${Math.round((Math.floor(difference/10000)*10)/60/60) > 1 ? 's':''}`
+        let hours = Math.round((Math.floor(difference/10000)*10)/60/60);
+        if (hours > 23) {
+            let days = Math.floor(hours / 24);
+            return { status: `Starts in ${days} day${days > 1 ? 's':''}`, startsWithin24Hours: false };
+        }
+        return { status: `Starting in ${hours} hour${hours > 1 ? 's':''}`, startsWithin24Hours: true };
     }
+
+    let statusObject = getStatus(group.time);
+    let status = statusObject.status;
+    let startsWithin24Hours = statusObject.startsWithin24Hours;
+
 
     let day = dateParser(group.time.getDay());
     let time = timeParser(''+group.time.getHours(), ''+group.time.getMinutes());
@@ -71,24 +79,24 @@ export default function Card({group, todo=null, returnGroup=null, selectedTags=[
         <>
         <div className={styles.all}>
             <div 
-                className={isActive ? styles.active : styles.inactive} 
+                className={startsWithin24Hours ? styles.active : styles.inactive} 
                 onClick={() => setPopup(true)}
             >
                 <div className={styles.top}>
                     <div>
                         <h3 className={styles.title}>{group.title}</h3>
-                        <p className={styles.status}>{getStatus(group.time)}</p>
+                        <p className={styles.status}>{status}</p>
                     </div>
                     <div 
                         className={styles.timeBlock} 
-                        style={isActive?{backgroundColor: "var(--bright-af-75)", 
+                        style={startsWithin24Hours ? {backgroundColor: "var(--bright-af-75)", 
                         color: "var(--dark-green"}:{backgroundColor: "var(--med-green-85)", 
                         color: "white"}}
                     >
                         <p style={{fontWeight: "var(--font-weight-bold)"}}>{day}</p>
                         <p>{time}</p>
                     </div>
-                </div> 
+                </div>  
                 <div className={styles.tags}>
                     {
                         processTags(group.tags).map((tag) => {
