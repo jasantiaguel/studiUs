@@ -67,11 +67,12 @@ export default function Search() {
       </div>
       <HeadArea/>
       <main className={styles.main}>
-        <Header name="Search"/>
-        <section className={styles.searchBar}>
+        <Header tabIndex={1} name="Search"/>
+        <section tabIndex={2} className={styles.searchBar}>
           <Image src='/images/icon.magnifying-glass.svg' width={21.6} height={24}/>
           <form onSubmit={handleSearchSubmit}>
             <input 
+              tabIndex={3}
               className={styles.searchInput} 
               type="text" value={searchTerm.toLowerCase()} 
               onChange={handleSearchChange}
@@ -81,39 +82,39 @@ export default function Search() {
         </section>
         <section className={styles.filterSection}>
           <section className={styles.filterSectionScroll} ref={sliderRef}>
-            <Tag text='Outgoing' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
-            <Tag text='Music' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
-            <Tag text='Anime' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
-            <Tag text='Coding' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
-            <Tag text='Coffee' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
-            <Tag text='Food' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
-            <Tag text='Pizza' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag tabIndex={4} text='Outgoing' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag tabIndex={4} text='Music' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag tabIndex={4} text='Anime' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag tabIndex={4} text='Coding' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag tabIndex={4} text='Coffee' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag tabIndex={4} text='Food' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag tabIndex={4} text='Pizza' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
           </section>
         </section>
         <h2 style={{margin: '32px 0 16px'}}>Computer & Technology</h2>
         <section className={styles.subjectSection}>
-          <SubjectSearchCard title='Computer Science'/>
-          <SubjectSearchCard title='Front End Development'/>
-          <SubjectSearchCard title='Digital Design & Development'/>
+          <SubjectSearchCard tabIndex={5} title='Computer Science'/>
+          <SubjectSearchCard tabIndex={5} title='Front End Development'/>
+          <SubjectSearchCard tabIndex={5} title='Digital Design & Development'/>
         </section>
         <h2 style={{margin: '32px 0 16px'}}>Science</h2>
         <section className={styles.subjectSection}>
-          <SubjectSearchCard title='Biology'/>
-          <SubjectSearchCard title='Chemistry'/>
-          <SubjectSearchCard title='Physics'/>
-          <SubjectSearchCard title='Environmental Studies'/>
+          <SubjectSearchCard tabIndex={5} title='Biology'/>
+          <SubjectSearchCard tabIndex={5} title='Chemistry'/>
+          <SubjectSearchCard tabIndex={5} title='Physics'/>
+          <SubjectSearchCard tabIndex={5} title='Environmental Studies'/>
         </section>
         <h2 style={{margin: '32px 0 16px'}}>Mathematics</h2>
         <section className={styles.subjectSection}>
-          <SubjectSearchCard title='Algebra'/>
-          <SubjectSearchCard title='Calculus'/>
-          <SubjectSearchCard title='Geometry'/>
+          <SubjectSearchCard tabIndex={5} title='Algebra'/>
+          <SubjectSearchCard tabIndex={5} title='Calculus'/>
+          <SubjectSearchCard tabIndex={5} title='Geometry'/>
         </section>
         <h2 style={{margin: '32px 0 16px'}}>Engineering</h2>
         <section className={styles.subjectSection}>
-          <SubjectSearchCard title='Electrical Engineering'/>
-          <SubjectSearchCard title='Mechanical Engineering'/>
-          <SubjectSearchCard title='Civil Engineering'/>
+          <SubjectSearchCard tabIndex={5} title='Electrical Engineering'/>
+          <SubjectSearchCard tabIndex={5} title='Mechanical Engineering'/>
+          <SubjectSearchCard tabIndex={5} title='Civil Engineering'/>
         </section>
         <h2 style={{margin: '32px 0 16px'}}>More Coming Soon!</h2>
 
