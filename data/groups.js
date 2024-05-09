@@ -8,7 +8,7 @@ export const groups = [
         tags: ["Chemistry", "Food", "Outgoing"],
         time: new Date(2024, 4, 9, 16, 0),
         location: "BCIT Library",
-        members: ["Jon", "Jerome", "Nathan"],
+        members: ["Jon", "Jerome", "Nathan", ""],
         coords: {centerPoint: "49.249234265894394,-123.00899574963694", circlePoint: "49.24936795802063,-123.00199080213194"},
     },
     {
