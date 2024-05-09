@@ -24,6 +24,12 @@
     transform: translate(-21%, 10%);
 }
 
+.groupsHeader {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
 .createButton {
     display: flex;
     justify-content: center;

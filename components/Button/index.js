@@ -8,9 +8,8 @@ export default function Button({
         bgColor='var(--med-blue)', 
         bgColorHover='var(--dark-blue)', 
         size='default', width="auto", 
-        tabIndex, 
-        onKeyDown,
-        zIndex
+        tabIndex=0, 
+        onKeyDown
     }) {
     const sizeStyles = {
         default: {

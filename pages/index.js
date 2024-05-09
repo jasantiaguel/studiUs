@@ -89,25 +89,25 @@ export default function Home() {
         />
         <section className={styles.filterSection}>
           <section className={styles.filterSectionScroll} ref={sliderRef}>
-            <Tag text='Outgoing' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
-            <Tag text='Music' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
-            <Tag text='Anime' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
-            <Tag text='Coding' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
-            <Tag text='Coffee' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
-            <Tag text='Food' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
-            <Tag text='Pizza' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag tabIndex={2} text='Outgoing' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag tabIndex={2} text='Music' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag tabIndex={2} text='Anime' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag tabIndex={2} text='Coding' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag tabIndex={2} text='Coffee' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag tabIndex={2} text='Food' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag tabIndex={2} text='Pizza' type='homeFilter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
           </section>
         </section>
         <h2 style={{margin: '32px 0 16px'}}>Today</h2>
         {
           filter(data).map((group) => {
-            return <GroupCard group={group} selectedTags={selectedTags}/>
+            return <GroupCard group={group} selectedTags={selectedTags} tabIndex={2}/>
           })
         }
-        <h2 style={{margin: '8px 0 16px'}}>This Week</h2>
+        <h2 style={{margin: '8px 0 16px'}}>Upcoming</h2>
         {
           filter(schedData).map((schedGroup) => {
-            return <GroupCard group={schedGroup} selectedTags={selectedTags}/>
+            return <GroupCard group={schedGroup} selectedTags={selectedTags} tabIndex={3}/>
           })
         }
         {/* This is a filler section to make the bottom of page not cut off */}

@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import styles from "@/styles/search/Results.module.css"
 import HeadArea from "@/components/HeadArea";
 import { useState, useEffect , useRef } from "react";
-import { groups } from "@/data/groups";
+import { groups , schedGroups } from "@/data/groups";
 import Image from "next/image";
 import Tag from "@/components/Tag";
 import GroupCard from "@/components/GroupCard";
@@ -15,6 +15,7 @@ export default function Results() {
   const router = useRouter();
   const selectedSubject = router.query.subject;
   const results = router.query.search;
+  const combinedGroups = [...groups, ...schedGroups];
 
   const [searchTerm, setSearchTerm] = useState('');
   const handleSearchChange = (event) => {
@@ -104,8 +105,8 @@ export default function Results() {
         </h2>
         <section className={styles.searchResultsContainer}>
           {
-            filter(groups).length > 0 ? (
-              filter(groups).map(group => <GroupCard group={group} selectedTags={selectedTags}/>)
+            filter(combinedGroups).length > 0 ? (
+              filter(combinedGroups).map(group => <GroupCard group={group} selectedTags={selectedTags}/>)
             ) : (
               <p style={{margin: '0', lineHeight: '150%'}}>Oops, no groups have been scheduled for this yet!</p>
             )
