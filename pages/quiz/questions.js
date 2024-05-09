@@ -1,6 +1,6 @@
 import Footer from "@/components/Footer";
 
-import styles from "@/styles/Questions.module.css";
+import styles from "@/styles/quiz/Questions.module.css";
 
 import { questions } from "@/data/quiz"; //edit questions here
 import { useState } from "react";
