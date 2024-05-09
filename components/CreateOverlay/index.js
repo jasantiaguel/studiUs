@@ -29,7 +29,7 @@ export default function CreateOverlay({onclick, newGroup}) {
         }
         return a;
     }
-    const groupMemberValues = [2, 3, 4];
+    const groupMemberValues = [2, 3, 4, 5];
 
     //location
     const defaultLocation = "BCIT Library";
@@ -112,36 +112,53 @@ export default function CreateOverlay({onclick, newGroup}) {
         <>
             <div className={styles.overlay}>
                 <div className={styles.container}>
-                    <input className={styles.titleInput} type="text" placeholder="Title" onChange={e => setTitle(e.currentTarget.value)}/>
-                    <textarea className={styles.descriptionInput} placeholder="Description" onChange={e => setDescription(e.currentTarget.value)}/>
-                    <div style={{display: "flex", gap: "4px", flexWrap: "wrap"}}>
-                        {
-                            tagDisplay.map((value) => {
-                                return(
-                                    // <label className={styles.tag}>{value}<input className={styles.checkbox} type="checkbox" value={value} onChange={handleTags}/></label>
-                                    <Checkbox title={value} selected={selected}/>
-                                );
-                            })
-                        }
-                        <input className={styles.tagInput} size={(1+customTag.length*.65)} type="text" placeholder="Tag" style={tagInputDisplay} onChange={e => setCustomTag(e.currentTarget.value)}></input>
-                        <button className={styles.addCustom} style={custom ? {backgroundColor: "var(--med-green)", color: "white"} : null} onClick={handleCustomTag}>{customText}</button>
+                    <h2>Create Group</h2>
+                    <div className={styles.formBlock}>
+                        <span className={styles.formLabel}>Group Name</span>
+                        <input className={styles.titleInput} type="text" placeholder="Name your group" onChange={e => setTitle(e.currentTarget.value)}/>
                     </div>
-                    <h3 style={{marginBottom: "0", marginTop: "8px"}}>Location & Time</h3>
-                    {locationMap}
-                    <select className={styles.locationSelect} onChange={(e) => setLocation({
-                        name: e.currentTarget.value,
-                        coords: getCoords(e.currentTarget.value)
-                    })}>
-                        {
-                            locations.map((location) => {
-                                return <option value={location}>{location}</option>
-                            })
-                        }
-                    </select>
-                    <input className={styles.dateInput} type="date" value={date} onChange={(e) => setDate(e.currentTarget.value)}/>
-                    <input className={styles.timeInput} type="time" value={time} onChange={(e) => setTime(e.currentTarget.value)}/>
-                    <div className={styles.members}>
-                        <h3 style={{marginBottom: "0", marginTop: "8px"}}>Group Members</h3>
+                    <div className={styles.formBlock}>
+                        <span className={styles.formLabel}>Description</span>
+                        <textarea className={styles.descriptionInput} placeholder="Write something about your group (Optional)" onChange={e => setDescription(e.currentTarget.value)}/>
+                    </div>
+                    <div className={styles.formBlock}>
+                        <span className={styles.formLabel}>Tags</span>
+                        <div className={styles.tagsInput} style={{display: "flex", gap: "4px", flexWrap: "wrap"}}>
+                            {
+                                tagDisplay.map((value) => {
+                                    return(
+                                        // <label className={styles.tag}>{value}<input className={styles.checkbox} type="checkbox" value={value} onChange={handleTags}/></label>
+                                        <Checkbox title={value} selected={selected}/>
+                                    );
+                                })
+                            }
+                            <input className={styles.tagInput} size={(1+customTag.length*.65)} type="text" placeholder="Tag" style={tagInputDisplay} onChange={e => setCustomTag(e.currentTarget.value)}></input>
+                            <button className={styles.addCustom} style={custom ? {backgroundColor: "var(--med-green)", color: "white"} : null} onClick={handleCustomTag}>{customText}</button>
+                        </div>
+                    </div>
+                    
+                    <div className={styles.formBlock}>
+                        <span className={styles.formLabel}>Choose a location</span>
+                        <select className={styles.locationSelect} onChange={(e) => setLocation({
+                            name: e.currentTarget.value,
+                            coords: getCoords(e.currentTarget.value)
+                        })}>
+                            {
+                                locations.map((location) => {
+                                    return <option value={location}>{location}</option>
+                                })
+                            }
+                        </select>
+                    </div>
+                    <div className={styles.formBlock}>
+                        <span className={styles.formLabel}>Schedule a time</span>
+                        <div style={{display: "flex", justifyContent: "space-between"}}>
+                            <input className={styles.dateInput} type="date" value={date} onChange={(e) => setDate(e.currentTarget.value)}/>
+                            <input className={styles.timeInput} type="time" value={time} onChange={(e) => setTime(e.currentTarget.value)}/>
+                        </div>
+                    </div>
+                    <div className={styles.formBlock}>
+                        <label className={styles.formLabel}>Group Members</label>
                         <div className={styles.radioButtons}>
                         {
                             groupMemberValues.map((value) => {
@@ -156,7 +173,7 @@ export default function CreateOverlay({onclick, newGroup}) {
                         </div>
                     </div>
                 </div>
-                <Button text="Create group" size="chonky" bgColor="var(--light-green)" textColor="white" bg width="398px" onclick={handleClick}/>
+                <Button text="Create group" size="chonky" bgColor="var(--light-green)" bgColorHover="var(--dark-green)" textColor="white" bg width="398px" onclick={handleClick}/>
             </div>
         <div className={styles.background} onClick={onclick}/>
         </>

@@ -52,8 +52,8 @@ export default function Quiz() {
                 <section className={styles.bottomFiller} style={{margin: '120px 0'}}>
                 <p> </p>
                 </section>
+                <Footer/>
             </div>
-            <Footer/>
         </div>
     )
 }

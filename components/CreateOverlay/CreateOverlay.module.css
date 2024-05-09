@@ -36,10 +36,22 @@
     z-index: 9;
 }
 
+.formBlock {
+    margin: 8px 0;
+}
+
+.formLabel {
+    font-weight: bold;
+    font-size: var(--title-2)
+}
+
+.titleInput, .descriptionInput, .timeInput, .dateInput, .radioButtons, .locationSelect, .tagsInput {
+    margin: 8px 0;
+}
+
 .titleInput {
-    font-size: var(--title-1);
-    margin-top: 16px;
     min-height: none;
+    font-size: var(--title-3);
     background-color: #eee;
     border-radius: 16px;
     padding: 16px;
@@ -64,7 +76,7 @@
 
 .tagInput {
     padding: 4px 12px;
-    background-color: var(--bright-green);
+    background-color: #eee;
     font-size: var(--caption-1);
     border-radius: 16px;
     border: none;
@@ -85,10 +97,14 @@
 
 .timeInput, .dateInput {
     border: none;
+    padding: 16px 40px;
+    background-color: #eee;
+    border-radius: 16px;
 }
 
 .timeInput:hover, .dateInput:hover {
-    color: var(--med-green);
+    background-color: var(--med-green);
+    color: white;
 }
 
 .timeInput:focus, .dateInput:focus {
@@ -100,11 +116,12 @@
     flex-flow: row wrap;
     gap: 8px;
     margin-top: 8px;
+    justify-content: space-around;
 }
 
 .radioButton {
     background-color: #eee;
-    padding: 4px;
+    padding: 16px;
     border-radius: 8px;
 }
 
@@ -116,8 +133,11 @@
 .locationSelect {
     border: none;
     border-radius: 16px;
-    padding: 4px 12px;
-    background-color: var(--bright-green)
+    padding: 16px 12px;
+    background-color: #eee;
+    width: 100%;
+    font-size: var(--body);
+    font-family: "Inter", sans-serif;
 }
 
 .locationSelect:hover {
