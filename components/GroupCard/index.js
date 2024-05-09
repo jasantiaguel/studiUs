@@ -93,7 +93,14 @@ export default function Card({group, todo=null, returnGroup=null, selectedTags=[
                     {
                         processTags(group.tags).map((tag) => {
                             return(
-                                <Tag text={tag} type={selectedTags.includes(tag) ? 'selected' : 'tag'}/>
+                                <Tag 
+                                    text={tag} 
+                                    type={
+                                        isActive ? (selectedTags.includes(tag) 
+                                        ? 'selected' : 'tag') : (selectedTags.includes(tag) 
+                                        ? 'selectedSched' : 'tag')
+                                    }
+                                />
                             )
                         })
                     }

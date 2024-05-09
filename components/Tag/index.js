@@ -33,6 +33,13 @@ export default function Tag({
             textColor: 'var(--dark-green)',
             backgroundColor: 'var(--bright-af)',
         },
+        selectedSched: {
+            padding: '4px 12px',
+            fontSize: 'var(--caption-1)',
+            borderRadius: '16px',
+            textColor: 'var(--bright-af)',
+            backgroundColor: 'var(--med-green)',
+        },
         filter: {
             fontSize: 'var(--sub-body)',
             padding: '8px 18px',
