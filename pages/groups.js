@@ -58,7 +58,7 @@ export default function Groups() {
           </section>
           {
               groupData.map((group) => {
-                  return <GroupCard group={group} todo={removeGroup} returnGroup={returnGroup}/>
+                  return <GroupCard tabIndex={3} group={group} todo={removeGroup} returnGroup={returnGroup}/>
               })
           }
           
@@ -72,6 +72,7 @@ export default function Groups() {
               size="chonky2" 
               width="398px"
               onclick={() => setShowCreate(true)}
+              tabIndex={4}
             />
         </div>
           <Footer bdRadius={0} dshadow='4px -32px 32px #2E384D59;'/>
