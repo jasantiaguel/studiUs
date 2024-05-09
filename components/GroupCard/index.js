@@ -23,6 +23,10 @@ export default function Card({group, todo=null, returnGroup=null, selectedTags=[
         else setIsActive(false);
     }, [group])
 
+    let statusObject = getStatus(group.time);
+    let status = statusObject.status;
+    let startsWithin24Hours = statusObject.startsWithin24Hours;
+
     const handleButton = () => {
         setPopup(false);
         todo && todo();
@@ -67,11 +71,6 @@ export default function Card({group, todo=null, returnGroup=null, selectedTags=[
         return { status: `Starting in ${hours} hour${hours > 1 ? 's':''}`, startsWithin24Hours: true };
     }
 
-    let statusObject = getStatus(group.time);
-    let status = statusObject.status;
-    let startsWithin24Hours = statusObject.startsWithin24Hours;
-
-
     let day = dateParser(group.time.getDay());
     let time = timeParser(''+group.time.getHours(), ''+group.time.getMinutes());
     
@@ -104,7 +103,7 @@ export default function Card({group, todo=null, returnGroup=null, selectedTags=[
                                 <Tag 
                                     text={tag} 
                                     type={
-                                        isActive ? (selectedTags.includes(tag) 
+                                        startsWithin24Hours ? (selectedTags.includes(tag) 
                                         ? 'selected' : 'tag') : (selectedTags.includes(tag) 
                                         ? 'selectedSched' : 'tag')
                                     }
