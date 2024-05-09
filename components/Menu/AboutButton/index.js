@@ -4,7 +4,7 @@ import styles from "../Menu.module.css"
 
 export default function AboutButton({path, text=""}) {
     return(
-        <Link className={styles.button} href="#">
+        <Link className={styles.button} href="/menuContent/about">
             <Image src={path} width={40} height={40}/>
             {text}
         </Link>

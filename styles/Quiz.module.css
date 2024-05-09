@@ -44,9 +44,3 @@ transform: translate(0, 5%);
     display: none;
 }
 
-.resources {
-    background-color: var(--bright-af);
-    border-radius: 16px;
-    padding: 16px;
-    padding-top: 8px;
-}
