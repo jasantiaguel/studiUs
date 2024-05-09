@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./NavTab.module.css";
 
-export default function NavTab({ image, activeImage, path, width, height, activeHeight}) {
+export default function NavTab({ image, activeImage, path, width, height, activeHeight }) {
     const currentPage = (usePathname() == path);
 
 

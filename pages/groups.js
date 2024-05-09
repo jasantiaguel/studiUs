@@ -52,7 +52,10 @@ export default function Groups() {
             path="/"
             bgImage="/images/groups.banner-bg.png"
           />
-          <h2 style={{margin: '0 0 16px'}}>Joined</h2>
+          <section className={styles.groupsHeader}>
+            <h2 style={{margin: '0 0 16px'}}>Joined</h2>
+            <h2 style={{margin: '0 0 16px'}}>{groupData.length}/5</h2>
+          </section>
           {
               groupData.map((group) => {
                   return <GroupCard group={group} todo={removeGroup} returnGroup={returnGroup}/>

@@ -5,7 +5,8 @@ export default function Tag({
       text, 
       type='tag', 
       selectedTags=[],
-      setSelectedTags
+      setSelectedTags,
+      tabIndex=0
     }) {
 
     function handleClick() {
@@ -68,6 +69,7 @@ export default function Tag({
             href={{ pathname: "/search/results", query: { subject: text } }}
             style={{textDecoration: 'none', color: 'inherit'}}
             onClick={handleClick}
+            tabIndex={tabIndex + 1}
           >
             <div 
               className={styles.tag} 
@@ -96,6 +98,7 @@ export default function Tag({
               filter: typeStyles[type].filter
             }}
             onClick={handleClick}
+            tabIndex={tabIndex + 1}
           >
             {text}
           </div>
@@ -111,6 +114,7 @@ export default function Tag({
               color: typeStyles[type].textColor,
               filter: typeStyles[type].filter
             }}
+            // tabIndex={tabIndex + 1}
           >
             {text}
           </div>
@@ -125,6 +129,7 @@ export default function Tag({
               color: typeStyles[type].textColor,
               filter: typeStyles[type].filter
             }}
+            // tabIndex={tabIndex + 1}
           >
             {text}
           </div>

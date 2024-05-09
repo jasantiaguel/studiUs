@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 export default function Footer({bdRadius, dshadow}) {
 
     return(
-        <div className={styles.footer} style={{borderRadius: bdRadius, filter: dshadow}}>
+        <div tabIndex={10} className={styles.footer} style={{borderRadius: bdRadius, filter: dshadow}}>
             <NavTab 
               image="/images/icon.home-selected.svg" 
               activeImage="/images/icon.home.svg" 
