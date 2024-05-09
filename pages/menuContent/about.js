@@ -42,12 +42,12 @@ export default function About() {
         </section>
 
         <section className={styles.description1}>
-        <Image
-          src="/images/sitting-graphic.svg"
-          width={239}
-          height={152}
-          className={styles.sittingGuy}
-        />
+          <Image
+            src="/images/sitting-graphic.svg"
+            width={239}
+            height={152}
+            className={styles.sittingGuy}
+          />
 
           <Image
             src="/images/header-shape.svg"
@@ -60,17 +60,27 @@ export default function About() {
             <p className={styles.descriptionBox1}>Studius is your ultimate destination for connecting with study groups and peers to enhance your learning experience</p>
           </div>
         </section>
-       
-        <Image
-          src="/images/header-shape.svg"
-          width={239}
-          height={152}
-          className={styles.headerShape2}
-        />
 
-        <p className={styles.headerTitle2}>Our Mission</p>
-        <p className={styles.descriptionBox2}>StudiUs aims to make finding study groups effortless, efficient, and enjoyable for students worldwide.</p>
-        
+        <section className={styles.description2}>
+          <Image
+            src="/images/globe-graphic.svg"
+            width={239}
+            height={152}
+            className={styles.globe}
+          />
+          <Image
+            src="/images/header-shape.svg"
+            width={239}
+            height={152}
+            className={styles.headerShape2}
+          />
+
+          <div className={styles.description2Container}>
+            <p className={styles.headerTitle2}>Our Mission</p>
+            <p className={styles.descriptionBox2}>StudiUs aims to make finding study groups effortless, efficient, and enjoyable for students worldwide.</p>
+          </div>
+        </section>
+
 
         <div className={styles.resources}>
           <h3>Resources</h3>

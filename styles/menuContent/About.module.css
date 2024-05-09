@@ -69,7 +69,7 @@
 .description1 {
     /* position: relative; */
     /* bottom: 300px; */
-    height: 200px;
+    height: 100px;
 }
 
 .description1Container {
@@ -128,19 +128,35 @@
 }
 
 .headerShape2 {
-    /* position: relative; */
+    position: relative;
     rotate: 180deg;
     left: 175px;
-    top: -110px;
+    z-index: 2;
+    top: 150px;
+
+}
+
+.globe{
+    position: relative;
+    z-index: 3;
+    top: 300px;
+    right: 10px;
 }
 
 .headerTitle2 {
-    /* position: relative; */
     font-size: var(--largerer-title);
     font-weight: bold;
     color: var(--bright-af);
-    top: -260px;
-    left: 210px;
+    text-align: right;
+    margin-bottom: 0px;
+
+}
+
+.description2Container {
+    position: relative;
+    bottom: 40px;
+    z-index: 3;
+    margin-top: 70px;
 
 }
 
