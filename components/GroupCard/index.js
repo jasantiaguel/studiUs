@@ -4,11 +4,12 @@ import { useEffect, useState } from "react";
 import styles from "./GroupCard.module.css";
 
 export default function Card({group, todo=null, returnGroup=null, selectedTags=[], tabIndex=0}) {
-    const [isActive, setIsActive] = useState(false);
+    // const [isActive, setIsActive] = useState(false);
     const [popup, setPopup] = useState(false);
     // const [tags, setTags] = useState(group.tags);
     // const [tagChars, setTagChars] = useState(group.tags.toString());
     const TAGLIMIT = 35;
+    const [image, setImage] = useState("url('/images/icon.profile-filled-small.svg')")
 
     function processTags(arr) {
         let temp = [...arr];
@@ -18,10 +19,10 @@ export default function Card({group, todo=null, returnGroup=null, selectedTags=[
         return temp;
     }
 
-    useEffect(() => {
-        if (getStatus(group.time) === "In Progress") setIsActive(true);
-        else setIsActive(false);
-    }, [group])
+    // useEffect(() => {
+    //     if (getStatus(group.time) === "In Progress") setIsActive(true);
+    //     else setIsActive(false);
+    // }, [group])
 
     let statusObject = getStatus(group.time);
     let status = statusObject.status;
@@ -80,7 +81,7 @@ export default function Card({group, todo=null, returnGroup=null, selectedTags=[
             <div 
                 className={startsWithin24Hours ? styles.active : styles.inactive} 
                 onClick={() => setPopup(true)}
-                tabIndex={tabIndex + 1}
+                tabIndex={tabIndex}
             >
                 <div className={styles.top}>
                     <div>
@@ -119,9 +120,8 @@ export default function Card({group, todo=null, returnGroup=null, selectedTags=[
                 <div className={styles.icons}>
                     {
                         group.members.map((member) => {
-                            let image = "url('/images/icon.profile-filled-small.svg";
                             if (member === "") {
-                                image = "url('/images/icon.profile-unfilled-small.svg";
+                                setImage("url('/images/icon.profile-unfilled-small.svg')");
                             }
                             return <div 
                                         style={{
