@@ -2,6 +2,7 @@ export const studyMethods = [
     {
         name: "Feynman",
         sub: "Study Method",
+        image: "/images/method.Feynman.svg",
         description: "The Feynman Technique, named after physicist Richard Feynman, involves simplifying complex concepts by explaining them in simple terms as if teaching them to someone else. This technique emphasizes understanding through clear, concise explanations.",
         howToUse: [
             {point: "Understand", description: "Grasp the concept thoroughly before attempting to explain it."},
@@ -20,6 +21,7 @@ export const studyMethods = [
     {
         name: "Leitner",
         sub: "System",
+        image: "/images/method.Lietner.svg",
         description: "The Leitner System is a spaced repetition technique that utilizes flashcards to review and memorize information. Flashcards are sorted into different boxes based on the level of mastery, with cards moving to higher boxes as they are answered correctly and vice versa.",
         howToUse: [
             { point: "Create", description: "Make flashcards with key information or questions." },
@@ -38,6 +40,7 @@ export const studyMethods = [
     {
         name: "Retrieval",
         sub: "Practice",
+        image: "/images/method.Retrieval.svg",
         description: "Retrieval practice involves actively recalling information from memory, without the aid of materials or notes. This technique strengthens memory retention by repeatedly retrieving and reinforcing learned information.",
         howToUse: [
             { point: "Recall", description: "Test yourself by trying to remember key facts or concepts." },
@@ -56,6 +59,7 @@ export const studyMethods = [
     {
         name: "SQ3R/PQ4R",
         sub: "Method",
+        image: "/images/method.SQ4R.svg",
         description: "SQ3R (Survey, Question, Read, Recite, Review) or PQ4R (Preview, Question, Read, Reflect, Recite, Review) is an active reading and study method. It involves previewing the material, generating questions, reading actively while answering those questions, reciting or recalling information, and finally reviewing the material to reinforce learning.",
         howToUse: [
             { point: "Survey", description: "Skim through the material to get an overview." },

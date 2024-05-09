@@ -38,7 +38,7 @@ export default function Quiz() {
                 <div className={styles.studyMethods}>
                 {
                     studyMethods.map((method) => {
-                        return <PopupButton methodName={method.name}/>
+                        return <PopupButton methodName={method.name} path={method.image}/>
                     })
                 }
                 </div>

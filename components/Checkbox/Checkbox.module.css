@@ -7,7 +7,7 @@
 }
 
 .containerSelected {
-    padding: 4px 12px;
+    padding: 8px 16px;
     background-color: var(--med-green);
     color: white;
     font-size: var(--caption-1);
