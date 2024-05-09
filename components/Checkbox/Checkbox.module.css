@@ -1,6 +1,7 @@
 .container {
-    padding: 4px 12px;
-    background-color: var(--bright-green);
+    padding: 8px 16px;
+    background-color: var(--light-green);
+    color: white;
     font-size: var(--caption-1);
     border-radius: 16px;
 }
@@ -14,10 +15,10 @@
 }
 
 .container:hover {
-    background-color: var(--light-green);
+    background-color: var(--dark-green-85);
     color: white;
 }
 
 .containerSelected:hover {
-    background-color: var(--med-green-85);
+    background-color: var(--dark-green);
 }
