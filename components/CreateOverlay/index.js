@@ -108,6 +108,11 @@ export default function CreateOverlay({onclick, newGroup}) {
         if (locationName === "Starbucks") return {circlePoint: "49.256500573312074,-123.00687841485916", centerPoint: "49.25503999698177,-122.99757892021863"};
     }
 
+    const [isChecked, setIsChecked] = useState(false);
+    const handleRadio = (e) => {
+        setMemberCount(e.currentTarget.value);
+    }
+
     return(
         <>
             <div className={styles.overlay}>
@@ -165,7 +170,7 @@ export default function CreateOverlay({onclick, newGroup}) {
                                 return(
                                     <label className={styles.radioButton}>
                                         {value}
-                                        <input type="radio" value={value} name="members" onChange={() => setMemberCount(value)}/>
+                                        <input type="radio" value={value} name="members" onChange={handleRadio}/>
                                     </label>
                                 )
                             })

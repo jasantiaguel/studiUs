@@ -120,15 +120,35 @@
     justify-content: space-around;
 }
 
+/* .radioButton input, .radioButtonChecked input {
+    display: none;
+} */
+
 .radioButton {
     background-color: #eee;
     padding: 16px;
+    width: 10%;
     border-radius: 8px;
+    text-align: center;
+}
+
+.radioButtonChecked {
+    background-color: var(--med-green);
+    padding: 16px;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    width: 10%;
 }
 
 .radioButton:hover {
     background-color: var(--med-green-85);
     color: white;
+}
+
+.radioButtonChecked:hover {
+    background-color: var(--light-green);
+    color:white;
 }
 
 .locationSelect {
