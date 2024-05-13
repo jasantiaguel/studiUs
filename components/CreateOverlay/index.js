@@ -170,7 +170,7 @@ export default function CreateOverlay({onclick, newGroup}) {
                                 return(
                                     <label className={styles.radioButton}>
                                         {value}
-                                        <input type="radio" value={value} name="members" onChange={handleRadio}/>
+                                        <input className={styles.radio} type="radio" value={value} name="members" onChange={handleRadio}/>
                                     </label>
                                 )
                             })
