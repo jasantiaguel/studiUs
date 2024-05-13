@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 import Button from "@/components/Button";
 import CreateOverlay from "@/components/CreateOverlay";
 import Image from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Groups() {  
   const [groupData, setGroupData] = useState(groups);
@@ -70,21 +71,29 @@ export default function Groups() {
             <h2 style={{margin: '0 0 16px'}}>Joined</h2>
             <h2 style={{margin: '0 0 16px'}}>{groupData.length}/5</h2>
           </section>
+          <AnimatePresence>
           {
               groupData.map((group) => {
                   return <GroupCard tabIndex={3} group={group} todo={removeGroup} returnGroup={returnGroup}/>
               })
           }
-          
+          </AnimatePresence>
           {/* This is a filler section to make the bottom of page not cut off */}
           <section className={styles.bottomFiller} style={{margin: '196px 0'}}>
           </section>
+          <AnimatePresence>
           {
             showSnackbar &&
-            <div className={styles.snackbar}>
+            <motion.div
+            key="snackbar"
+            initial={{opacity: 0}}
+            animate={{opacity: 100}}
+            exit={{opacity: 0}}
+            className={styles.snackbar}>
               {snackbarText}
-            </div>
+            </motion.div>
           }
+          </AnimatePresence>
           <div className={styles.createButton}>
             <Button 
               text="+ Create Group" 
@@ -96,6 +105,7 @@ export default function Groups() {
         </div>
           <Footer bdRadius={0} dshadow='4px -32px 32px #2E384D59;'/>
         </main>
+        <AnimatePresence>
         {
           showCreate &&
           <CreateOverlay
@@ -103,6 +113,7 @@ export default function Groups() {
             newGroup={newGroup}
           />
         }
+        </AnimatePresence>
       </div>
   )
 }

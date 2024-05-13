@@ -20,7 +20,6 @@ export default function GroupInfo({onclick, group, todo=null, returnGroup=null, 
                 initial={{y: 100}}
                 animate={{y: 0}}
                 exit={{scale: 0}}
-                transition={{duration: .2}}
                 className={styles.container}>
                     <h2 className={styles.title}>{group.title}</h2>
                     <p>{group.description}</p>

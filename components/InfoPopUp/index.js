@@ -9,8 +9,10 @@ export default function InfoPopUp({methodName, onclick}) {
     return(
         <>
             <motion.div
+            key="info"
             initial={{y: 100}}
             animate={{y: 0}}
+            exit={{scale: 0, duration: .2}}
             className={styles.container}>
                 <h2>The {method.name}</h2>
                 <h4>{method.sub}</h4>

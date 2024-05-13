@@ -70,8 +70,11 @@ export default function Card({group, todo=null, returnGroup=null, selectedTags=[
     return(
         <>
         <motion.div
+        // key="card"
         initial={{x: 40}}
         animate={{x: 0}}
+        whileHover={{scale: 1.02}}
+        whileTap={{scale: 0.98}}
         className={styles.all}>
             <div 
                 className={startsWithin24Hours ? styles.active : styles.inactive} 

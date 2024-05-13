@@ -118,8 +118,10 @@ export default function CreateOverlay({onclick, newGroup}) {
         <>
             <div className={styles.overlay}>
                 <motion.div
+                key="create"
                 initial={{y: 100}}
                 animate={{y: 0}}
+                exit={{scale: 0}}
                 className={styles.container}>
                     <h2>Create Group</h2>
                     <div className={styles.formBlock}>
