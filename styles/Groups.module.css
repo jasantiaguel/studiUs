@@ -25,9 +25,9 @@
 }
 
 .groupsHeader {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
 }
 
 .createButton {
