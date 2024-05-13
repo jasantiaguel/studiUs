@@ -1,5 +1,6 @@
 import styles from "./Button.module.css"
 import { useState } from "react";
+import { motion } from "framer-motion"
 
 export default function Button({
         text, 
@@ -41,7 +42,11 @@ export default function Button({
     const [hover, setHover] = useState(false);
 
     return(
-        <button 
+        <motion.button
+            key="button"
+            initial={{scale: 0.6}}
+            animate={{scale: 1}}
+            exit={{scale: 0}}
             tabIndex={tabIndex}
             onClick={onclick} 
             onMouseEnter={() => setHover(true)}
@@ -59,6 +64,6 @@ export default function Button({
             }}
         >
             {text}
-        </button>
+        </motion.button>
     )
 }

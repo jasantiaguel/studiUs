@@ -1,7 +1,8 @@
 import GroupInfo from "@/components/GroupInfo";
 import Tag from "@/components/Tag";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "./GroupCard.module.css";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Card({group, todo=null, returnGroup=null, selectedTags=[], tabIndex=0}) {
     const [popup, setPopup] = useState(false);
@@ -68,7 +69,10 @@ export default function Card({group, todo=null, returnGroup=null, selectedTags=[
     
     return(
         <>
-        <div className={styles.all}>
+        <motion.div
+        initial={{x: 40}}
+        animate={{x: 0}}
+        className={styles.all}>
             <div 
                 className={startsWithin24Hours ? styles.active : styles.inactive} 
                 onClick={() => setPopup(true)}
@@ -124,10 +128,12 @@ export default function Card({group, todo=null, returnGroup=null, selectedTags=[
                     }
                 </div>
             </div>
-        </div>
+        </motion.div>
+        <AnimatePresence>
         {
             popup && <GroupInfo group={group} todo={handleButton} returnGroup={returnData} onclick={() => setPopup(false)} day={day} time={time}/>
         }
+        </AnimatePresence>
         </>
     )
 }

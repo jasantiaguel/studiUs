@@ -3,6 +3,7 @@ import Map from "../Map";
 import Button from "../Button";
 import styles from "./CreateOverlay.module.css"
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 export default function CreateOverlay({onclick, newGroup}) {
     const [title, setTitle] = useState("Title");
@@ -116,7 +117,10 @@ export default function CreateOverlay({onclick, newGroup}) {
     return(
         <>
             <div className={styles.overlay}>
-                <div className={styles.container}>
+                <motion.div
+                initial={{y: 100}}
+                animate={{y: 0}}
+                className={styles.container}>
                     <h2>Create Group</h2>
                     <div className={styles.formBlock}>
                         <span className={styles.formLabel}>Group Name</span>
@@ -177,7 +181,7 @@ export default function CreateOverlay({onclick, newGroup}) {
                         }
                         </div>
                     </div>
-                </div>
+                </motion.div>
                 <Button text="Create group" size="chonky" bgColor="var(--light-green)" bgColorHover="var(--dark-green)" textColor="white" bg width="398px" onclick={handleClick}/>
             </div>
         <div className={styles.background} onClick={onclick}/>

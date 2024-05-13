@@ -3,6 +3,7 @@ import Button from "../Button"
 import Map from "../Map"
 import Tag from "../Tag"
 import styles from "./GroupInfo.module.css"
+import {motion, AnimatePresence} from "framer-motion"
 
 export default function GroupInfo({onclick, group, todo=null, returnGroup=null, day, time}) {
     const path = usePathname();
@@ -14,7 +15,13 @@ export default function GroupInfo({onclick, group, todo=null, returnGroup=null, 
     return(
         <>
             <div className={styles.overlay}>
-                <div className={styles.container}>
+                <motion.div
+                key="overlay"
+                initial={{y: 100}}
+                animate={{y: 0}}
+                exit={{scale: 0}}
+                transition={{duration: .2}}
+                className={styles.container}>
                     <h2 className={styles.title}>{group.title}</h2>
                     <p>{group.description}</p>
                     <div className={styles.tags}>
@@ -39,11 +46,11 @@ export default function GroupInfo({onclick, group, todo=null, returnGroup=null, 
                             })
                         }
                     </ul>
-                </div>
+                </motion.div>
                 {
                     path === "/groups" ?
                     <Button onclick={leaveGroup} text="Leave Group" width="398px" size="chonky" bgColor="var(--med-red)" bgColorHover="var(--bold-red)"/>:
-                    <Button text="Join Group" width="398px" size="chonky" bgColor="var(--med-blue)" bgColorHover="var(--bold-blue)"/>
+                    <Button onclick={leaveGroup} text="Join Group" width="398px" size="chonky" bgColor="var(--med-blue)" bgColorHover="var(--bold-blue)"/>
                 }
             </div>
         <div className={styles.background} onClick={onclick}/>
