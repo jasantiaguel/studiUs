@@ -1,5 +1,6 @@
 import styles from "./Tag.module.css"
 import Link from "next/link"
+import { motion } from "framer-motion";
 
 export default function Tag({
       text, 
@@ -71,7 +72,8 @@ export default function Tag({
             onClick={handleClick}
             tabIndex={tabIndex + 1}
           >
-            <div 
+            <motion.div
+              whileHover={{scale: 1.05}}
               className={styles.tag} 
               style={{
                 fontSize: typeStyles[type].fontSize,
@@ -83,11 +85,12 @@ export default function Tag({
               }}
             >
               {text}
-            </div>
+            </motion.div>
           </Link>
           :
           type === "homeFilter" ?
-          <div 
+          <motion.div
+            whileHover={{scale: 1.05}}
             className={styles.tag} 
             style={{
               fontSize: typeStyles[type].fontSize,
@@ -101,10 +104,11 @@ export default function Tag({
             tabIndex={tabIndex + 1}
           >
             {text}
-          </div>
+          </motion.div>
           :
           type === "selected" ?
-          <div 
+          <motion.div
+            whileHover={{scale: 1.05}}
             className={styles.tag} 
             style={{
               fontSize: typeStyles[type].fontSize,
@@ -117,9 +121,10 @@ export default function Tag({
             // tabIndex={tabIndex + 1}
           >
             {text}
-          </div>
+          </motion.div>
           :
-          <div 
+          <motion.div
+            whileHover={{scale: 1.05}}
             className={styles.tag} 
             style={{
               fontSize: typeStyles[type].fontSize,
@@ -132,7 +137,7 @@ export default function Tag({
             // tabIndex={tabIndex + 1}
           >
             {text}
-          </div>
+          </motion.div>
         }
         </>
     )

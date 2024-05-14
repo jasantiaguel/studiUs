@@ -16,6 +16,7 @@ export default function Question({ answerData, onclick, onKeyDown, returnData, s
         <motion.div
         initial={{scale: .9}}
         animate={{scale: 1}}
+        whileHover={{scale: 1.05}}
         transition={{type: "spring", duration: .5}}
         tabIndex={tabIndex} className={styles.answerBackground} onClick={handleClick} onKeyDown={(e) => e.key === 'Enter' && handleClick()} style={answerData.number % 2 != 0 ? {marginRight: "auto"} : {marginLeft: "auto"}}>
             <div className={styles.ellipse} style={style}>

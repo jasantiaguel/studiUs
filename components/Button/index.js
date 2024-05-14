@@ -44,6 +44,7 @@ export default function Button({
     return(
         <motion.button
             key="button"
+            whileHover={{scale: 1.05}}
             initial={{scale: 0.6}}
             animate={{scale: 1}}
             exit={{scale: 0}}
