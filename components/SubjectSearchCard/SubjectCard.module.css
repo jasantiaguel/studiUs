@@ -13,7 +13,7 @@
   width: 191px;
   height: 119px;
   border-radius: 16px 16px 0 16px;
-  /* background-color: var(--bright-af); */
+  background-color: var(--bright-af);
 }
 
 .subjectTitle {
