@@ -93,7 +93,7 @@ export default function Search() {
         </section>
         <h2 style={{margin: '32px 0 16px'}}>Computer & Technology</h2>
         <section className={styles.subjectSection}>
-          <SubjectSearchCard tabIndex={5} title='Computer Science'/>
+          <SubjectSearchCard tabIndex={5} title='Computer Science' image="url('/images/bg-comp-sci.jpeg')"/>
           <SubjectSearchCard tabIndex={5} title='Front End Development'/>
           <SubjectSearchCard tabIndex={5} title='Digital Design & Development'/>
         </section>

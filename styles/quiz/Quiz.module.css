@@ -49,4 +49,5 @@ transform: translate(0, 5%);
     border-radius: 16px;
     padding: 16px;
     padding-top: 8px;
+    filter: drop-shadow(var(--drop-shadow-4-8-32));
 }

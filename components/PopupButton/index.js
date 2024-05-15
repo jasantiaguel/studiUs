@@ -2,6 +2,7 @@ import styles from "./popupButton.module.css";
 import InfoPopUp from "../InfoPopUp";
 import Image from "next/image";
 import { useState } from "react";
+
 import { AnimatePresence, motion } from "framer-motion";
 
 export default function PopupButton({methodName, path}) {

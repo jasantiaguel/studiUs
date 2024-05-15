@@ -9,6 +9,8 @@ import HeadArea from "@/components/HeadArea";
 
 import { studyMethods } from "@/data/studymethods";
 import PopupButton from "@/components/PopupButton";
+import { motion } from "framer-motion"
+
 
 export default function Quiz() {    
     return(
