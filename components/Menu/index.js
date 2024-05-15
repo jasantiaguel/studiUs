@@ -28,9 +28,15 @@ export default function Menu() {
                             <Image style={{width: "258px", height: "auto"}} src="/images/logo/logomark-white.svg" width={597} height={175}/>
                         </div>
                         <div className={styles.body}>
+<<<<<<< HEAD
                             <AboutButton path="/images/icons/icon.about.svg" text="About"/>
                             <AboutButton path="/images/icons/icon.settings.svg" text="Settings"/>
                             <ResourcesButton path="/images/icons/icon.resources.svg" text="Resources"/>
+=======
+                            <AboutButton imgPath="/images/icons/icon.about.svg" text="About" path="/menuContent/about"/>
+                            <AboutButton imgPath="/images/icons/icon.settings.svg" text="Settings"/>
+                            <AboutButton imgPath="/images/icons/icon.resources.svg" text="Resources"/>
+>>>>>>> 57c9e75684686d399cb6a5810aab6a1ce3834ceb
 
                         </div>
                     </motion.div>
