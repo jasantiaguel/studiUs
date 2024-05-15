@@ -74,7 +74,7 @@ export default function Search() {
             <input 
               tabIndex={3}
               className={styles.searchInput} 
-              type="text" value={searchTerm.toLowerCase()} 
+              type="text" value={searchTerm} 
               onChange={handleSearchChange}
               placeholder="Search for tags"
             />
