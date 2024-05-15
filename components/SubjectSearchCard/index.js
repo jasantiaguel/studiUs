@@ -18,7 +18,7 @@ export default function SubjectSearchCard({ title, tabIndex, image }) {
         animate={{ scaleY: 1 }}
         whileHover={{ scale: 1.05 }}
         className={styles.fullCard}>
-        <div className={styles.overCard} style={{ backgroundImage: { image } }}>
+        <div className={styles.overCard} style={{ backgroundImage: `url(${ image })` }}>
         </div>
         <h5 className={styles.subjectTitle}>{title}</h5>
       </motion.section>

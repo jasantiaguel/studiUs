@@ -93,16 +93,16 @@ export default function Search() {
         </section>
         <h2 style={{margin: '32px 0 16px'}}>Computer & Technology</h2>
         <section className={styles.subjectSection}>
-          <SubjectSearchCard tabIndex={5} title='Computer Science' image="url('/images/bg-comp-sci.jpeg')"/>
-          <SubjectSearchCard tabIndex={5} title='Front End Development'/>
-          <SubjectSearchCard tabIndex={5} title='Digital Design & Development'/>
+          <SubjectSearchCard tabIndex={5} title='Computer Science' image='/images/bg-comp-sci.jpeg'/>
+          <SubjectSearchCard tabIndex={5} title='Front End Development' image='/images/bg-frontend.svg'/> 
+          <SubjectSearchCard tabIndex={5} title='Digital Design & Development' image='/images/bg-deefree.svg'/>
         </section>
         <h2 style={{margin: '32px 0 16px'}}>Science</h2>
         <section className={styles.subjectSection}>
-          <SubjectSearchCard tabIndex={5} title='Biology'/>
-          <SubjectSearchCard tabIndex={5} title='Chemistry'/>
-          <SubjectSearchCard tabIndex={5} title='Physics'/>
-          <SubjectSearchCard tabIndex={5} title='Environmental Studies'/>
+          <SubjectSearchCard tabIndex={5} title='Biology' image='/images/bg-biology.svg'/>
+          <SubjectSearchCard tabIndex={5} title='Chemistry' image='/images/bg-chem.svg'/>
+          <SubjectSearchCard tabIndex={5} title='Physics' image='/images/bg-physics.svg'/>
+          <SubjectSearchCard tabIndex={5} title='Environmental Studies' image='/images/bg-env-sci.svg'/>
         </section>
         <h2 style={{margin: '32px 0 16px'}}>Mathematics</h2>
         <section className={styles.subjectSection}>

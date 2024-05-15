@@ -3,7 +3,7 @@
   width: 191px;
   height: 148px;
   border-radius: 16px;
-  background-color: var(--med-green);
+  background-color: var(--bright-af);
   filter: drop-shadow(var(--drop-shadow-2-2-16));
 }
 
@@ -13,12 +13,12 @@
   width: 191px;
   height: 119px;
   border-radius: 16px 16px 0 16px;
-  /* background-color: var(--bright-af); */
+  background-color: var(--med-green-20);
 }
 
 .subjectTitle {
   font-weight: var(--font-weight-bold); 
-  color: var(--bright-af);
+  color: var(--dark-blue);
   margin: 4px 0 0 12px;
   width: 169px;
   text-overflow: ellipsis;
