@@ -38,7 +38,7 @@ export default function GroupInfo({onclick, group, todo=null, returnGroup=null, 
                             group.members.map((member) => {
                                 return(
                                     <div className={styles.member}>
-                                        <div className={styles.pfp}/>
+                                        <div className={styles.pfp} style={{backgroundImage: member == "" ? "url('/images/icons/icon.profile-large-non.svg')":"url('/images/icons/icon.profile-large.svg')"}}/>
                                         <p>{member}</p>
                                     </div>
                                 )
