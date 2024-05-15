@@ -45,7 +45,11 @@ export default function Quiz() {
                 <div className={styles.resources}>
                     <h3>Resources</h3>
                     <p>More information from credible sources!</p>
-                    <Button text="Read More"/>
+                    <Link href="https://www.usa.edu/blog/study-techniques/" passHref legacyBehavior>
+                        <a target="_blank">
+                            <Button text="Read More"/>
+                        </a>
+                    </Link>
                 </div>
                 {/* This is a filler section to make the bottom of page not cut off */}
                 <section className={styles.bottomFiller} style={{margin: '120px 0'}}>

@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./Menu.module.css";
 import { useState } from "react";
 import AboutButton from "./AboutButton";
+import ResourcesButton from "./ResourcesButton";
 import { AnimatePresence, motion } from "framer-motion";
 
 export default function Menu() {
@@ -29,7 +30,7 @@ export default function Menu() {
                         <div className={styles.body}>
                             <AboutButton path="/images/icons/icon.about.svg" text="About"/>
                             <AboutButton path="/images/icons/icon.settings.svg" text="Settings"/>
-                            <AboutButton path="/images/icons/icon.resources.svg" text="Resources"/>
+                            <ResourcesButton path="/images/icons/icon.resources.svg" text="Resources"/>
 
                         </div>
                     </motion.div>
