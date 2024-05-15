@@ -84,18 +84,24 @@ export default function Search() {
           <section className={styles.filterSectionScroll} ref={sliderRef}>
             <Tag tabIndex={4} text='Outgoing' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
             <Tag tabIndex={4} text='Music' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
-            <Tag tabIndex={4} text='Anime' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
             <Tag tabIndex={4} text='Coding' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
             <Tag tabIndex={4} text='Coffee' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
             <Tag tabIndex={4} text='Food' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag tabIndex={4} text='Anime' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />            
             <Tag tabIndex={4} text='Pizza' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
           </section>
         </section>
         <h2 style={{margin: '32px 0 16px'}}>Computer & Technology</h2>
         <section className={styles.subjectSection}>
+<<<<<<< HEAD
           <SubjectSearchCard tabIndex={5} title='Computer Science' image='/images/bg-comp-sci.jpeg'/>
           <SubjectSearchCard tabIndex={5} title='Front End Development' image='/images/bg-frontend.svg'/> 
           <SubjectSearchCard tabIndex={5} title='Digital Design & Development' image='/images/bg-deefree.svg'/>
+=======
+          <SubjectSearchCard tabIndex={5} title='Computer Science' image="/images/bg-comp-sci.jpeg"/>
+          <SubjectSearchCard tabIndex={5} title='Front End Development'/>
+          <SubjectSearchCard tabIndex={5} title='Digital Design & Development'/>
+>>>>>>> 68be07c525a199c1f9a36673c99d460721f0a923
         </section>
         <h2 style={{margin: '32px 0 16px'}}>Science</h2>
         <section className={styles.subjectSection}>
