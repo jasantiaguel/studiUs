@@ -68,8 +68,8 @@ export default function profile() {
         </section>
         <h2 style={{ margin: "32px 0 16px", width: "398px" }}>Top Subjects</h2>
         <section className={styles.topSubjectsSection}>
-          <SubjectSearchCard title="Computer Science" />
-          <SubjectSearchCard title="Front End Development" />
+          <SubjectSearchCard tabIndex={5} title='Computer Science' image='/images/bg-comp-sci.jpeg' />
+          <SubjectSearchCard tabIndex={5} title='Front End Development' image='/images/bg-frontend.svg' />
         </section>
 
         {/* This is a filler section to make the bottom of page not cut off */}

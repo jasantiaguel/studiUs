@@ -1,10 +1,10 @@
 .container {
     min-width: 136px;
     height: 152px;
-    background-color: var(--bright-af);
+    background-color: var(--light-green);
     font-weight: var(--font-weight-bold);
     font-size: var(--body);
-    color: var(--dark-blue);
+    color: var(--bright-af);
     display: flex;
     flex-flow: column;
     justify-content: flex-end;

@@ -13,12 +13,12 @@
   width: 191px;
   height: 119px;
   border-radius: 16px 16px 0 16px;
-  background-color: var(--med-green-20);
+  background-color: var(--light-green);
 }
 
 .subjectTitle {
   font-weight: var(--font-weight-bold); 
-  color: var(--dark-blue);
+  color: var(--dark-green);
   margin: 4px 0 0 12px;
   width: 169px;
   text-overflow: ellipsis;
