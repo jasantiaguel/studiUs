@@ -80,13 +80,14 @@ export default function Card({group, todo=null, returnGroup=null, selectedTags=[
                         <p className={styles.status}>{status}</p>
                     </div>
                     <div 
-                        className={styles.timeBlock} 
-                        style={startsWithin24Hours ? {backgroundColor: "var(--bright-af-75)", 
-                        color: "var(--dark-green"}:{backgroundColor: "var(--med-green-85)", 
-                        color: "white"}}
+                      className={styles.timeBlock} 
+                      style={startsWithin24Hours ?
+                      {backgroundColor: "var(--bright-af-75)", color: "var(--dark-green"} : 
+                      {backgroundColor: "var(--med-green-85)", color: "white"}
+                      }
                     >
-                        <p style={{fontWeight: "var(--font-weight-bold)"}}>{day}</p>
-                        <p>{time}</p>
+                      <p style={{fontWeight: "var(--font-weight-bold)"}}>{day}</p>
+                      <p>{time}</p>
                     </div>
                 </div>  
                 <div className={styles.tags}>
