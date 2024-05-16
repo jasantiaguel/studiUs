@@ -2,10 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "../Menu.module.css"
 
-export default function AboutButton({path, text=""}) {
+export default function AboutButton({imgPath, text="", path="#"}) {
     return(
-        <Link className={styles.button} href="/menuContent/about">
-            <Image src={path} width={40} height={40}/>
+        <Link className={styles.button} href={path}>
+            <Image src={imgPath} width={40} height={40}/>
             {text}
         </Link>
     )

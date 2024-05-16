@@ -1,10 +1,10 @@
 .container {
     min-width: 136px;
     height: 152px;
-    background-color: var(--med-green);
+    background-color: var(--light-green);
     font-weight: var(--font-weight-bold);
     font-size: var(--body);
-    color: white;
+    color: var(--bright-af);
     display: flex;
     flex-flow: column;
     justify-content: flex-end;
@@ -12,6 +12,8 @@
     margin: 0;
     padding-bottom: 8px;
     border-radius: 16px;
+    filter: drop-shadow(var(--drop-shadow-2-2-16));
+
 }
 
 .container p {
@@ -20,4 +22,7 @@
 
 .container:hover {
     background-color: var(--med-green-85);
+    color: var(--bright-af);
+
+
 }

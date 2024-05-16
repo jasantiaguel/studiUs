@@ -12,6 +12,7 @@ import HeadArea from "@/components/HeadArea";
 import ProgressBar from "@/components/ProgressBar";
 import Image from "next/image";
 import InfoPopUp from "@/components/InfoPopUp";
+import { AnimatePresence } from "framer-motion";
 
 export default function Questions() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -188,10 +189,12 @@ export default function Questions() {
                     <ProgressBar progress={currentQuestion} length={questions.length} />
                 </div>
             </div>
+            <AnimatePresence>
             {
                 popup && <InfoPopUp methodName={answerSelected.method} onclick={() => setPopup(null)}/>
             }
             <Footer />
+            </AnimatePresence>
         </div>
     )
 }

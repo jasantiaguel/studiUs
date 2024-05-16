@@ -25,9 +25,9 @@
 }
 
 .groupsHeader {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
 }
 
 .createButton {
@@ -44,4 +44,25 @@
     background-color: var(--bright-af);
     top: 770px;
     z-index: 3;
+}
+
+.snackbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px 0 0 16px;
+    height: 64px;
+    width: 338px;
+    padding: 0 32px;
+    position: absolute;
+    left: 26px;
+    right: 0;
+    top: 696px;
+    margin: auto;
+    background-color: var(--bright-af);
+    filter: drop-shadow(var(--drop-shadow-2-2-16));
+    border: 2px solid var(--med-green-85);
+    border-right: none;
+    font-weight: var(--font-weight-bold);
+    color: var(--dark-green);
 }

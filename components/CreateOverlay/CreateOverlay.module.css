@@ -120,15 +120,40 @@
     justify-content: space-around;
 }
 
+.radioButton input {
+    z-index: -1;
+    margin: 0;
+    bottom: 400px;
+    position: absolute;
+}
+
 .radioButton {
+    display: flex;
+    flex-flow: column;
     background-color: #eee;
     padding: 16px;
+    width: 10%;
     border-radius: 8px;
+    text-align: center;
+}
+
+.radioButton:focus-within {
+    background-color: var(--med-green);
+    padding: 16px;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    width: 10%;
 }
 
 .radioButton:hover {
     background-color: var(--med-green-85);
     color: white;
+}
+
+.radioButtonChecked:hover {
+    background-color: var(--light-green);
+    color:white;
 }
 
 .locationSelect {

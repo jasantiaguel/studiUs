@@ -93,10 +93,10 @@ export default function Results() {
           <section className={styles.filterSectionScroll} ref={sliderRef}>
             <Tag text='Outgoing' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
             <Tag text='Music' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
-            <Tag text='Anime' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
             <Tag text='Coding' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
             <Tag text='Coffee' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
             <Tag text='Food' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+            <Tag text='Anime' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
             <Tag text='Pizza' type='filter' selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
           </section>
         </section>
