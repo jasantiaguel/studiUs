@@ -6,7 +6,7 @@ export const groups = [
     title: "Beans, Barbies, Borat",
     description: "beans beans beans beans...",
     tags: ["Chemistry", "Food", "Outgoing"],
-    time: new Date(2024, 4, 15, 16, 0),
+    time: new Date(2024, 4, 17, 16, 0),
     location: "BCIT Library",
     members: ["Jon Santiaguel", "Jerome Gache", "Nathan Yee", ""],
     coords: {
@@ -19,7 +19,7 @@ export const groups = [
     description:
       "We’ll be at the far table at the corner of the library! Take a right after entering and look for the group with all the starbucks cups lol!",
     tags: ["Marketing", "Quiet", "Coffee", "Music"],
-    time: new Date(2024, 4, 15, 18, 30),
+    time: new Date(2024, 4, 17, 18, 30),
     location: "BCIT Library",
     members: ["Jimmy Heiser", "Jacob Smith", "Norman D'ron"],
     coords: {
@@ -32,7 +32,7 @@ export const groups = [
     description:
       "Looking for chill peeps to practice some coding, preferably JavaScript! Exams coming up and I needa prepaaare. Anyone is welcome!",
     tags: ["Front End Development", "JavaScript", "Coding", "Coffee"],
-    time: new Date(2024, 4, 15, 19, 0),
+    time: new Date(2024, 4, 17, 19, 0),
     location: "BCIT Library",
     members: ["Peter Peter", "Carol Corn", "", ""],
     coords: {
